@@ -73,6 +73,7 @@
         "imagemaker.js": "*",
         "javascript-obfuscator": "*",
         "jimp": "*",
+        "knights-canvas": "*",
         "lowdb": "^3.0.0",
         "megajs": "*",
         "mime-types": "*",
