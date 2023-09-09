@@ -49,6 +49,7 @@
         "axios": "*",
         "brainly-scraper-v2": "*",
         "canvafy": "*",
+        "cfonts": "*",
         "chalk": "*",
         "chalk-animation": "*",
         "cheerio": "*",

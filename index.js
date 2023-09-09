@@ -1,48 +1,69 @@
-import os from 'os'
-import express from 'express'
-import { spawn } from 'child_process'
-import path from 'path'
-import fs from 'fs'
-import { promises as fsPromises } from 'fs'
-import chalk from 'chalk'
+console.log('🕖 Starting...')
 
-const app = express()
-const port = process.env.PORT || 8080
+import { join, dirname } from 'path'
+import { createRequire } from "module";
+import { fileURLToPath } from 'url'
+import { setupMaster, fork } from 'cluster'
+import { watchFile, unwatchFile } from 'fs'
+import cfonts from 'cfonts';
+import chalkAnimation from 'chalk-animation'
+import { createInterface } from 'readline'
+import yargs from 'yargs'
 
-const basePath = new URL(import.meta.url).pathname
-const htmlDir = path.join(path.dirname(basePath), 'html')
+// https://stackoverflow.com/a/50052194
+const __dirname = dirname(fileURLToPath(import.meta.url))
+const require = createRequire(__dirname) // Bring in the ability to create the 'require' method
+const { name, author } = require(join(__dirname, './package.json')) // https://www.stefanjudis.com/snippets/how-to-import-json-files-in-es-modules-node-js/
+const { say } = cfonts
+const rl = createInterface(process.stdin, process.stdout)
 
-const sendHtml = (req, res, name) => {
-  res.sendFile(path.join(htmlDir, `${name}.html`))
-}
+say('█▀ █░█ ▄▀█ █▀▄ ▀▄▀ █▄█\n█▀ █▄█ █▀█ █▄▀ █░█ ░█░', {
+font: 'chrome',
+align: 'center',
+gradient: ['red', 'magenta']})
+say(`Updated FuadXy`, {
+font: 'console',
+align: 'center',
+gradient: ['red', 'magenta']})
 
-app.get('/', (req, res) => sendHtml(req, res, 'home'))
-app.get('/chat', (req, res) => sendHtml(req, res, 'chat'))
-app.get('/game', (req, res) => sendHtml(req, res, 'game'))
-app.get('/tools', (req, res) => sendHtml(req, res, 'tools'))
-app.get('/music', (req, res) => sendHtml(req, res, 'music'))
 
-app.listen(port, () => {
-  console.log(chalk.green(`🌐 Port ${port} is open`))
-})
 
-let isRunning = false
-
-async function start(file) {
+  
+var isRunning = false
+/**
+ * Start a js file
+ * @param {String} file `path/to/file`
+ */
+function start(file) {
   if (isRunning) return
   isRunning = true
-
-  const currentFilePath = new URL(import.meta.url).pathname
-  const args = [path.join(path.dirname(currentFilePath), file), ...process.argv.slice(2)]
-  const p = spawn(process.argv[0], args, {
-    stdio: ['inherit', 'inherit', 'inherit', 'ipc'],
+  let args = [join(__dirname, file), ...process.argv.slice(2)]
+  say([process.argv[0], ...args].join(' '), {
+    font: 'console',
+    align: 'center',
+    gradient: ['red', 'magenta']})
+  say('Sabar Ya Kak Hihihi...', {
+    font: 'console',
+    align: 'center',
+    gradient: ['red', 'magenta']})
+  say('Lagi Memuat Plugins Kak...', {
+    font: 'console',
+    align: 'center',
+    gradient: ['red', 'magenta']})
+  say('Dah Tinggal Tunggu Kak Mwehehe', {
+    font: 'console',
+    align: 'center',
+    gradient: ['blue', 'magenta']})
+  setupMaster({
+    exec: args[0],
+    args: args.slice(1),
   })
-
-  p.on('message', (data) => {
-    console.log(chalk.cyan(`🟢 RECEIVED ${data}`))
+  let p = fork()
+  p.on('message', data => {
+    console.log('[RECEIVED]', data)
     switch (data) {
       case 'reset':
-        p.kill()
+        p.process.kill()
         isRunning = false
         start.apply(this, arguments)
         break
@@ -51,107 +72,21 @@ async function start(file) {
         break
     }
   })
-
-  p.on('exit', (code) => {
+  p.on('exit', (_, code) => {
     isRunning = false
-    console.error(chalk.red(`🛑 Exited with code: ${code}`))
-
+    console.error('Error Cuy:', code)
     if (code === 0) return
-
-    fs.watchFile(args[0], () => {
-      fs.unwatchFile(args[0])
-      start('main.js')
+    watchFile(args[0], () => {
+      unwatchFile(args[0])
+      start(file)
     })
   })
-
-  p.on('error', (err) => {
-    console.error(chalk.red(`❌ Error: ${err}`))
-    p.kill()
-    isRunning = false
-    start('main.js')
-  })
-
-  const pluginsFolder = path.join(path.dirname(currentFilePath), 'plugins')
-
-  fs.readdir(pluginsFolder, async (err, files) => {
-    if (err) {
-      console.error(chalk.red(`❌ Error reading plugins folder: ${err}`))
-      return
-    }
-    console.log(chalk.yellow(`🟡 Found ${files.length} plugins in folder ${pluginsFolder}`))
-
-    try {
-      const { default: baileys } = await import('@adiwajshing/baileys')
-      const version = (await baileys.fetchLatestBaileysVersion()).version
-      console.log(chalk.yellow(`🟡 Baileys library version ${version} is installed`))
-    } catch (e) {
-      console.error(chalk.red('❌ Baileys library is not installed'))
-    }
-  })
-
-  console.log(chalk.yellow(`🖥️ ${os.type()}, ${os.release()} - ${os.arch()}`))
-  const ramInGB = os.totalmem() / (1024 * 1024 * 1024)
-  console.log(chalk.yellow(`💾 Total RAM: ${ramInGB.toFixed(2)} GB`))
-  const freeRamInGB = os.freemem() / (1024 * 1024 * 1024)
-  console.log(chalk.yellow(`💽 Free RAM: ${freeRamInGB.toFixed(2)} GB`))
-  console.log(chalk.yellow(`📃 Script by wudysoft`))
-
-  const packageJsonPath = path.join(path.dirname(currentFilePath), './package.json')
-  try {
-    const packageJsonData = await fsPromises.readFile(packageJsonPath, 'utf-8')
-    const packageJsonObj = JSON.parse(packageJsonData)
-    console.log(chalk.blue.bold(`\n📦 Package Information`))
-    console.log(chalk.cyan(`Name: ${packageJsonObj.name}`))
-    console.log(chalk.cyan(`Version: ${packageJsonObj.version}`))
-    console.log(chalk.cyan(`Description: ${packageJsonObj.description}`))
-    console.log(chalk.cyan(`Author: ${packageJsonObj.author.name}`))
-  } catch (err) {
-    console.error(chalk.red(`❌ Unable to read package.json: ${err}`))
-  }
-
-  const totalFoldersAndFiles = await getTotalFoldersAndFiles(pluginsFolder)
-  console.log(chalk.blue.bold(`\n📂 Total Folders and Files in "plugins" folder`))
-  console.log(chalk.cyan(`Total Folders: ${totalFoldersAndFiles.folders}`))
-  console.log(chalk.cyan(`Total Files: ${totalFoldersAndFiles.files}`))
-
-  console.log(chalk.blue.bold(`\n⏰ Current Time`))
-  const currentTime = new Date().toLocaleString()
-  console.log(chalk.cyan(`${currentTime}`))
-
-  setInterval(() => {}, 1000)
-}
-
-function getTotalFoldersAndFiles(folderPath) {
-  return new Promise((resolve, reject) => {
-    fs.readdir(folderPath, (err, files) => {
-      if (err) {
-        reject(err)
-      } else {
-        let folders = 0
-        let filesCount = 0
-        files.forEach((file) => {
-          const filePath = path.join(folderPath, file)
-          if (fs.statSync(filePath).isDirectory()) {
-            folders++
-          } else {
-            filesCount++
-          }
-        })
-        resolve({ folders, files: filesCount })
-      }
+  let opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse())
+  if (!opts['test'])
+    if (!rl.listenerCount()) rl.on('line', line => {
+      p.emit('message', line.trim())
     })
-  })
+  // console.log(p)
 }
 
 start('main.js')
-
-process.on('unhandledRejection', () => {
-  console.error(chalk.red(`❌ Unhandled promise rejection. Script will restart...`))
-  start('main.js')
-})
-
-process.on('exit', (code) => {
-  console.error(chalk.red(`🛑 Exited with code: ${code}`))
-  console.error(chalk.red(`❌ Script will restart...`))
-  start('main.js')
-})
