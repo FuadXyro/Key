@@ -1880,7 +1880,7 @@ def shell():
     else:
         callback = print_dots(shutdown_event)
 
-    printer('• SPEEDTEST.NET •\n', quiet)
+    printer('', quiet)
     try:
         speedtest = Speedtest(
             source_address=args.source,
@@ -1910,11 +1910,11 @@ def shell():
                         raise
         sys.exit(0)
 
-    printer('Testing from %(isp)s...' % speedtest.config['client'],
+    printer('*🔭 Testing From %(isp)s...*\n' % speedtest.config['client'],
             quiet)
 
     if not args.mini:
-        printer('Retrieving speedtest.net server list...', quiet)
+        printer('📑 Retrieving speedtest.net server list...', quiet)
         try:
             speedtest.get_servers(servers=args.server, exclude=args.exclude)
         except NoMatchedServers:
