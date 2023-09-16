@@ -57,6 +57,7 @@
         "child_process": "*",
         "crypto": "*",
         "didyoumean": "*",
+        "discord.js": "^14.13.0",
         "emoji-api": "*",
         "express": "*",
         "file-type": "*",
