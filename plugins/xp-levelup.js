@@ -1,11 +1,12 @@
 import {
     canLevelUp,
     xpRange
-} from "../lib/levelling.js"
+} from '../lib/levelling.js'
 import {
     levelup
-} from "../lib/canvas.js"
-import canvafy from "canvafy"
+} from '../lib/canvas.js'
+import canvacord from 'canvacord'
+import knights from 'knights-canvas'
 
 let handler = async (m, {
     conn,
@@ -39,7 +40,7 @@ Kurang *${max - user.exp}* lagi! ✨
 
 • 🧬Level Sebelumnya : ${before}
 • 🧬Level Baru : ${user.level}
-• Pada Jam : ${new Date().toLocaleString("id-ID")}
+• Pada Jam : ${new Date().toLocaleString('id-ID', {timeZone: 'Asia/Jakarta' })}
 
 *Note:* _Semakin sering berinteraksi dengan bot Semakin Tinggi level kamu_
 `.trim()
@@ -49,54 +50,57 @@ Kurang *${max - user.exp}* lagi! ✨
             xp,
             max
         } = xpRange(user.level, global.multiplier)
-        let pp = await conn.profilePictureUrl(m.sender).catch(_ => "./src/avatar_contact.png")
-        
+        let pp = await conn.profilePictureUrl(m.sender).catch(_ => './src/avatar_contact.png')
+        let image = await new knights.Up()
+            .setAvatar(pp)
+            .toAttachment();
+        let dataa = image.toBuffer();
+
         let exp = user.exp
         let required = xp
         let role = user.role
         let level = user.level
         let disec = m.sender.substring(3, 7)
-        let sortedlevel = Object.entries(global.db.data.users).sort((a, b) => b[1].level - a[1].level)
-let userslevel = sortedlevel.map(v => v[0])
-let rank = (userslevel.indexOf(m.sender) + 1)
-
         let ppuser
         try {
-            ppuser = await conn.profilePictureUrl(m.sender, "image")
+            ppuser = await conn.profilePictureUrl(m.sender, 'image')
         } catch {
-            ppuser = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMxMUXFtd5GrFkxyrU-f5zA2IH8MZ-U-cFKg&usqp=CAU"
+            ppuser = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMxMUXFtd5GrFkxyrU-f5zA2IH8MZ-U-cFKg&usqp=CAU'
         }
-       
-        try {
-        let datab = await canvafyRank(ppuser, user.name, disec.toString(), "online", level, rank, Number(required), Number(exp))
-            await conn.sendFile(m.chat, datab, "", str, m)
-        } catch (e) {
-        try {
+
+        const rank = new canvacord.Rank()
+            .setAvatar(ppuser)
+            .setLevel(level)
+            .setLevelColor('#39FF14', '#39FF14')
+            .setCurrentXP(exp)
+            .setOverlay('#000000', 100, true)
+            .setRequiredXP(required)
+            .setProgressBar('#39FF14', 'COLOR')
+            .setRank(0, role, true)
+            .setBackground('COLOR', '#000000')
+            .setUsername(m.name)
+            .setDiscriminator(disec)
+        let datab = await rank.build()
+
         let datac = await levelup(teks, user.level)
-            await conn.sendFile(m.chat, datac, "", str, m)
-            } catch (e) {
-            await conn.sendFile(m.chat, fla + "levelup", "", str, m)
-            }
+
+        try {
+            await conn.sendMessage(m.chat, {
+                image: datab,
+                caption: str
+            }, {
+                quoted: m
+            })
+        } catch (e) {
+            await m.reply(eror)
         }
 
     }
 }
-handler.help = ["levelup"]
-handler.tags = ["xp"]
-handler.command = /^level(|up)$/i
-export default handler
 
-async function canvafyRank(avatar, username, discrim, status, level, rank, cxp, rxp) {
-    const rankBuffer = await new canvafy.Rank()
-    .setAvatar(avatar)
-    .setBackground("image", "https://th.bing.com/th/id/R.248b992f15fb255621fa51ee0ca0cecb?rik=K8hIsVFACWQ8%2fw&pid=ImgRaw&r=0")
-    .setUsername(username)
-    .setDiscriminator(discrim)
-    .setStatus(status)
-    .setLevel(level)
-    .setRank(rank)
-    .setCurrentXp(cxp)
-    .setRequiredXp(rxp)
-    .build();
-    return rankBuffer
-    }
+handler.help = ['levelup']
+handler.tags = ['xp']
+
+handler.command = /^level(|up)$/i
+
+export default handler
