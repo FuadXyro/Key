@@ -101,6 +101,8 @@ let handler = async (m, {
         "store": "Store Menu",
         "virus": "Virtex",
         "payment": "Payment",
+        "stalk": "Stalker Menu",
+        "konfess": "Konfess"
     }
     try {
         // DEFAULT MENU

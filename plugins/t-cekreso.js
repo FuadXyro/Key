@@ -31,7 +31,7 @@ let reso = `_*⛶ RESOLUTION :*_ ${width} x ${height}
 conn.reply(m.chat, reso, fakes, { contextInfo: { isForwarded: false, forwardingScore: 9999, externalAdReply :{ mediaType: 1, mediaUrl: link, title: `${namebot}`, body: `By ${author}`, thumbnail: { url: link }, thumbnailUrl: link, renderLargerThumbnail: true }}})
 }
 handler.help = ['cekresolution <reply | caption>', 'cekreso <reply | caption>']
-handler.tags = ['tool']
+handler.tags = ['tools']
 handler.command = /^(cekreso(lution)?)$/i
 
 export default handler
