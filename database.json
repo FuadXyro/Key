@@ -91,7 +91,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 20349,
+      "exp": 20916,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -945,7 +945,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 1593,
+      "exp": 1636,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -9742,20 +9742,21 @@
       "expired": 0,
       "nsfw": false,
       "premnsfw": false
-    }
+    },
+    "sWelcome": null
   },
   "stats": {
     "ro-exec2.js": {
-      "total": 43,
-      "success": 43,
-      "last": 1695047859922,
-      "lastSuccess": 1695047859922
+      "total": 44,
+      "success": 44,
+      "last": 1695123532847,
+      "lastSuccess": 1695123532847
     },
     "ro-exec.js": {
-      "total": 59,
-      "success": 59,
-      "last": 1695048150420,
-      "lastSuccess": 1695048150420
+      "total": 65,
+      "success": 65,
+      "last": 1695123912418,
+      "lastSuccess": 1695123912418
     },
     "update.js": {
       "total": 10,
@@ -9770,10 +9771,10 @@
       "lastSuccess": 1694273778651
     },
     "ro-sfp.js": {
-      "total": 82,
-      "success": 82,
-      "last": 1695048870223,
-      "lastSuccess": 1695048870223
+      "total": 86,
+      "success": 86,
+      "last": 1695124449454,
+      "lastSuccess": 1695124449454
     },
     "rpg-daily.js": {
       "total": 2,
@@ -9878,10 +9879,10 @@
       "lastSuccess": 1694251201563
     },
     "ro-setppfull.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1694251421177,
-      "lastSuccess": 1694251421177
+      "total": 4,
+      "success": 4,
+      "last": 1695126782584,
+      "lastSuccess": 1695126782584
     },
     "gc-setpp.js": {
       "total": 3,
@@ -9986,10 +9987,10 @@
       "lastSuccess": 1694272271722
     },
     "t-fetch.js": {
-      "total": 8,
-      "success": 6,
-      "last": 1694840299434,
-      "lastSuccess": 1694840299434
+      "total": 10,
+      "success": 8,
+      "last": 1695127066220,
+      "lastSuccess": 1695127066220
     },
     "s-stickers.js": {
       "total": 5,
@@ -10116,6 +10117,36 @@
       "success": 5,
       "last": 1695048918068,
       "lastSuccess": 1695048918068
+    },
+    "o-simulate.js": {
+      "total": 5,
+      "success": 5,
+      "last": 1695123918492,
+      "lastSuccess": 1695123918492
+    },
+    "gc-setWelcome.js": {
+      "total": 4,
+      "success": 2,
+      "last": 1695123845597,
+      "lastSuccess": 1695123845597
+    },
+    "islam-jadwalSholat.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1695124081252,
+      "lastSuccess": 1695124081252
+    },
+    "join.js": {
+      "total": 2,
+      "success": 0,
+      "last": 1695124471346,
+      "lastSuccess": 0
+    },
+    "t-cekreso.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1695126915700,
+      "lastSuccess": 1695126915700
     }
   },
   "msgs": {},
