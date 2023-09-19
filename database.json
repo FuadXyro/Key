@@ -91,7 +91,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 20916,
+      "exp": 26141,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -248,7 +248,7 @@
       "leleb": 0,
       "lelebakar": 0,
       "leleg": 0,
-      "level": 9,
+      "level": 10,
       "limit": 26,
       "limitjoinfree": 1,
       "lion": 0,
@@ -945,7 +945,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 1636,
+      "exp": 1696,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -9753,16 +9753,16 @@
       "lastSuccess": 1695123532847
     },
     "ro-exec.js": {
-      "total": 65,
-      "success": 65,
-      "last": 1695123912418,
-      "lastSuccess": 1695123912418
+      "total": 68,
+      "success": 68,
+      "last": 1695136354361,
+      "lastSuccess": 1695136354361
     },
     "update.js": {
-      "total": 10,
-      "success": 10,
-      "last": 1694833964831,
-      "lastSuccess": 1694833964831
+      "total": 11,
+      "success": 11,
+      "last": 1695136804911,
+      "lastSuccess": 1695136804911
     },
     "enable.js": {
       "total": 9,
@@ -9771,10 +9771,10 @@
       "lastSuccess": 1694273778651
     },
     "ro-sfp.js": {
-      "total": 86,
-      "success": 86,
-      "last": 1695124449454,
-      "lastSuccess": 1695124449454
+      "total": 87,
+      "success": 87,
+      "last": 1695136753219,
+      "lastSuccess": 1695136753219
     },
     "rpg-daily.js": {
       "total": 2,
@@ -9915,10 +9915,10 @@
       "lastSuccess": 1694268366567
     },
     "ro-df.js": {
-      "total": 7,
-      "success": 7,
-      "last": 1695048381852,
-      "lastSuccess": 1695048381852
+      "total": 8,
+      "success": 8,
+      "last": 1695136745624,
+      "lastSuccess": 1695136745624
     },
     "t-totv.js": {
       "total": 3,
@@ -9987,10 +9987,10 @@
       "lastSuccess": 1694272271722
     },
     "t-fetch.js": {
-      "total": 10,
-      "success": 8,
-      "last": 1695127066220,
-      "lastSuccess": 1695127066220
+      "total": 12,
+      "success": 9,
+      "last": 1695136357468,
+      "lastSuccess": 1695136357468
     },
     "s-stickers.js": {
       "total": 5,
@@ -10065,10 +10065,10 @@
       "lastSuccess": 1694326560253
     },
     "xp-levelup.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1695048358943,
-      "lastSuccess": 1695048358943
+      "total": 5,
+      "success": 4,
+      "last": 1695136968888,
+      "lastSuccess": 1695136968888
     },
     "t-hdr.js": {
       "total": 3,
@@ -10147,6 +10147,18 @@
       "success": 2,
       "last": 1695126915700,
       "lastSuccess": 1695126915700
+    },
+    "t-getnomor.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1695136145396,
+      "lastSuccess": 1695136145396
+    },
+    "ro-sendXp.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1695136958235,
+      "lastSuccess": 1695136958235
     }
   },
   "msgs": {},
