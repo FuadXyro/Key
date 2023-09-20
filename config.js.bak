@@ -13,7 +13,7 @@ import moment from "moment-timezone"
 global.owner = [
     ["6283837709331", "️FuadXy", true]
 ]
-global.mods = []
+global.mods = ["6283837709331"]
 global.prems = ["6283837709331"]
 
 /*Website*/
@@ -144,7 +144,7 @@ global.cmenua = "\n⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙
 global.emojis = pickRandom(["👑", "🎗", "️🗿", "🕹", "️💡", "🪄", "🎈", "🎊", "🔖", "📍", "❤", "‍🔥", "💤", "💭", "🕚", "💬", "🚩", "🎐", "🍃", "🌿", "🥀", "✨", "⚡", "☂️"])
 global.packname = "𝑴𝒂𝒅𝒆 𝒃𝒚"
 global.stickpack = packname
-global.author = "𝑭𝒖𝒂𝒅𝑿𝒚"
+global.author = "𝒁𝒆𝒏𝒊𝒕𝒉 乂 𝑭𝒖𝒂𝒅𝑿𝒚"
 global.stickauth = author + "\nwa.me/" + nomorbot
 global.multiplier = 69
 
