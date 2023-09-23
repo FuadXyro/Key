@@ -1,6 +1,6 @@
 import fetch from "node-fetch"
 
-const API_URL = "https://api.aladhan.com/v1/timingsByCity?city=Jakarta&country=Indonesia&method=8"
+const API_URL = "https://api.aladhan.com/v1/timingsByCity?city=Surabaya&country=Indonesia&method=8"
 
 export async function before(m) {
     try {
@@ -27,9 +27,9 @@ export async function before(m) {
         
         for (const [sholat, waktu] of Object.entries(jadwalSholat)) {
             if (timeNow === waktu) {
-                let caption = `Hai kak @${who.split`@`[0]},\nWaktu *${sholat}* telah tiba, ambilah air wudhu dan segeralah shalat.\n\n*${waktu}*\n_untuk wilayah Jakarta dan sekitarnya._`
+                let caption = `Hai kak @${who.split`@`[0]},\nWaktu *${sholat}* telah tiba, ambilah air wudhu dan segeralah shalat.\n\n*${waktu}*\n_untuk wilayah Surabaya dan sekitarnya._`
                 this.autosholat[id] = [
-                    this.reply(m.chat, caption, null),
+                    this.reply(m.chat, caption, m),
                     setTimeout(() => {
                         delete this.autosholat[id]
                     }, 57000)

@@ -85,6 +85,7 @@
         "mongoose": "*",
         "node-fetch": "*",
         "node-gtts": "*",
+        "nodemailer": "*",
         "node-os-utils": "*",
         "node-webpmux": "*",
         "node-zip": "*",

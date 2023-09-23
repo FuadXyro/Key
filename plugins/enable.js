@@ -12,13 +12,13 @@ let fxy = `
 ◉ antilinkall
 ◉ antiphising
 ◉ antisticker
+◉ antiviewonce
 ◉ antidelete
 ◉ antivn
 ◉ antivirtex
 ◉ antivirus
 ◉ autosticker
 ◉ autolevelup
-◉ antirpg
 ◉ antigame
 ◉ antiluar
 ◉ adminonly
@@ -252,6 +252,16 @@ ${usedPrefix}${command} welcome
       }
       chat.antiSpam = isEnable
       break
+      
+    case 'viewonce':
+			if (m.isGroup) {
+				if (!(isAdmin || isOwner)) {
+					global.dfail('admin', m, conn)
+					throw false
+				}
+			}
+			chat.viewonce = isEnable
+			break
       
     case 'antidelete':
       if (m.isGroup) {
