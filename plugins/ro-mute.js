@@ -9,13 +9,13 @@ let handler = async (m, { conn, args, usedPrefix, isPrems, isOwner, command }) =
     if (total > 70 && !isOwner) return m.reply(`[!] Maksimal ${command} : 70 menit.`)
     let chat = global.db.data.chats[m.chat]
     chat.isBanned = true
-    m.reply(`Bot Senyap selama ${total} menit!`)
+    m.reply(`${namebot} Senyap selama ${total} menit!`)
     setTimeout(() => {
         chat.isBanned = false
     }, cooldown * total)
     setTimeout(() => {
         chat.isBanned = false
-        m.reply(`Bot dapat digunakan kembali.`)
+        m.reply(`${namebot} dapat digunakan kembali.`)
     }, (cooldown * total) + 2000)
     chat.lastmute = new Date * 1 + (cooldown * total)
 }
