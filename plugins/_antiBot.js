@@ -14,9 +14,9 @@ export async function all(m) {
   const isBotAdmin = bot && bot?.admin || false;
   let chat = global.db.data.chats[m.chat]
   let user = global.db.data.users[m.sender]
-  console.log("Is Bot?:", m.quoted.id.startsWith('BAE5'))
+  console.log("Is Bot?:", m.key.id.startsWith('BAE5'))
   if (chat.antiBot) {
-    if (m.quoted.id.startsWith('BAE5')) {
+    if (m.key.id.startsWith('BAE5')) {
       await m.reply(`*Bot Lain Terdeteksi*\n\nHusshhh Sana Pergi Dari Grup Ini!!!`).then(async v => {
         await delay(1000)
         if (!isBotAdmin) {
