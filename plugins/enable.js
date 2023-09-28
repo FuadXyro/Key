@@ -21,6 +21,7 @@ let fxy = `
 ◉ autolevelup
 ◉ antigame
 ◉ antiluar
+◉ anticall
 ◉ adminonly
 ◉ autopersence
 ◉ autodelvn
@@ -272,6 +273,16 @@ ${usedPrefix}${command} welcome
       }
       chat.delete = !isEnable
       break
+      
+     case 'anticall':
+       if (m.isGroup) {
+         if (!(isAdmin || isOwner)) {
+           global.dfail('admin', m, conn)
+           throw false
+         }
+       }
+       chat.antiCall = isEnable
+       break
       
      case 'document':
        chat.useDocument = isEnable

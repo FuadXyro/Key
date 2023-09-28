@@ -1,0 +1,23 @@
+import Aichat from '../lib/aichat.js'
+const model = 'gpt-3.5-turbo'
+
+const handler = async (m, { text }) => {
+  if (!text) throw 'Input! Text'
+
+  m.reply(wait)
+  const messages = [{ role: 'system', content: 'Anda adalah asisten yang membantu.' }, { role: 'user', content: text }]
+
+  try {
+    const output = await Aichat.createAsync(model, messages)
+    m.reply(output)
+  } catch (error) {
+    console.error('Error:', error)
+    m.reply(eror)
+  }
+}
+
+handler.help = ['aichat']
+handler.tags = ['internet']
+handler.command = /^(aichat)$/i
+
+export default handler
