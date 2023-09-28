@@ -63,7 +63,7 @@ let handler = async (m, {
 }) => {
     await conn.sendMessage(m.chat, {
         react: {
-            text: "⚡",
+            text: "🔥",
             key: m.key,
         }
     })
@@ -90,6 +90,7 @@ let handler = async (m, {
         "nulis": "MagerNulis & Logo",
         "audio": "Audio",
         "maker": "Maker",
+        "misc": "Misc",
         "database": "Database",
         "islamic": "Islamic",
         "developer": "Developer",
@@ -129,13 +130,15 @@ let handler = async (m, {
         let glb = global.db.data.users
         let usrs = glb[m.sender]
 
-        /* TIME ZONE */
-        let wib = moment.tz("Asia/Jakarta").format("HH:mm:ss")
-        let wibh = moment.tz("Asia/Makassar").format("HH")
-        let wibm = moment.tz("Asia/Makassar").format("mm")
-        let wibs = moment.tz("Asia/Makassar").format("ss")
-        let wita = moment.tz("Asia/Makassar").format("HH:mm:ss")
-        let waktuwita = `${wibh} H ${wibm} M ${wibs} S`
+/**************** TIME *******************/
+ let wib = moment.tz('Asia/Jakarta').format('HH:mm:ss')
+    let wibh = moment.tz('Asia/Jakarta').format('HH')
+    let wibm = moment.tz('Asia/Jakarta').format('mm')
+    let wibs = moment.tz('Asia/Jakarta').format('ss')
+    let wit = moment.tz('Asia/Jayapura').format('HH:mm:ss')
+    let wita = moment.tz('Asia/Makassar').format('HH:mm:ss')
+    let wktuwib = `${wibh} H ${wibm} M ${wibs} S`
+    let waktuwita = `${wibh} H ${wibm} M ${wibs} S`
 
         /* Info Menu */
         let mode = global.opts["self"] ? "Private" : "Publik"
