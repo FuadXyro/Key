@@ -1,41 +1,40 @@
+import fetch from 'node-fetch'
 let handler  = async (m, { conn, usedPrefix: _p }) => {
-let info = `Updating....`.trim()
-const fpayment = {
-		key: {
-		remoteJid: '0@s.whatsapp.net',
-		fromMe: false,
-		id: 'FuadXy',
-		participant: '0@s.whatsapp.net'
+
+let pp = await conn.profilePictureUrl(m.sender, 'image')
+
+const anu = {
+	"key": {
+		"fromMe": false,
+		"participant": "0@s.whatsapp.net",
+		"remoteJid": "0@s.whatsapp.net"
 	},
-	message: {
-		requestPaymentMessage: {
-			currencyCodeIso4217: "USD",
-			amount1000: 999999999,
-			requestFrom: (m !== null && m !== undefined) ? m.sender : '0@s.whatsapp.net',
-			noteMessage: {
-				extendedTextMessage: {
-					text: (m !== null && m !== undefined) ? m.text : 'IG: fuadxy99'
-				}
-			},
-			expiryTimestamp: 999999999,
-			amount: {
-				value: 91929291929,
-				offset: 1000,
-				currencyCode: "USD"
-			}
+	"message": {
+		"groupInviteMessage": {
+			"groupJid": "6285240750713-1610340626@g.us",
+			"inviteCode": "mememteeeekkeke",
+			"groupName": "P", 
+            "caption": `${namebot}`, 
+            'jpegThumbnail': await ( await fetch(pp)).buffer()
 		}
 	}
-} 
-conn.reply(m.chat, info, fpayment)
 }
-handler.command = /^(cekversi)$/i
-handler.premium = false
-handler.group = false
+
+let text = 'V7 (latest update)'
+
+conn.sendMessage(m.chat, { text: text} , { quoted: anu })
+}
+
+handler.help = ['cekversi']
+handler.tags = ["info"]
+
+handler.command = /^cekversi$/i
 handler.private = false
 
 handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
+handler.exp = 3
 
 export default handler
