@@ -312,7 +312,7 @@ let handler = async (m, {
         throw e
     }
 }
-handler.command = /^(menu)$/i
+handler.command = /^(allmenu)$/i
 handler.register = true
 handler.exp = 3
 
