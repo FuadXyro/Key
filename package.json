@@ -78,6 +78,7 @@
         "jimp": "*",
         "jsdom": "*",
         "knights-canvas": "*",
+        "lolcatjs": "*",
         "lowdb": "^3.0.0",
         "megajs": "*",
         "mime-types": "*",
