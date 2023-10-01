@@ -57,6 +57,7 @@
         "cheerio": "*",
         "child_process": "*",
         "crypto": "*",
+        "deepai": "*",
         "didyoumean": "*",
         "discord.js": "^14.13.0",
         "emoji-api": "*",

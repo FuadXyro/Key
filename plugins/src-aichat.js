@@ -2,7 +2,7 @@ import Aichat from '../lib/aichat.js'
 const model = 'gpt-3.5-turbo'
 
 const handler = async (m, { text }) => {
-  if (!text) throw 'Contoh: .aichat Pesan yang ingin Anda sampaikan kepada asisten AI'
+  if (!text) throw 'Input! Text'
 
   m.reply(wait)
   const messages = [{ role: 'system', content: 'Anda adalah asisten yang membantu.' }, { role: 'user', content: text }]
