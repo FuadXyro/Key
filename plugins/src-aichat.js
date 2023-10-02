@@ -1,11 +1,11 @@
-import Aichat from '../lib/aichat.js'
-const model = 'gpt-3.5-turbo'
+import Aichat from "../lib/aichat.js"
+const model = "gpt-3.5-turbo"
 
-const handler = async (m, { text }) => {
-  if (!text) throw 'Contoh: .aichat Pesan yang ingin Anda sampaikan kepada asisten AI'
+let handler = async (m, { text }) => {
+  if (!text) throw 'input! text'
 
   m.reply(wait)
-  const messages = [{ role: 'system', content: 'Anda adalah asisten yang membantu.' }, { role: 'user', content: text }]
+  const messages = [{ role: 'system', content: 'Anda adalah asisten yang membantu.' }, { role: 'user', content: encodeURIComponent(text) }]
 
   try {
     const output = await Aichat.createAsync(model, messages)
@@ -16,8 +16,8 @@ const handler = async (m, { text }) => {
   }
 }
 
-handler.help = ['aichat']
-handler.tags = ['internet']
+handler.help = ["aichat"]
+handler.tags = ["internet"]
 handler.command = /^(aichat)$/i
 
 export default handler

@@ -30,7 +30,9 @@ let muptime = clockString(_muptime)
 let totalf = Object.values(global.plugins).filter(
     (v) => v.help && v.tags
   ).length;
-let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : m.fromMe ? conn.user.jid : m.sender
+let who
+    if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
+   else who = m.sender
 let name = conn.getName(who)
 
 let img1 = 'https://telegra.ph/file/4d5cf54515dd1eab55c47.jpg'
@@ -43,7 +45,7 @@ let img7 = 'https://telegra.ph/file/b2bcf52752d273683c002.jpg'
 let pp = `${pickRandom([`${img1}`, `${img2}`, `${img3}`, `${img4}`, `${img5}`, `${img6}`, `${img7}`])}`
 
 let ucpn = `${ucapan()}`
-let info = `Hai Kak *${name}* \n*${ucpn}*\n
+let info = `Hai Kak *${m.name}*
 sᥱᥣᥲmᥲ𝗍 ძᥲ𝗍ᥲᥒg ძі ${namebot}
 ᑲ᥆𝗍 іᥒі sᥱძᥲᥒg ძᥲᥣᥲm 𝗍ᥲһᥲ⍴ ⍴ᥱᥒgᥱmᑲᥲᥒgᥲᥒ!!
 
@@ -137,4 +139,4 @@ function megabit() {
 }
 function pickRandom(list) {
      return list[Math.floor(Math.random() * list.length)]
-  }
+}
