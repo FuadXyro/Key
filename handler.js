@@ -34,8 +34,6 @@ export async function handler(chatUpdate) {
     if (!amd.message) return
     await conn.readMessages([amd.key])*/
     
-    global.img = 'https://telegra.ph/file/e4a2f4339da8a32ad20a1.jpg' 
-    
     if (!m)
         return
     if (global.db.data == null)
@@ -1343,33 +1341,26 @@ export async function participantsUpdate({ id, participants, action }) {
     let chat = global.db.data.chats[id] || {}
     let text = ''
     switch (action) {
-                case 'add':
+        case 'add':
         case 'remove':
             if (chat.welcome) {
                 let groupMetadata = await this.groupMetadata(id) || (conn.chats[id] || {}).metadata
                 for (let user of participants) {
-                    let pp = 'https://telegra.ph/file/2d06f0936842064f6b3bb.png'
+                    let pp = './src/avatar_contact.png'
                     try {
                         pp = await this.profilePictureUrl(user, 'image')
                     } catch (e) {
                     } finally {
-                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
-                            (chat.sBye || this.bye || conn.bye || 'Bye @user')).replace(/@user/g, '@' + user.split`@`[0])
-                        let wel = API('males', '/welcome2', {
-                                profile: pp,
-                                username: await this.getName(user),
-                                background: 'https://telegra.ph/file/7f827ca45c833542777f0.jpg',
-                                groupname: await this.getName(id),
-                                membercount: groupMetadata.participants.length
-                            })
-                            let lea = API('males', '/goodbye2', {
-                                profile: pp,
-                                username: await this.getName(user),
-                                background: 'https://telegra.ph/file/7f827ca45c833542777f0.jpg',
-                                groupname: await this.getName(id),
-                                membercount: groupMetadata.participants.length
-                            })
-                   this.sendFile(id, pp, 'pp.jpg', text, null, false, { mentions: [user] })
+                        text = (action === 'add' ? (chat.sWelcome || this.welcome || conn.welcome || 'Welcome, @user!').replace('@subject', await this.getName(id)).replace('@desc', groupMetadata.desc?.toString() || 'unknow') :
+                            (chat.sBye || this.bye || conn.bye || 'Bye, @user!')).replace('@user', await this.getName(user))
+                            
+let notif = conn.notice
+
+let wel = 'https://telegra.ph/file/61a04a443f2b9fc3e34bc.jpg'
+
+let lea = 'https://telegra.ph/file/cadce7b456c2b36564737.jpg'
+ 
+await this.reply(id, text, null, { contextInfo: { mentionedJid: [user], forwardingScore: 9999, isForwarded: true, externalAdReply: { mediaType: 1, mediaUrl: sgc, title: this.getName(user), body: action === 'add' ? 'Welcome bro 🥳' : 'Sayonara😏',  thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: true, renderLargerThumbnail: true }}})
                     }
                 }
             }

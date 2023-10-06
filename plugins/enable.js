@@ -156,15 +156,14 @@ ${usedPrefix}${command} welcome
        break
        
   	case 'antibot':
-  		if (!m.isGroup) {
-  			global.dfail('group', m, conn)
-  			throw false;
-  		} else if (!(isAdmin || isOwner)) {
-  			global.dfail('admin', m, conn)
-  			throw false;
-  		}
-  		chat.antiBot = isEnable
-  	break
+      if (m.isGroup) {
+        if (!(isAdmin || isOwner)) {
+          global.dfail('admin', m, conn)
+          throw false
+        }
+      }
+      chat.antiBot = isEnable
+      break
   	
     case 'welcome':
         if (!m.isGroup) {
