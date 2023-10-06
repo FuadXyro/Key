@@ -3,36 +3,50 @@ let handler = async (m, {
     groupMetadata,
     usedPrefix,
     text,
-    command
+    command,
 }) => {
-if (!text && !m.quoted) return m.reply("Input text\nReply pesan")
-    let get = await groupMetadata.participants.filter(v => v.id.endsWith('.net')).map(v => v.id)
-    let count = get.length;
-    let sentCount = 0;
-    m.reply(wait);
-    for (let i = 0; i < get.length; i++) {
+    let idgc = text.split("|")[0]
+    let pesan = text.split("|")[1]
+    
+    if (!idgc || !pesan) return m.reply(`*Example:* ${usedPrefix + command} idgc|text`)
+    
+    let get
+    try {
+        get = await conn.groupMetadata(idgc)
+    } catch (e) {
+        return m.reply(e)
+    }
+    
+    let participants = get.participants.filter(v => v.id.endsWith('.net')).map(v => v.id)
+    let count = participants.length
+    let sentCount = 0
+    m.reply(wait)
+
+    for (let i = 0; i < participants.length; i++) {
         setTimeout(function() {
-            if (text) {
-                conn.sendMessage(get[i], {
-                    text: text
-                });
+            if (pesan) {
+                conn.sendMessage(participants[i], {
+                    text: pesan
+                })
             } else if (m.quoted) {
-                conn.copyNForward(get[i], m.getQuotedObj(), false);
-            } else if (text && m.quoted) {
-                conn.sendMessage(get[i], {
-                    text: text + "\n" + m.quoted.text
-                });
+                conn.copyNForward(participants[i], m.getQuotedObj(), false)
+            } else if (pesan && m.quoted) {
+                conn.sendMessage(participants[i], {
+                    text: pesan + "\n" + m.quoted.text
+                })
             }
-            count--;
-            sentCount++;
+            count--
+            sentCount++
             if (count === 0) {
-                m.reply(`Berhasil Push Kontak:\nJumlah Pesan Terkirim: *${sentCount}*`);
+                m.reply(`Berhasil Push Kontak:\nJumlah Pesan Terkirim: *${sentCount}*`)
             }
-        }, i * 1000); // delay setiap pengiriman selama 1 detik
+        }, i * 1000) // delay setiap pengiriman selama 1 detik
     }
 }
+
 handler.command = handler.help = ["pushkontak"]
 handler.tags = ["developer"]
 handler.rowner = true
-handler.group = true
+handler.group = false
+
 export default handler
