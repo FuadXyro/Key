@@ -79,7 +79,7 @@ global.flaaa = ImgLogoDynamic()
 /*Link*/
 global.sig = "https://www.instagram.com/fuadxy99"
 global.sgh = "https://www.github.com/FuadXyro"
-global.sgc = "https://chat.whatsapp.com/C5G9dgOguTAFp2nkNv4jn7"
+global.sgc = "https://chat.whatsapp.com/KIuvRvTUv6KGU7z8BEnE9x"
 global.sdc = "https://www.discord.com/wudysoft"
 global.snh = "https://www.tiktok.com/@upload_file"
 global.sfb = "https://www.facebook.com/"

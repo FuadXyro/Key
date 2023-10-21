@@ -73,6 +73,7 @@
         "google-play-scraper": "*",
         "got": "*",
         "human-readable": "*",
+        "hxz-api": "*",
         "imagemaker.js": "*",
         "javascript-obfuscator": "*",
         "jimp": "*",

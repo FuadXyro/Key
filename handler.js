@@ -1025,7 +1025,7 @@ export async function handler(chatUpdate) {
         if (opts['pconly'] && m.chat.endsWith('g.us'))
             return
         if (opts['gconly'] && !m.chat.endsWith('g.us') && !m.fromMe)
-            return conn.reply(m.chat, 'Bot Sedang Dalam Mode Grup Only\nMasuk Gc Biar Bisa Pake\n[ Link ]\nhttps://chat.whatsapp.com/C5G9dgOguTAFp2nkNv4jn7', fkontak)
+            return conn.reply(m.chat, `[❗] *Bot Sedang Dalam Mode _Group Only_ !*\nJoin Grup Bot Agar Bisa Menggunakannya...\nLink: ${global.sgc}\nShare Linknya Untuk Meramaikan Grup 🙏🏻`, fkontak)
         if (opts['swonly'] && m.chat !== 'status@broadcast')
             return
         if (typeof m.text !== 'string')
