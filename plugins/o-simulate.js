@@ -1,14 +1,18 @@
-let handler = async (m, { conn, usedPrefix, command, args: [event], text }) => {
+let handler = async (m, { conn, usedPrefix, command, args, text }) => {
+    let event = args[0]
     if (!event) return await conn.reply(m.chat, `contoh:
 ${usedPrefix + command} welcome @user
 ${usedPrefix + command} bye @user
 ${usedPrefix + command} promote @user
 ${usedPrefix + command} demote @user`.trim(), m)
-    let mentions = text.replace(event, '').trimStart()
-    let who = mentions ? conn.parseMention(mentions) : []
+    
+    let mentions = text.replace(`@${event}`, '').trimStart()
+    let who = conn.parseMention(mentions)
     let part = who.length ? who : [m.sender]
-    let act = false
-    m.reply(`*${htjava} Simulating ${event}...*`)
+    let act = ''
+
+    m.reply(`*Simulating ${event}...*`)
+
     switch (event.toLowerCase()) {
         case 'add':
         case 'invite':
@@ -27,22 +31,21 @@ ${usedPrefix + command} demote @user`.trim(), m)
         case 'demote':
             act = 'demote'
             break
-/*        case 'delete':
-            deleted = m
-            break
-*/
         default:
-            throw eror
+            throw new Error('Event tidak valid')
     }
-    if (act) return conn.participantsUpdate({
-        id: m.chat,
-        participants: part,
-        action: act
-    })
-//    return conn.onDelete(m)
+
+    if (act) {
+        return conn.participantsUpdate({
+            id: m.chat,
+            participants: part,
+            action: act
+        })
+    }
 }
+
 handler.help = ['simulate <event> [@mention]']
 handler.tags = ['owner']
-
 handler.command = /^simulate$/i
+
 export default handler

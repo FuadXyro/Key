@@ -7,7 +7,7 @@ let name = await conn.getName(who)
 let fuadxy = `6283837709331`
  let ig = 'https://instagram.com/fuadxy99'
   let admin = await conn.profilePictureUrl(fuadxy + '@s.whatsapp.net', 'image').catch(_ => hwaifu[1])
-   
+
 const vcard = `BEGIN:VCARD\nVERSION:3.0\nN:;${author};;;\nFN:${author}\nORG:${author}\nTITLE:\nitem1.TEL;waid=6283837709331:+62 838-3770-9331\nitem1.X-ABLabel:${author}\nX-WA-BIZ-DESCRIPTION:${htjava} ᴛɪᴅᴀᴋ ᴍᴇɴᴇʀɪᴍᴀ sᴀᴠᴇ ᴋᴏɴᴛᴀᴋ.\nX-WA-BIZ-NAME:${author}\nEND:VCARD`
 await conn.sendMessage(m.chat, { contacts: { displayName: wm, contacts: [{ vcard }] }}, { quoted: fkontak })
 //Text
