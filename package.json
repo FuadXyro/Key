@@ -104,7 +104,6 @@
         "qrcode-terminal": "*",
         "qs": "*",
         "replicate": "*",
-        "request": "*",
         "sagiri": "*",
         "similarity": "*",
         "socket.io": "*",
