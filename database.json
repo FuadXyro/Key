@@ -91,7 +91,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 37970,
+      "exp": 38023,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -1801,7 +1801,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 620,
+      "exp": 623,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -31468,7 +31468,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 7176,
+      "exp": 7214,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -109306,7 +109306,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 1288,
+      "exp": 1303,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -138044,10 +138044,10 @@
   },
   "stats": {
     "ro-exec2.js": {
-      "total": 83,
-      "success": 83,
-      "last": 1698333721379,
-      "lastSuccess": 1698333721379
+      "total": 84,
+      "success": 84,
+      "last": 1698393835675,
+      "lastSuccess": 1698393835675
     },
     "ro-exec.js": {
       "total": 133,
@@ -138470,10 +138470,10 @@
       "lastSuccess": 1697851951492
     },
     "menu.js": {
-      "total": 71,
-      "success": 70,
-      "last": 1698333703152,
-      "lastSuccess": 1698333703152
+      "total": 72,
+      "success": 71,
+      "last": 1698393829937,
+      "lastSuccess": 1698393829937
     },
     "ro-mute.js": {
       "total": 3,
