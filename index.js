@@ -17,8 +17,8 @@ const { name, author } = require(join(__dirname, './package.json')) // https://w
 const { say } = cfonts
 const rl = createInterface(process.stdin, process.stdout)
 
-say('█▀ █░█ ▄▀█ █▀▄ ▀▄▀ █▄█\n█▀ █▄█ █▀█ █▄▀ █░█ ░█░', {
-font: 'chrome',
+say('ZenithBotz', {
+font: 'tiny',
 align: 'center',
 gradient: ['red', 'magenta']})
 say(`Updated FuadXy`, {

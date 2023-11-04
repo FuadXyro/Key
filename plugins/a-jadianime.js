@@ -1,4 +1,4 @@
-import axios from 'axios'
+import fetch from 'node-fetch';
 
 let handler = async (m, {
     command,
@@ -15,7 +15,7 @@ let handler = async (m, {
     
     await m.reply(wait)
     try {
-        const openAIResponse = await processImageAndUpload(media);
+        const openAIResponse = await fetchAnimeData(media);
 
         if (openAIResponse) {
             const result = openAIResponse;
@@ -24,13 +24,13 @@ let handler = async (m, {
                 image: {
                     url: result
                 },
-                caption: `Success`,
+                caption: `Done ( ✓ )`,
                 mentions: [m.sender]
             }, {
                 quoted: m
             });
         } else {
-            console.log("Tidak ada respons dari OpenAI atau terjadi kesalahan.");
+            console.log("Error.");
         }
     } catch (e) {
         await m.reply(eror)
@@ -42,21 +42,20 @@ handler.command = /^(jadianime)$/i
 handler.limit = true
 export default handler
 
-async function processImageAndUpload(buffer) {
-    try {
-        
-        const base64String = Buffer.from(buffer, 'binary').toString('base64');
+async function fetchAnimeData(imageBuffer) {
+  const api = "https://api.taoanhdep.com/public/anime.php";
+  const base64String = imageBuffer.toString('base64');
+  const body = new URLSearchParams();
+  body.set('image', base64String);
 
-        const apiResponse = await axios.post('https://www.drawever.com/api/photo-to-anime', {
-            data: `data:image/png;base64,${base64String}`,
-        }, {
-            headers: {
-                'Content-Type': 'application/json',
-            },
-        });
+  const response = await fetch(api, {
+    headers: {
+      "content-type": "application/x-www-form-urlencoded",
+    },
+    body: body.toString(),
+    method: "POST",
+  });
 
-        return 'https://www.drawever.com' + apiResponse.data.urls[1] || 'https://www.drawever.com' + apiResponse.data.urls[0];
-    } catch (error) {
-        throw error;
-    }
+  const data = await response.json()
+  return data.img;
 }
