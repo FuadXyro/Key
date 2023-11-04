@@ -37,12 +37,13 @@
         "url": "git+https://github.com/FuadXyro/PairingCode.git"
     },
     "bugs": {
-        "url": "https://github.com/AyGemuy/PairingCode/issues"
+        "url": "https://github.com/FuadXyro/PairingCode/issues"
     },
     "license": "GPL-3.0-or-later",
     "dependencies": {
         "@adiwajshing/baileys": "github:@FuadXyro/Bails",
         "@adiwajshing/keyed-db": "^0.2.4",
+        "@colors/colors": "1.5.0",
         "@bochilteam/scraper": "^3.0.0",
         "@vitalets/google-translate-api": "^8.0.0",
         "api-dylux": "*",
@@ -67,8 +68,6 @@
         "formdata-node": "*",
         "fs": "*",
         "genius-lyrics": "*",
-        "genshin": "*",
-        "genshin-db": "*",
         "google-it": "*",
         "google-play-scraper": "*",
         "got": "*",
