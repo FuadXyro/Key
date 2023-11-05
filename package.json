@@ -108,6 +108,7 @@
         "socket.io": "*",
         "spinnies": "*",
         "syntax-error": "*",
+        "terser": "*",
         "terminal-image": "*",
         "url": "*",
         "url-regex": "*",
