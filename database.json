@@ -91,7 +91,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 55246,
+      "exp": 56243,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -269,7 +269,7 @@
       "mana": 20,
       "mangga": 0,
       "misi": "",
-      "money": 39095,
+      "money": 4419435,
       "monyet": 0,
       "mythic": 0,
       "naga": 0,
@@ -947,7 +947,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 14832,
+      "exp": 15196,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -31468,7 +31468,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 8152,
+      "exp": 8458,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -91073,7 +91073,7 @@
     "6282316828450@s.whatsapp.net": {
       "afk": -1,
       "afkReason": "",
-      "age": -1,
+      "age": 20,
       "agility": 16,
       "anakanjing": 0,
       "anakcentaur": 0,
@@ -91161,7 +91161,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4,
+      "exp": 362,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -91319,7 +91319,7 @@
       "lelebakar": 0,
       "leleg": 0,
       "level": 0,
-      "limit": 25,
+      "limit": 23,
       "limitjoinfree": 1,
       "lion": 0,
       "lionexp": 0,
@@ -91344,7 +91344,7 @@
       "mythic": 0,
       "naga": 0,
       "nagalastclaim": 0,
-      "name": "ᅠᅠᅠᅠ",
+      "name": "jimmy",
       "net": 0,
       "nila": 0,
       "nilabakar": 0,
@@ -91383,9 +91383,9 @@
       "ramuanphonixlast": 0,
       "ramuanrubahlast": 0,
       "ramuanserigalalast": 0,
-      "registered": false,
+      "registered": true,
       "reglast": 0,
-      "regTime": -1,
+      "regTime": 1699197629637,
       "rendang": 0,
       "rhinoceros": 0,
       "rhinocerosexp": 0,
@@ -143121,26 +143121,55 @@
       "expired": 0,
       "nsfw": false,
       "premnsfw": false
+    },
+    "6282316828450@s.whatsapp.net": {
+      "isBanned": false,
+      "antiLinkGc": false,
+      "antiLinkTik": false,
+      "antiLinkTel": false,
+      "antiLinkIg": false,
+      "antiLinkFb": false,
+      "antiLinkHttp": false,
+      "antiLinkYt": false,
+      "antiSpam": false,
+      "antiStiker": false,
+      "antiVirtex": false,
+      "virtex": false,
+      "autoJoin": false,
+      "antiToxic": false,
+      "anticall": false,
+      "welcome": true,
+      "detect": false,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "delete": false,
+      "viewonce": false,
+      "simi": false,
+      "expired": 0,
+      "nsfw": false,
+      "premnsfw": false
     }
   },
   "stats": {
     "ro-exec2.js": {
-      "total": 90,
-      "success": 90,
-      "last": 1699194305357,
-      "lastSuccess": 1699194305357
+      "total": 91,
+      "success": 91,
+      "last": 1699197757063,
+      "lastSuccess": 1699197757063
     },
     "ro-exec.js": {
-      "total": 139,
-      "success": 139,
-      "last": 1699162146543,
-      "lastSuccess": 1699162146543
+      "total": 147,
+      "success": 147,
+      "last": 1699197731466,
+      "lastSuccess": 1699197731466
     },
     "update.js": {
-      "total": 21,
-      "success": 21,
-      "last": 1697891579880,
-      "lastSuccess": 1697891579880
+      "total": 25,
+      "success": 25,
+      "last": 1699199513690,
+      "lastSuccess": 1699199513690
     },
     "enable.js": {
       "total": 30,
@@ -143149,10 +143178,10 @@
       "lastSuccess": 1697990014613
     },
     "ro-sfp.js": {
-      "total": 156,
-      "success": 156,
-      "last": 1699194146645,
-      "lastSuccess": 1699194146645
+      "total": 158,
+      "success": 158,
+      "last": 1699196441965,
+      "lastSuccess": 1699196441965
     },
     "rpg-daily.js": {
       "total": 3,
@@ -143173,10 +143202,10 @@
       "lastSuccess": 1697985074995
     },
     "i-totalfitur.js": {
-      "total": 37,
-      "success": 37,
-      "last": 1698012945938,
-      "lastSuccess": 1698012945938
+      "total": 38,
+      "success": 38,
+      "last": 1699196677130,
+      "lastSuccess": 1699196677130
     },
     "rpg-freegift.js": {
       "total": 5,
@@ -143275,10 +143304,10 @@
       "lastSuccess": 1697990484593
     },
     "gc-listBot.js": {
-      "total": 9,
-      "success": 8,
-      "last": 1694267902025,
-      "lastSuccess": 1694267902025
+      "total": 10,
+      "success": 9,
+      "last": 1699197285878,
+      "lastSuccess": 1699197285878
     },
     "ro-upsw.js": {
       "total": 10,
@@ -143395,10 +143424,10 @@
       "lastSuccess": 1699194301846
     },
     "xp-daftar.js": {
-      "total": 35,
-      "success": 24,
-      "last": 1698342606182,
-      "lastSuccess": 1698342606182
+      "total": 36,
+      "success": 25,
+      "last": 1699197621773,
+      "lastSuccess": 1699197621773
     },
     "dl-tiktok.js": {
       "total": 43,
@@ -143551,10 +143580,10 @@
       "lastSuccess": 1699158799325
     },
     "menu.js": {
-      "total": 76,
-      "success": 75,
-      "last": 1699194109979,
-      "lastSuccess": 1699194109979
+      "total": 78,
+      "success": 77,
+      "last": 1699199672179,
+      "lastSuccess": 1699199672179
     },
     "ro-mute.js": {
       "total": 3,
@@ -143563,10 +143592,10 @@
       "lastSuccess": 1696172518446
     },
     "menu-all.js": {
-      "total": 45,
-      "success": 45,
-      "last": 1699194122068,
-      "lastSuccess": 1699194122068
+      "total": 47,
+      "success": 47,
+      "last": 1699197637488,
+      "lastSuccess": 1699197637488
     },
     "ress-tesBot.js": {
       "total": 26,
@@ -143671,10 +143700,10 @@
       "lastSuccess": 1699158935875
     },
     "i-script.js": {
-      "total": 9,
-      "success": 9,
-      "last": 1697989903880,
-      "lastSuccess": 1697989903880
+      "total": 10,
+      "success": 10,
+      "last": 1699197900592,
+      "lastSuccess": 1699197900592
     },
     "rpg-mission.js": {
       "total": 3,
@@ -143761,10 +143790,10 @@
       "lastSuccess": 1697999004697
     },
     "a-jadianime.js": {
-      "total": 7,
-      "success": 5,
-      "last": 1697934442555,
-      "lastSuccess": 1697934442555
+      "total": 9,
+      "success": 7,
+      "last": 1699199466566,
+      "lastSuccess": 1699199466566
     },
     "s-toimg.js": {
       "total": 5,
@@ -143851,10 +143880,10 @@
       "lastSuccess": 1697814624734
     },
     "ro-jadiBot.js": {
-      "total": 8,
-      "success": 8,
-      "last": 1697983290160,
-      "lastSuccess": 1697983290160
+      "total": 9,
+      "success": 9,
+      "last": 1699199516370,
+      "lastSuccess": 1699199516370
     },
     "mods-unbanWa.js": {
       "total": 3,
@@ -143911,10 +143940,10 @@
       "lastSuccess": 1697953912431
     },
     "_ressOk.js": {
-      "total": 8,
-      "success": 8,
-      "last": 1697974080075,
-      "lastSuccess": 1697974080075
+      "total": 11,
+      "success": 11,
+      "last": 1699199420552,
+      "lastSuccess": 1699199420552
     },
     "ro-rf.js": {
       "total": 3,
@@ -144035,6 +144064,30 @@
       "success": 2,
       "last": 1699194199391,
       "lastSuccess": 1699194199391
+    },
+    "rpg-kerja.js": {
+      "total": 5,
+      "success": 1,
+      "last": 1699196517113,
+      "lastSuccess": 1699196467218
+    },
+    "gc-totalpesan.js": {
+      "total": 2,
+      "success": 2,
+      "last": 1699197263224,
+      "lastSuccess": 1699197263224
+    },
+    "src-animeVideo.js": {
+      "total": 6,
+      "success": 6,
+      "last": 1699199689064,
+      "lastSuccess": 1699199689064
+    },
+    "s-antiColong.js": {
+      "total": 3,
+      "success": 1,
+      "last": 1699199790033,
+      "lastSuccess": 1699199790033
     }
   },
   "msgs": {},
