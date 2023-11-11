@@ -46,6 +46,7 @@
         "@colors/colors": "1.5.0",
         "@bochilteam/scraper": "^3.0.0",
         "@vitalets/google-translate-api": "^8.0.0",
+        "@xct007/frieren-scraper": "*",
         "api-dylux": "*",
         "awesome-phonenumber": "*",
         "axios": "*",
