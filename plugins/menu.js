@@ -4,6 +4,7 @@ import { sizeFormatter } from 'human-readable'
 import fetch from 'node-fetch'
 import moment from 'moment-timezone'
 let handler = async (m, { conn, usedPrefix: _p, __dirname, args }) => {
+//Reacticon
 await conn.sendMessage(m.chat, {
           react: {
             text: `${pickRandom(['👻', '🦋', '🏁'])}`,
@@ -16,6 +17,7 @@ let formatSize = sizeFormatter({
 	render: (literal, symbol) => `${literal} ${symbol}B`
 })
 
+//Uptime
 let _muptime
   if (process.send) {
     process.send('uptime')
@@ -27,14 +29,16 @@ let _muptime
   }
 let muptime = clockString(_muptime)
 
+//Total Feature
 let totalf = Object.values(global.plugins).filter(
     (v) => v.help && v.tags
   ).length;
+//m.sender
 let who
     if (m.isGroup) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.sender
    else who = m.sender
 let name = conn.getName(who)
-
+//thumbnail 
 let img1 = 'https://telegra.ph/file/4d5cf54515dd1eab55c47.jpg'
 let img2 = 'https://telegra.ph/file/55d519d8ec7f25ba6c4bb.jpg'
 let img3 = 'https://telegra.ph/file/7108d5804a49b4fcdae27.jpg'

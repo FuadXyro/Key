@@ -107,6 +107,7 @@ let handler = async (m, { conn, text, args, usedPrefix, command }) => {
 handler.help = ['ngechit'].map((v) => v + ' *hehe..*')
 handler.tags = ['xp']
 handler.command = /^(ngech(ea|i)t|c(((he(ater|t)|iter)|(hea|i)t)|hit))$/i 
-handler.private = true
+handler.private = false
+handler.premium = true
 
 export default handler
