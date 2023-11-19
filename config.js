@@ -1,6 +1,7 @@
 import {
     watchFile,
-    unwatchFile
+    unwatchFile,
+    readFileSync
 } from "fs"
 import chalk from "chalk"
 import {
@@ -10,10 +11,11 @@ import fs from "fs"
 import moment from "moment-timezone"
 
 /*Oᴡɴᴇʀ number*/
-global.owner = [
-    ["6283837709331", "️FuadXy", true]
+global.owner = [ 
+    ["6283138381932"],
+    ["6283837709331", "️𝑭𝒖𝒂𝒅𝑿𝒚𝒓𝒐", true]
 ]
-global.mods = []
+global.mods = JSON.parse(readFileSync("./src/moderator.json", "utf-8"))
 global.prems = ["6283837709331"]
 
 /*Website*/
