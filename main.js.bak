@@ -58,7 +58,7 @@ import {
 } from "@hapi/boom";
 import Pino from 'pino';
 import {
-    makeWASocket,
+    makeWaSocket,
     protoType,
     serialize
 } from './lib/simple.js';
@@ -268,7 +268,7 @@ const connectionOptions = {
     markOnlineOnConnect: true
 };
 
-global.conn = makeWASocket(connectionOptions);
+global.conn = makeWaSocket(connectionOptions);
 store.bind(conn.ev)
 conn.isInit = false
 
@@ -489,7 +489,7 @@ global.reloadHandler = async function(restatConn) {
             global.conn.ws.close();
         } catch {}
         conn.ev.removeAllListeners();
-        global.conn = makeWASocket(connectionOptions, {
+        global.conn = makeWaSocket(connectionOptions, {
             chats: oldChats
         });
         isInit = true;
