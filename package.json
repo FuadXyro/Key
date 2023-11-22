@@ -75,6 +75,7 @@
         "imagemaker.js": "*",
         "javascript-obfuscator": "*",
         "jimp": "*",
+        "js-beautify": "*",
         "jsdom": "*",
         "knights-canvas": "*",
         "lolcatjs": "*",

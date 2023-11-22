@@ -32,7 +32,7 @@ ${JSON.stringify(ha.participants)}`)
   }
 }
 handler.help = ['creategroup']
-handler.tags = ['owner']
+handler.tags = ['premium']
 handler.command = /^((create|buat)(gc|grup|group))$/
 handler.owner = true
 handler.premium = false
