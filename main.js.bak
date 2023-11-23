@@ -58,7 +58,7 @@ import {
 } from "@hapi/boom";
 import Pino from 'pino';
 import {
-    makeWaSocket,
+    makeWASocket,
     protoType,
     serialize
 } from './lib/simple.js';
@@ -71,7 +71,7 @@ import {
     mongoDBV2
 } from './lib/mongoDB.js';
 
-const {
+const { 
     DisconnectReason,
     useMultiFileAuthState,
     MessageRetryMap,
@@ -82,7 +82,7 @@ const {
     jidNormalizedUser,
     PHONENUMBER_MCC,
     Browsers
-} = await (await import('@whiskeysockets/baileys')).default;
+} = await import('@adiwajshing/baileys');
 
 import readline from "readline"
 import {
@@ -241,12 +241,12 @@ const connectionOptions = {
     },
     msgRetryCounterMap,
     logger: Pino({
-        level: 'fatal'
+        level: 'silent'
     }),
     auth: {
         creds: authState.state.creds,
         keys: makeCacheableSignalKeyStore(authState.state.keys, Pino().child({
-            level: 'fatal',
+            level: 'silent',
             stream: 'store'
         })),
     },
@@ -257,7 +257,6 @@ const connectionOptions = {
         let msg = await store.loadMessage(jid, key.id)
         return msg?.message || ""
     },
-    msgRetryCounterCache,
     connectTimeoutMs: 60000,
     defaultQueryTimeoutMs: 0,
     keepAliveIntervalMs: 10000,
@@ -268,7 +267,7 @@ const connectionOptions = {
     markOnlineOnConnect: true
 };
 
-global.conn = makeWaSocket(connectionOptions);
+global.conn = makeWASocket(connectionOptions);
 store.bind(conn.ev)
 conn.isInit = false
 
@@ -489,7 +488,7 @@ global.reloadHandler = async function(restatConn) {
             global.conn.ws.close();
         } catch {}
         conn.ev.removeAllListeners();
-        global.conn = makeWaSocket(connectionOptions, {
+        global.conn = makeWASocket(connectionOptions, {
             chats: oldChats
         });
         isInit = true;
@@ -601,37 +600,39 @@ global.reload = async (_ev, filename) => {
             } catch (e) {
                 conn.logger.error(`\nError require plugin '${filename}\n${format(e)}'`);
             } finally {
-                global.plugins = Object.fromEntries(Object.entries(global.plugins).sort(([a], [b]) => a.localeCompare(b)));
-            }
+                global.plugins = Object.fromEntries(Object.entries(global.plugins).sort(([a], [b]) => a.localeCompare(b)))
         }
     }
-};
-Object.freeze(global.reload);
-watch(pluginFolder, global.reload);
-await global.reloadHandler();
+}
+Object.freeze(global.reload)
+watch(pluginFolder, global.reload)
+await global.reloadHandler()
+
+/* QuickTest */
 async function _quickTest() {
-    const test = await Promise.all([
+    let test = await Promise.all([
         spawn('ffmpeg'),
         spawn('ffprobe'),
         spawn('ffmpeg', ['-hide_banner', '-loglevel', 'error', '-filter_complex', 'color', '-frames:v', '1', '-f', 'webp', '-']),
         spawn('convert'),
         spawn('magick'),
         spawn('gm'),
-        spawn('find', ['--version']),
-    ].map((p) => {
+        spawn('find', ['--version'])
+    ].map(p => {
         return Promise.race([
-            new Promise((resolve) => {
-                p.on('close', (code) => {
-                    resolve(code !== 127);
-                });
+            new Promise(resolve => {
+                p.on('close', code => {
+                    resolve(code !== 127)
+                })
             }),
-            new Promise((resolve) => {
-                p.on('error', (_) => resolve(false));
+            new Promise(resolve => {
+                p.on('error', _ => resolve(false))
             })
-        ]);
-    }));
-    const [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find] = test;
-    const s = global.support = {
+        ])
+    }))
+    let [ffmpeg, ffprobe, ffmpegWebp, convert, magick, gm, find] = test
+    console.log(test)
+    let s = global.support = {
         ffmpeg,
         ffprobe,
         ffmpegWebp,
@@ -639,8 +640,9 @@ async function _quickTest() {
         magick,
         gm,
         find
-    };
-    Object.freeze(global.support);
+    }
+
+    Object.freeze(global.support)
 }
 const actions = [
     { func: clearTmp, message: '\nBerhasil ClearTmp☑️' },
@@ -669,4 +671,7 @@ function clockString(ms) {
     return units.map(unit => `${unit.value.toString().padStart(2, '0')} ${unit.label}`).join(' ');
 }
 
-_quickTest().catch(console.error);
+/* QuickTest */
+_quickTest()
+    .then(() => conn.logger.info('Quick Test Done'))
+    .catch(console.error)
