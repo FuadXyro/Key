@@ -91,7 +91,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 58576,
+      "exp": 58592,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -148534,7 +148534,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 2328,
+      "exp": 2467,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -157576,10 +157576,10 @@
   },
   "stats": {
     "ro-exec2.js": {
-      "total": 93,
-      "success": 93,
-      "last": 1699632619346,
-      "lastSuccess": 1699632619346
+      "total": 94,
+      "success": 94,
+      "last": 1700885323384,
+      "lastSuccess": 1700885323384
     },
     "ro-exec.js": {
       "total": 156,
@@ -157588,10 +157588,10 @@
       "lastSuccess": 1700836095202
     },
     "update.js": {
-      "total": 29,
-      "success": 29,
-      "last": 1700647150971,
-      "lastSuccess": 1700647150971
+      "total": 30,
+      "success": 30,
+      "last": 1700885329954,
+      "lastSuccess": 1700885329954
     },
     "enable.js": {
       "total": 33,
@@ -157720,10 +157720,10 @@
       "lastSuccess": 1699194589148
     },
     "ro-gp.js": {
-      "total": 41,
-      "success": 40,
-      "last": 1700836126588,
-      "lastSuccess": 1700836126588
+      "total": 42,
+      "success": 41,
+      "last": 1700885257538,
+      "lastSuccess": 1700885257538
     },
     "gc-listBot.js": {
       "total": 10,
@@ -157744,10 +157744,10 @@
       "lastSuccess": 1694268366567
     },
     "ro-df.js": {
-      "total": 30,
-      "success": 30,
-      "last": 1700646866261,
-      "lastSuccess": 1700646866261
+      "total": 31,
+      "success": 31,
+      "last": 1700885306093,
+      "lastSuccess": 1700885306093
     },
     "t-totv.js": {
       "total": 3,
@@ -158542,10 +158542,10 @@
       "lastSuccess": 1699673145575
     },
     "ro-gitStatus.js": {
-      "total": 2,
-      "success": 2,
-      "last": 1699703875228,
-      "lastSuccess": 1699703875228
+      "total": 3,
+      "success": 3,
+      "last": 1700885341971,
+      "lastSuccess": 1700885341971
     },
     "rpg-craft.js": {
       "total": 3,
@@ -158578,9 +158578,9 @@
       "lastSuccess": 1700870461999
     },
     "dl-ttImg.js": {
-      "total": 5,
+      "total": 6,
       "success": 0,
-      "last": 1700877686358,
+      "last": 1700885295074,
       "lastSuccess": 0
     },
     "stalk-ig.js": {
