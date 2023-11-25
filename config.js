@@ -82,7 +82,8 @@ global.flaaa = ImgLogoDynamic()
 global.sig = "https://www.instagram.com/fuadxy99"
 global.sgh = "https://www.github.com/FuadXyro"
 global.sgc = "https://chat.whatsapp.com/KIuvRvTUv6KGU7z8BEnE9x"
-global.sdc = "https://www.discord.com/wudysoft"
+global.sch = "https://whatsapp.com/channel/0029VaEvj4E7dmeQb7UVbG1j"
+global.sdc = "https://www.discord.com"
 global.snh = "https://www.tiktok.com/@upload_file"
 global.sfb = "https://www.facebook.com/"
 global.syt = "https://www.youtube.com/"
@@ -175,7 +176,7 @@ global.adReplyS = {
             title: "👋 " + Sapa() + Pagi(),
             body: author,
             mediaUrl: sgc,
-            description: "𝑾𝒖𝒅𝒚𝒔𝒐𝒇𝒕",
+            description: "FuadXyro",
             previewType: "PHOTO",
             thumbnail: await fs.readFileSync("./thumbnail.jpg"),
             sourceUrl: "https://github.com/FuadXyro",

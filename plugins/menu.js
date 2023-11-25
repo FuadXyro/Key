@@ -101,7 +101,7 @@ ${motivasi.getRandom()}
 
 ❀𝑫𝒂𝒕𝒆 ${new Date().toLocaleString('id-ID', {timeZone: 'Asia/Jakarta' })}`
 await conn.sendPresenceUpdate('recording', m.chat)
-await conn.reply(m.chat, info, m, { mentionedJid: [who], contextInfo: { forwardingScore: 9999, isForwarded: true, externalAdReply :{ mediaType: 1, mediaUrl: pp, title: `${namebot}`, body: '乂 2021-2023', thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: 'https://whatsapp.com/channel/0029VaA3scQ96H4XIyXpZ50C', renderLargerThumbnail: true }}})
+await conn.reply(m.chat, info, m, { mentionedJid: [who], contextInfo: { forwardingScore: 9999, isForwarded: true, externalAdReply :{ mediaType: 1, mediaUrl: pp, title: `${namebot}`, body: '乂 2021-2023', thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: `${global.sch}`, renderLargerThumbnail: true }}})
   }
 handler.help = ['menu']
 handler.tags = ['info', 'main']
