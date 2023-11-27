@@ -33,6 +33,8 @@ handler.help = ["tes"]
 handler.tags = ["info"]
 handler.command = /^(tes)$/i
 
+handler.vvip = true
+
 export default handler
 
 function delay(ms) {

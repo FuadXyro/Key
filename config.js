@@ -10,12 +10,16 @@ import {
 import fs from "fs"
 import moment from "moment-timezone"
 
-/*Oᴡɴᴇʀ number*/
+/* Dev number */
 global.owner = [ 
     ["6283138381932"],
     ["6283837709331", "️𝑭𝒖𝒂𝒅𝑿𝒚𝒓𝒐", true]
 ]
+/* Vvip number */
+global.vvip = JSON.parse(readFileSync("./src/vvip.json", "utf-8"))
+/* Moderator number */
 global.mods = JSON.parse(readFileSync("./src/moderator.json", "utf-8"))
+/* Premium number */
 global.prems = ["6283837709331"]
 
 /*Website*/

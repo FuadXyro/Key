@@ -1,175 +1,51 @@
-const approvedRequests = [];
-const rejectedRequests = [];
-
-const handler = async (m, { conn, args, usedPrefix, command }) => {
+let handler = async (m, { conn, args }) => {
   const groupId = m.chat;
-  try {
-    const joinRequestList = await conn.groupRequestParticipantsList(groupId);
+  const [subCommand, options] = args;
+  const joinRequestList = await conn.groupRequestParticipantsList(groupId);
 
-    switch (command) {
-      case "acc":
-        const subCommand = args[0];
+  const formatDate = (timestamp) => new Intl.DateTimeFormat('id-ID', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' }).format(new Date(timestamp * 1000));
+  const reply = (text) => conn.reply(m.chat, text, m, adReplyS);
 
-        switch (subCommand) {
-          case "list":
-            // Display the list of join requests, including approved and rejected ones
-            const formattedList = joinRequestList.map((request, index) => {
-              const phoneNumber = request.jid.split('@')[0];
-              return (
-                `│ \`\`\`${index + 1}. Nomor: ${phoneNumber}\`\`\`\n` +
-                `│ \`\`\`Metode: ${request.request_method}\`\`\`\n` +
-                `│ \`\`\`Waktu: ${new Date(request.request_time * 1000).toLocaleString()}\`\`\`\n` +
-                `├━━━━━━━━━━━━━━━━━━━━━┈─`
-              );
-            });
-            await m.reply("*Daftar Permintaan Bergabung:*\n" + '\n╭━━━━━━━━━━━━━━━━━━━━━┈─◂\n'+ formattedList.join("\n") + '\n╰━━━━━━━━━━━━━━━━━━━━━┈─◂');
-            break;
+  switch (subCommand) {
+    case "list":
+      const formattedList = joinRequestList.length > 0
+        ? joinRequestList.map((request, i) => `*${i + 1}.*\n• Nomor: ${request.jid.split('@')[0]}\n• Metode Permintaan: ${request.request_method}\n• Waktu Permintaan: ${formatDate(request.request_time)}\n\n`).join('')
+        : "Tidak ada permintaan bergabung yang tertunda.";
+      reply(`*Daftar Permintaan Bergabung:*\n\n${formattedList}`);
+      break;
 
-          case "approve":
-          case "reject":
-            const action = subCommand;
-            const requestIndexes = args[1].split("|").map(index => parseInt(index));
-            const validIndexes = requestIndexes.filter(index => !isNaN(index) && index > 0 && index <= joinRequestList.length);
-
-            const delayBetweenActions = 200;
-            const responseMessages = [];
-
-            async function processRequest(index) {
-              if (index < validIndexes.length) {
-                const indexToProcess = validIndexes[index];
-                const jidToProcess = joinRequestList[indexToProcess - 1].jid;
-
-                try {
-                  const response = await conn.groupRequestParticipantsUpdate(groupId, [jidToProcess], action);
-                  if (action === "approve") {
-                    approvedRequests.push(jidToProcess);
-                  } else if (action === "reject") {
-                    rejectedRequests.push(jidToProcess);
-                  }
-                  const phoneNumber = jidToProcess.split('@')[0];
-                  const formattedResponse = (
-                    `│ \`\`\`${indexToProcess}. Nomor: ${phoneNumber}\`\`\`\n` +
-                    `│ \`\`\`Status: ${action}\`\`\`\n` +
-                    `│ \`\`\`Time ${action}: ${new Date().toLocaleString()}\`\`\`\n` +
-                    `├━━━━━━━━━━━━━━━━━━━━━┈─`
-                  );
-                  responseMessages.push(formattedResponse);
-                } catch (error) {
-                  console.error(error);
-                  const phoneNumber = jidToProcess.split('@')[0];
-                  const errorResponse = `Terjadi kesalahan saat ${action} permintaan bergabung *${phoneNumber}*.`;
-                  responseMessages.push(errorResponse);
-                }
-
-                setTimeout(() => {
-                  processRequest(index + 1);
-                }, delayBetweenActions);
-
-                if (index === validIndexes.length - 1) {
-                  const allResponses = '\n╭━━━━━━━━━━━━━━━━━━━━━┈─◂\n' + `│ \`\`\`Hasil ${action} :\`\`\`\n` + responseMessages.join("\n") + '\n╰━━━━━━━━━━━━━━━━━━━━━┈─◂';
-                  await m.reply(allResponses);
-                }
-              }
-            }
-
-            processRequest(0);
-            break;
-
-          case "all":
-            const delayBetweenActionsAll = 200;
-            const responseMessagesAll = [];
-
-            async function processRequestAll(index) {
-              if (index < joinRequestList.length) {
-                const jidToProcess = joinRequestList[index].jid;
-
-                try {
-                  const response = await conn.groupRequestParticipantsUpdate(groupId, [jidToProcess], "approve");
-                  approvedRequests.push(jidToProcess);
-                  const phoneNumber = jidToProcess.split('@')[0];
-                  const formattedResponse = (
-                    `│ \`\`\`${index + 1}. Nomor: ${phoneNumber}\`\`\`\n` +
-                    `│ \`\`\`Status: approve\`\`\`\n` +
-                    `│ \`\`\`Time approve: ${new Date().toLocaleString()}\`\`\`\n` +
-                    `├━━━━━━━━━━━━━━━━━━━━━┈─`
-                  );
-                  responseMessagesAll.push(formattedResponse);
-                } catch (error) {
-                  console.error(error);
-                  const phoneNumber = jidToProcess.split('@')[0];
-                  const errorResponse = `Terjadi kesalahan saat approve permintaan bergabung *${phoneNumber}*.`;
-                  responseMessagesAll.push(errorResponse);
-                }
-
-                setTimeout(() => {
-                  processRequestAll(index + 1);
-                }, delayBetweenActionsAll);
-
-                if (index === joinRequestList.length - 1) {
-                  const allResponses = '\n╭━━━━━━━━━━━━━━━━━━━━━┈─◂\n' + `│ \`\`\`Hasil approve :\`\`\`\n` + responseMessagesAll.join("\n") + '\n╰━━━━━━━━━━━━━━━━━━━━━┈─◂';
-                  await m.reply(allResponses);
-                }
-              }
-            }
-
-            processRequestAll(0);
-            break;
-
-          case "allreject":
-            const delayBetweenActionsReject = 200;
-            const responseMessagesReject = [];
-
-            async function processRequestReject(index) {
-              if (index < joinRequestList.length) {
-                const jidToProcess = joinRequestList[index].jid;
-
-                try {
-                  const response = await conn.groupRequestParticipantsUpdate(groupId, [jidToProcess], "reject");
-                  rejectedRequests.push(jidToProcess);
-                  const phoneNumber = jidToProcess.split('@')[0];
-                  const formattedResponse = (
-                    `│ \`\`\`${index + 1}. Nomor: ${phoneNumber}\`\`\`\n` +
-                    `│ \`\`\`Status: reject\`\`\`\n` +
-                    `│ \`\`\`Time reject: ${new Date().toLocaleString()}\`\`\`\n` +
-                    `├━━━━━━━━━━━━━━━━━━━━━┈─`
-                  );
-                  responseMessagesReject.push(formattedResponse);
-                } catch (error) {
-                  console.error(error);
-                  const phoneNumber = jidToProcess.split('@')[0];
-                  const errorResponse = `Terjadi kesalahan saat reject permintaan bergabung *${phoneNumber}*.`;
-                  responseMessagesReject.push(errorResponse);
-                }
-
-                setTimeout(() => {
-                  processRequestReject(index + 1);
-                }, delayBetweenActionsReject);
-
-                if (index === joinRequestList.length - 1) {
-                  const allResponses = '\n╭━━━━━━━━━━━━━━━━━━━━━┈─◂\n' + `│ \`\`\`Hasil reject :\`\`\`\n` + responseMessagesReject.join("\n") + '\n╰━━━━━━━━━━━━━━━━━━━━━┈─◂';
-                  await m.reply(allResponses);
-                }
-              }
-            }
-
-            processRequestReject(0);
-            break;
-
-          default:
-            await m.reply("Perintah tidak valid. Gunakan 'acc list', 'acc approve|reject [nomor(s)]', atau 'acc all' untuk approve semua, atau 'acc allreject' untuk reject semua.");
+    case "reject":
+    case "approve":
+      if (options === "all") {
+        for (const request of joinRequestList) {
+          await conn.groupRequestParticipantsUpdate(groupId, [request.jid], subCommand);
+          console.log(`Meng-${subCommand} participant dengan JID: ${request.jid}`);
         }
-        break;
+        reply(`*${subCommand === 'approve' ? 'Menyetujui' : 'Menolak'} semua permintaan bergabung.*`);
+      } else {
+        const actions = options.split('|').map(action => action.trim());
+        const participants = actions.map(action => joinRequestList[parseInt(action) - 1]).filter(request => request);
+        if (participants.length > 0) {
+          let formattedResponse = '';
+          for (const request of participants) {
+            const response = await conn.groupRequestParticipantsUpdate(groupId, [request.jid], subCommand);
+            const status = response[0].status === 'success' ? 'Gagal' : 'Berhasil';
+            formattedResponse += `*${participants.indexOf(request) + 1}.*\n• Status: ${status}\n• Nomor: ${request.jid.split('@')[0]}\n\n`;
+            console.log(`Meng-${subCommand} participant dengan JID: ${request.jid}`);
+          }
+          reply(`*${subCommand === 'approve' ? 'Menyetujui' : 'Menolak'} Permintaan Bergabung:*\n\n${formattedResponse}`);
+        } else {
+          reply("Tidak ada anggota yang cocok untuk reject/approve.");
+        }
+      }
+      break;
 
-      default:
-        await m.reply("Perintah tidak valid. Gunakan 'acc list', 'acc approve|reject [nomor(s)]', atau 'acc all' untuk approve semua, atau 'acc allreject' untuk reject semua.");
-    }
-  } catch (error) {
-    console.error(error);
-    await m.reply("Terjadi kesalahan saat mendapatkan daftar permintaan bergabung.");
+    default:
+      reply("*Perintah tidak valid.*\nGunakan:\n- *acc list*\n- *acc approve [number]*\n- *acc reject [number]*\n- *acc reject [JID]*\n- *acc reject/approve all* untuk menolak/menyetujui semua permintaan bergabung.");
   }
 }
 
-handler.help = ['acc *[opsi] [nomor(s)]*']
+handler.help = ['acc *option*']
 handler.tags = ['group']
 handler.command = /^(acc)$/i
 handler.group = true
@@ -177,4 +53,4 @@ handler.admin = true
 handler.botAdmin = true
 handler.fail = null
 
-export default handler;
+export default handler

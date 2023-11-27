@@ -1031,12 +1031,14 @@ export async function handler(chatUpdate) {
         if (typeof m.text !== 'string')
             m.text = ''
 
-        const isROwner = [conn.decodeJid(global.conn.user.id), ...global.owner.map(([number]) => number)].map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-        const isOwner = isROwner || m.fromMe
-        const isMods = isOwner || global.mods.map(v => v.replace(/[^0-9]/g, '') + '@s.whatsapp.net').includes(m.sender)
-        const isPrems = isROwner || db.data.users[m.sender].premiumTime > 0
+        const userJid = conn.decodeJid(global.conn.user.id).split('@')[0];
+        const isROwner = [userJid, ...global.owner.map(v => v + '@s.whatsapp.net')].includes(m.sender);
+        const isOwner = isROwner || m.fromMe;
+        const isVvip = isROwner || global.vvip.map(v => v + '@s.whatsapp.net').includes(m.sender);
+        const isMods = isROwner || global.mods.map(v => v + '@s.whatsapp.net').includes(m.sender);
+        const isPrems = isOwner || db.data.users[m.sender].premiumTime > 0
 
-        if (opts['queque'] && m.text && !(isMods || isPrems)) {
+        if (opts['queue'] && m.text && !(isMods || isPrems || isVvip)) {
             let queque = this.msgqueque, time = 1000 * 5
             const previousID = queque[queque.length - 1]
             queque.push(m.id || m.key.id)
@@ -1116,6 +1118,7 @@ export async function handler(chatUpdate) {
                     bot,
                     isROwner,
                     isOwner,
+                    isVvip,
                     isRAdmin,
                     isAdmin,
                     isBotAdmin,
@@ -1169,6 +1172,10 @@ export async function handler(chatUpdate) {
                 }
                 if (plugin.owner && !isOwner) { // Number Owner
                     fail('owner', m, this)
+                    continue
+                }
+                if (plugin.vvip && !isVvip) { // Moderator
+                    fail('vvip', m, this)
                     continue
                 }
                 if (plugin.mods && !isMods) { // Moderator
@@ -1433,6 +1440,7 @@ global.dfail = (type, m, conn) => {
     let msg = {
         rowner: '*ᴏɴʟʏ ᴅᴇᴠᴇʟᴏᴘᴇʀ* • ᴄᴏᴍᴍᴀɴᴅ ɪɴɪ ʜᴀɴʏᴀ ᴜɴᴛᴜᴋ ᴅᴇᴠᴇʟᴏᴘᴇʀ ʙᴏᴛ',
         owner: '*ᴏɴʟʏ ᴏᴡɴᴇʀ* • ᴄᴏᴍᴍᴀɴᴅ ɪɴɪ ʜᴀɴʏᴀ ᴜɴᴛᴜᴋ ᴏᴡɴᴇʀ ʙᴏᴛ',
+        vvip: '*ᴏɴʟʏ ᴠɪᴘ* • ᴄᴏᴍᴍᴀɴᴅ ɪɴɪ ʜᴀɴʏᴀ ᴜɴᴛᴜᴋ ᴠᴠɪᴘ ʙᴏᴛ',
         mods: '*ᴏɴʟʏ ᴍᴏᴅᴇʀᴀᴛᴏʀ* • ᴄᴏᴍᴍᴀɴᴅ ɪɴɪ ʜᴀɴʏᴀ ᴜɴᴛᴜᴋ ᴍᴏᴅᴇʀᴀᴛᴏʀ ʙᴏᴛ',
         premium: '*ᴏɴʟʏ ᴘʀᴇᴍɪᴜᴍ* • ᴄᴏᴍᴍᴀɴᴅ ɪɴɪ ʜᴀɴʏᴀ ᴜɴᴛᴜᴋ ᴘʀᴇᴍɪᴜᴍ ᴜsᴇʀ',
         group: '*ɢʀᴏᴜᴘ ᴄʜᴀᴛ* • ᴄᴏᴍᴍᴀɴᴅ ɪɴɪ ʜᴀɴʏᴀ ʙɪsᴀ ᴅɪᴘᴀᴋᴀɪ ᴅɪᴅᴀʟᴀᴍ ɢʀᴏᴜᴘ',
