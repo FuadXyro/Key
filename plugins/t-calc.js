@@ -1,38 +1,47 @@
-let handler = async (m, { conn, text }) => {
-  let id = m.chat
-  conn.math = conn.math ? conn.math : {}
-  if (id in conn.math) {
-    clearTimeout(conn.math[id][3])
-    delete conn.math[id]
-    conn.reply(m.chat, `Jirr.. Ngecit -_- pake kalkulator..`, m)
-  }
-  let val = text
-    .replace(/[^0-9\-\/+*×÷πEe()piPI/]/g, '')
-    .replace(/×/g, '*')
-    .replace(/÷/g, '/')
-    .replace(/π|pi/gi, 'Math.PI')
-    .replace(/e/gi, 'Math.E')
-    .replace(/\/+/g, '/')
-    .replace(/\++/g, '+')
-    .replace(/-+/g, '-')
-  let format = val
-    .replace(/Math\.PI/g, 'π')
-    .replace(/Math\.E/g, 'e')
-    .replace(/\//g, '÷')
-    .replace(/\*×/g, '×')
-  try {
-    console.log(val)
-    let result = (new Function('return ' + val))()
-    if (!result) throw result
-    m.reply(`*${format}* = _${result}_`)
-  } catch (e) {
-    if (e == undefined) throw 'Isinya?'
-    throw 'Format salah, hanya 0-9 dan Simbol -, +, *, /, ×, ÷, π, e, (, ) yang disupport'
-  }
-}
-handler.help = ['calc <expression>']
-handler.tags = ['tools']
-handler.command = /^(calc(ulat(e|or))?|kalk(ulator)?)$/i
-handler.exp = 5
+import {
+    runInNewContext
+} from 'vm';
 
-export default handler
+const handler = async (m, {
+    conn,
+    text
+}) => {
+    const id = m.chat;
+    conn.math = conn.math || {};
+
+    if (id in conn.math) {
+        clearTimeout(conn.math[id][3]);
+        delete conn.math[id];
+        m.reply('🚩 Terdeteksi kamu menggunakan kalkulator saat dalam sesi bermain math.');
+        return;
+    }
+
+    // Regex dengan karakter spesial yang didukung oleh vm
+    const expression = text
+        .replace(/[×]/g, '*')
+        .replace(/[√]/g, 'Math.sqrt')
+        .replace(/(π|pi)/gi, 'Math.PI')
+        .replace(/(e)/gi, 'Math.E')
+        .replace(/(ln|lg)/gi, match => `Math.${match.toLowerCase()}`)
+        .replace(/(sin|cos|tan|asin|acos|atan|atan2)/gi, match => `Math.${match.toLowerCase()}`)
+        .replace(/(abs|ceil|floor|round)/gi, match => `Math.${match.toLowerCase()}`)
+        .replace(/(min|max)/gi, match => `Math.${match.toLowerCase()}`)
+        .replace(/(pow)/gi, match => `Math.${match.toLowerCase()}`)
+        .replace(/[!]/g, match => `factorial(${parseInt(match) - 1})`)
+        .replace(/[∞]/g, 'Infinity');
+
+    try {
+        const result = runInNewContext(expression);
+        if (!result) throw result;
+        m.reply(`*${text} = ${result}*`);
+    } catch (e) {
+        if (e === undefined) return m.reply('Isinya?');
+        m.reply('🚩 Format salah, hanya simbol + - * / ^ √ π e ln lg sin cos tan asin acos atan atan2 abs ceil floor round min max pow ! ∞ yang disupport.');
+    }
+};
+
+handler.help = ['kalkulator <soal>'];
+handler.tags = ['tools'];
+handler.command = /^(calc(ulat(e|or))?|kalk(ulator)?)$/i;
+
+export default handler;

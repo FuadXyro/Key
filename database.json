@@ -948,7 +948,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 16157,
+      "exp": 16649,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -1802,7 +1802,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 1789,
+      "exp": 1813,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -2229,7 +2229,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 259,
+      "exp": 285,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -33201,7 +33201,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 654,
+      "exp": 697,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -138004,7 +138004,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 60,
+      "exp": 216,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -148466,7 +148466,7 @@
       "antispam": 0,
       "antispamlastclaim": 0,
       "apel": 0,
-      "aqua": 0,
+      "aqua": 20000000,
       "arc": 0,
       "arcdurability": 0,
       "arlok": 0,
@@ -148497,11 +148497,11 @@
       "bawalbakar": 0,
       "bayam": 0,
       "berlian": 100,
-      "bibitanggur": 0,
-      "bibitapel": 0,
-      "bibitjeruk": 0,
-      "bibitmangga": 0,
-      "bibitpisang": 0,
+      "bibitanggur": 20000000,
+      "bibitapel": 20000000,
+      "bibitjeruk": 20000000,
+      "bibitmangga": 20000000,
+      "bibitpisang": 20000000,
       "botol": 0,
       "bow": 0,
       "bowdurability": 0,
@@ -148535,7 +148535,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 31873,
+      "exp": 20032528,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -148550,7 +148550,7 @@
       "gajah": 0,
       "gamemines": false,
       "ganja": 0,
-      "gardenboxs": 0,
+      "gardenboxs": 20000000,
       "gems": 0,
       "glass": 0,
       "gold": 0,
@@ -148563,7 +148563,7 @@
       "harimau": 0,
       "haus": 100,
       "healt": 100,
-      "health": 100,
+      "health": 20000100,
       "healtmonster": 100,
       "hero": 1,
       "herolastclaim": 0,
@@ -148574,12 +148574,12 @@
       "ikan": 0,
       "ikanbakar": 0,
       "intelligence": 10,
-      "iron": 0,
+      "iron": 20000000,
       "jagung": 0,
       "jagungbakar": 0,
       "jeruk": 0,
       "job": "Pengangguran",
-      "joinlimit": 1,
+      "joinlimit": 3,
       "judilast": 0,
       "kaleng": 0,
       "kambing": 0,
@@ -148713,7 +148713,7 @@
       "mana": 20,
       "mangga": 0,
       "misi": "",
-      "money": 40998,
+      "money": 20040998,
       "monyet": 0,
       "mythic": 0,
       "naga": 0,
@@ -148743,7 +148743,7 @@
       "pillhero": 0,
       "pisang": 0,
       "pointxp": 0,
-      "potion": 24,
+      "potion": 20000024,
       "premium": false,
       "premiumTime": 0,
       "ramuan": 0,
@@ -148764,7 +148764,7 @@
       "rhinoceros": 0,
       "rhinocerosexp": 0,
       "rhinoceroslastfeed": 0,
-      "rock": 0,
+      "rock": 20000000,
       "roket": 0,
       "role": "Newbie ㋡",
       "roti": 0,
@@ -148773,7 +148773,7 @@
       "rubahlastclaim": 0,
       "rumahsakit": 0,
       "sampah": 0,
-      "sand": 0,
+      "sand": 20000000,
       "sapi": 0,
       "sapir": 0,
       "seedbayam": 0,
@@ -148802,7 +148802,7 @@
       "steak": 0,
       "stick": 0,
       "strength": 30,
-      "string": 0,
+      "string": 20000000,
       "stroberi": 0,
       "superior": 0,
       "suplabu": 0,
@@ -148814,7 +148814,7 @@
       "title": 0,
       "tomat": 0,
       "tprem": 0,
-      "trash": 0,
+      "trash": 20000000,
       "trofi": 0,
       "troopcamp": 0,
       "tumiskangkung": 0,
@@ -148832,7 +148832,7 @@
       "wolf": 0,
       "wolfexp": 0,
       "wolflastfeed": 0,
-      "wood": 0,
+      "wood": 20000000,
       "wortel": 0,
       "limitjoin": 0,
       "akinator": {
@@ -148871,7 +148871,8 @@
       "robo": 0,
       "roboxp": 0,
       "ref_code": "fzmZ7sDYyPD",
-      "ref_count": 0
+      "ref_count": 0,
+      "weeklypass": 1701078153083
     },
     "62857263192051@s.whatsapp.net": {
       "afk": -1,
@@ -156186,7 +156187,9 @@
       "virtex": false,
       "anticall": false,
       "autoJoin": false,
-      "delete": false
+      "delete": false,
+      "adminOnly": false,
+      "owneronly": false
     },
     "6283835148953@s.whatsapp.net": {
       "antiDelete": true,
@@ -156436,7 +156439,8 @@
       "premnsfw": false,
       "antiBot": false,
       "adminOnly": false,
-      "owneronly": false
+      "owneronly": false,
+      "game": true
     },
     "62831383819320@s.whatsapp.net": {
       "isBanned": false,
@@ -157643,7 +157647,7 @@
       "premnsfw": false
     },
     "120363199471188707@g.us": {
-      "isBanned": false,
+      "isBanned": true,
       "antiLinkGc": false,
       "antiLinkTik": false,
       "antiLinkTel": false,
@@ -157669,39 +157673,41 @@
       "simi": false,
       "expired": 0,
       "nsfw": false,
-      "premnsfw": false
+      "premnsfw": false,
+      "adminOnly": false,
+      "owneronly": false
     }
   },
   "stats": {
     "ro-exec2.js": {
-      "total": 100,
-      "success": 100,
-      "last": 1701007417243,
-      "lastSuccess": 1701007417243
+      "total": 103,
+      "success": 103,
+      "last": 1701084111173,
+      "lastSuccess": 1701084111173
     },
     "ro-exec.js": {
-      "total": 178,
-      "success": 178,
-      "last": 1701007509908,
-      "lastSuccess": 1701007509908
+      "total": 179,
+      "success": 179,
+      "last": 1701084381422,
+      "lastSuccess": 1701084381422
     },
     "update.js": {
-      "total": 34,
-      "success": 34,
-      "last": 1701002948929,
-      "lastSuccess": 1701002948929
+      "total": 35,
+      "success": 35,
+      "last": 1701078132900,
+      "lastSuccess": 1701078132900
     },
     "enable.js": {
-      "total": 33,
-      "success": 28,
-      "last": 1699704861809,
-      "lastSuccess": 1699671845175
+      "total": 34,
+      "success": 29,
+      "last": 1701084723084,
+      "lastSuccess": 1701084723084
     },
     "ro-sfp.js": {
-      "total": 202,
-      "success": 202,
-      "last": 1701008931087,
-      "lastSuccess": 1701008931087
+      "total": 204,
+      "success": 204,
+      "last": 1701084827317,
+      "lastSuccess": 1701084827317
     },
     "rpg-daily.js": {
       "total": 4,
@@ -157722,10 +157728,10 @@
       "lastSuccess": 1697985074995
     },
     "i-totalfitur.js": {
-      "total": 41,
-      "success": 41,
-      "last": 1701002062101,
-      "lastSuccess": 1701002062101
+      "total": 42,
+      "success": 42,
+      "last": 1701084219732,
+      "lastSuccess": 1701084219732
     },
     "rpg-freegift.js": {
       "total": 5,
@@ -157746,10 +157752,10 @@
       "lastSuccess": 1694249317034
     },
     "t-calc.js": {
-      "total": 7,
-      "success": 5,
-      "last": 1696503922916,
-      "lastSuccess": 1696503922916
+      "total": 9,
+      "success": 7,
+      "last": 1701084875191,
+      "lastSuccess": 1701084875191
     },
     "s-getExif.js": {
       "total": 3,
@@ -157842,10 +157848,10 @@
       "lastSuccess": 1694268366567
     },
     "ro-df.js": {
-      "total": 33,
-      "success": 33,
-      "last": 1701007967411,
-      "lastSuccess": 1701007967411
+      "total": 34,
+      "success": 34,
+      "last": 1701084741699,
+      "lastSuccess": 1701084741699
     },
     "t-totv.js": {
       "total": 3,
@@ -157950,10 +157956,10 @@
       "lastSuccess": 1700403736483
     },
     "dl-tiktok.js": {
-      "total": 45,
-      "success": 45,
-      "last": 1700565747885,
-      "lastSuccess": 1700565747885
+      "total": 47,
+      "success": 47,
+      "last": 1701084450207,
+      "lastSuccess": 1701084450207
     },
     "ro-pushKontak.js": {
       "total": 2,
@@ -158100,10 +158106,10 @@
       "lastSuccess": 1699706233823
     },
     "menu.js": {
-      "total": 127,
-      "success": 125,
-      "last": 1701009840283,
-      "lastSuccess": 1701009840283
+      "total": 130,
+      "success": 128,
+      "last": 1701084425997,
+      "lastSuccess": 1701084425997
     },
     "ro-mute.js": {
       "total": 3,
@@ -158118,10 +158124,10 @@
       "lastSuccess": 1701009571509
     },
     "ress-tesBot.js": {
-      "total": 34,
-      "success": 34,
-      "last": 1701005212298,
-      "lastSuccess": 1701005212298
+      "total": 38,
+      "success": 38,
+      "last": 1701084410384,
+      "lastSuccess": 1701084410384
     },
     "src-aivvm.js": {
       "total": 2,
@@ -158484,10 +158490,10 @@
       "lastSuccess": 1699706622115
     },
     "i-listpc.js": {
-      "total": 13,
-      "success": 13,
-      "last": 1700919443506,
-      "lastSuccess": 1700919443506
+      "total": 14,
+      "success": 14,
+      "last": 1701084104377,
+      "lastSuccess": 1701084104377
     },
     "o-out.js": {
       "total": 4,
@@ -158802,10 +158808,16 @@
       "lastSuccess": 1701009067875
     },
     "rpg-weeklyPass.js": {
-      "total": 2,
-      "success": 2,
-      "last": 1701008160234,
-      "lastSuccess": 1701008160234
+      "total": 4,
+      "success": 3,
+      "last": 1701078163513,
+      "lastSuccess": 1701078153083
+    },
+    "gm-math.js": {
+      "total": 6,
+      "success": 6,
+      "last": 1701084853155,
+      "lastSuccess": 1701084853155
     }
   },
   "msgs": {},
