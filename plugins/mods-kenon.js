@@ -1,6 +1,6 @@
-import axios from "axios"
-import cheerio from "cheerio"
-import PhoneNumber from "awesome-phonenumber"
+import axios from "axios";
+import cheerio from "cheerio";
+import PhoneNumber from "awesome-phonenumber";
 
 /** @note @see @line 42 */
 let handler = async (m, { conn, text }) => {
@@ -31,7 +31,7 @@ let handler = async (m, { conn, text }) => {
 	try {
 		const data = await axios.get("https://www.whatsapp.com/contact/noclient/");
 		const email = await axios.get(
-			"https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=10"
+			"https://www.1secmail.com/api/v1/?action=genRandomMailbox&count=1"
 		);
 		const cookie = data.headers["set-cookie"] || ""//.join("; ");
 		const $ = cheerio.load(data.data);
@@ -77,7 +77,7 @@ let handler = async (m, { conn, text }) => {
 
 		if (payload.includes(`"payload":true`)) {
 			m.reply(
-				`WhatsApp Support
+				`FROM WhatsApp Support
 Hai,
 Terima kasih atas pesan Anda.
 Kami telah menonaktifkan akun WhatsApp Anda.`.trim()
@@ -92,11 +92,7 @@ Kami akan menghubungi Anda kembali melalui email, dan itu mungkin memerlukan wak
 		m.reply(`${err}`);
 	}
 };
-
-handler.help = ['kenon']
-handler.tags = ['mods']
-handler.command = /^(kenon)$/i
-handler.mods = true
-handler.premium = false
-
-export default handler
+handler.command = ["kenon"]; // you decide
+handler.tags = ["mods"]; // you decide
+handler.owner = true;
+export default handler;

@@ -1,6 +1,3 @@
-// Update By FuadXy
-// No: 6283837709331
-
 import fetch from "node-fetch"
 import {
    addExif
