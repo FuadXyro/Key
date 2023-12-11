@@ -65,4 +65,7 @@ global.islam = [
 'Yakinlah bahwa ada do’a yang terus dipanjatkan kepada Allah yang tidak putus-putus dari orang tua kita agar kita senantiasa menjadi anak yang sholeh dan sholehah',
 'Setiap hari aku berusaha semaksimal mungkin mencari rizki yang halal demi bisa menghalalkanmu',
 'Jatuh cinta bisa jadi sangat menyakitkan jika kita tidak mampu untuk mengendalikannya',
+'Seperti apapun kekurangan kita, jangan pernah tinggalkan sholat!',
+'Bukan cobaan Allah yang berat tapi rindu Allah yang gagal kau pahami',
+'Kita tidak tahu apakah sholat kita di terima atau *tidak* tapi setidaknya kita tidak meninggalkan *sholat*',
 ]
