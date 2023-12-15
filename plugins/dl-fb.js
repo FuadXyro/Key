@@ -1,28 +1,4 @@
-/*
-import fetch from 'node-fetch'
-
-let handler = async (m, { conn, command, args, usedPrefix }) => {
-  const linknya = args[0]
-
-  if (!args[0]) throw `Input *URL*`
-  m.reply(wait)
-  try {
-    let res = await fetch(`https://api.ryzendesu.com/api/dowloader/fbdown?url=${encodeURIComponent(linknya)}&apikey=${global.ryzen}`)
-    let result = await res.json()
-    let video = result.result.HD
-    //let audio = result.data.audio
-    let cap = global.wm
-    conn.sendMessage(m.chat, { video: { url: video }, caption: cap }, m)
-    //conn.sendMessage(m.chat, { audio: { url: audio }, mimetype: 'audio/mp4' }, { quoted : m })
-  } catch (e) {
-    console.log(e)
-    m.reply(`Fitur error atau Otak pengguna error`)
-  }
-}
-*/
-
-import axios from 'axios'
-import fetch from 'node-fetch'
+import axios from 'axios';
 
 var handler = async (m, { args }) => {
     if (!args[0]) {
@@ -37,7 +13,7 @@ var handler = async (m, { args }) => {
         };
 
         const reqOptions = {
-            url: `https://backend.shirokamiryzen.repl.co/fb?u=${url}`,
+            url: `https://apikey.fuadxy99.repl.co/fb?u=${url}`,
             method: "GET",
             headers: headersList,
         };
@@ -51,25 +27,25 @@ var handler = async (m, { args }) => {
         const hdCaption = `Video Kualitas HD\nLink HD: ${hdMedia}`;
         const sdCaption = `Video Kualitas SD\nLink SD: ${sdMedia}`;
         
-        m.reply(wait);
+        m.reply('wait'); // Assuming wait is defined somewhere
 
         try {
             // Send HD video
-            const hdFile = await fetch(hdMedia);
-            conn.sendFile(m.chat, await hdFile.buffer(), 'video_hd.mp4', hdCaption, m);
+            const hdFile = await axios.get(hdMedia, { responseType: 'arraybuffer' });
+            conn.sendFile(m.chat, hdFile.data, 'video_hd.mp4', hdCaption, m);
 
             try {
                 // Send SD video
-                const sdFile = await fetch(sdMedia);
-           //     conn.sendFile(m.chat, await sdFile.buffer(), 'video_sd.mp4', sdCaption, m);
+                const sdFile = await axios.get(sdMedia, { responseType: 'arraybuffer' });
+                // conn.sendFile(m.chat, sdFile.data, 'video_sd.mp4', sdCaption, m);
             } catch {
                 // If SD video sending fails, no further action needed
             }
         } catch {
             try {
                 // Send SD video
-                const sdFile = await fetch(sdMedia);
-           //     conn.sendFile(m.chat, await sdFile.buffer(), 'video_sd.mp4', sdCaption, m);
+                const sdFile = await axios.get(sdMedia, { responseType: 'arraybuffer' });
+                // conn.sendFile(m.chat, sdFile.data, 'video_sd.mp4', sdCaption, m);
             } catch {
                 // If both HD and SD videos don't exist, send an error message
                 const cap = 'Gagal mengunduh video FB';
@@ -90,4 +66,4 @@ handler.register = true
 
 handler.command = /^(fb(dl)?)$/i
 
-export default handler
+export default handler;
