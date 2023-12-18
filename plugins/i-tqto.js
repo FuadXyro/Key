@@ -32,26 +32,17 @@ https://github.com/Aiinne
 ◐ *The.sad.boy01*
 https://github.com/kangsad01
 
-◐ *Kanna*
-https://github.com/Kannachann
-
 ◐ *Nurutomo*
 https://github.com/Narutomo
 
 ◐ *Bochilgaming*
 https://github.com/BochilGaming
 
-◐ *FangzXD*
-https://github.com/Fangzbotz2007
-
 ◐ *DaveKgw*
 https://github.com/davekgw
 
 ◐ *Kyami*
 https://github.com/KaiZax
-
-◐ *Ahmad*
-https://github.com/Dzox13524
 
 ◐ *Ken*
 https://github.com/KensBot

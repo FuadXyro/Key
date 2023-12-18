@@ -21,7 +21,8 @@ export async function before(m) {
     if (!isIdExist) {
         const urls = "https://chat.whatsapp.com/";
         const inviteCode = await this.groupInviteCode(id);
-        const caption = `🤖 Please join the bot's group first to use its services.\n\nJoin here: ${urls + inviteCode}`;
+      
+        const caption = `🤖 Silahkan bergabung ke grup bot terlebih dahulu agar bisa menggunakannya.\n\nLink: ${urls + inviteCode}`;
         await this.reply(m.chat, caption, m);
     }
 }

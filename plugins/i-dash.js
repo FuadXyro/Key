@@ -1,22 +1,49 @@
 let handler = async (m, { conn }) => {
-  let stats = Object.entries(db.data.stats).map(([key, val]) => {
-    let name = Array.isArray(plugins[key]?.help) ? plugins[key]?.help?.join(' , ') : plugins[key]?.help || key 
+  let stats = Object.entries(global.db.data.stats).map(([key, val]) => {
+    let name = Array.isArray(plugins[key]?.help) ? plugins[key]?.help?.join('\n• ') : plugins[key]?.help || key 
     if (/exec/.test(name)) return
     return { name, ...val }
   })
   stats = stats.sort((a, b) => b.total - a.total)
-  let teks = stats.slice(0, 100).map(({ name, total }) => {
-    return `*Command*: *.${name}*\n• *Global HIT*: ${total}`
-  }).join('\n\n')
+  let txt = stats.slice(0, 10).map(({ name, total, last }, idx) => {
+    if (name.includes('-') && name.endsWith('.js')) name = name.split('-')[1].replace('.js', '')
+    return `
+*${htjava} C M D ${htjava}*
+${name}
 
-  let pp = 'https://telegra.ph/file/c11b355795e01444b5bf2.jpg'
+*${htjava} H I T ${htjava}*
+${total}
 
-  await conn.reply(m.chat, teks, m, { mentionedJid: [m.sender], contextInfo: { forwardingScore: 9999, isForwarded: true, externalAdReply :{ mediaType: 1, mediaUrl: pp, title: '乂 DASHBOARD', body: `${namebot}`, thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: null, renderLargerThumbnail: true }}})
+*${htjava} T I M E ${htjava}*
+${getTime(last)}
+`}).join`\n\n`
+    let pp = 'https://telegra.ph/file/c11b355795e01444b5bf2.jpg'
+
+  await conn.reply(m.chat, txt, m, { mentionedJid: [m.sender], contextInfo: { forwardingScore: 9999, isForwarded: true, externalAdReply :{ mediaType: 1, mediaUrl: pp, title: '乂 DASHBOARD', body: `${namebot}`, thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: null, renderLargerThumbnail: true }}})
 }
-
-handler.command = handler.help = ['dashboard', 'dash', 'views']
+handler.help = ['dashboard']
 handler.tags = ['info']
-handler.register = true
-handler.limit = true
+handler.command = /^^d(as(hbo(ard?|r)|bo(ard?|r))|b)$/i
 
 export default handler
+
+export function parseMs(ms) {
+  if (typeof ms !== 'number') throw 'Parameter must be filled with number'
+  return {
+    days: Math.trunc(ms / 86400000),
+    hours: Math.trunc(ms / 3600000) % 24,
+    minutes: Math.trunc(ms / 60000) % 60,
+    seconds: Math.trunc(ms / 1000) % 60,
+    milliseconds: Math.trunc(ms) % 1000,
+    microseconds: Math.trunc(ms * 1000) % 1000,
+    nanoseconds: Math.trunc(ms * 1e6) % 1000
+  }
+}
+
+export function getTime(ms) {
+  let now = parseMs(+new Date() - ms)
+  if (now.days) return `${now.days} Hari yang lalu`
+  else if (now.hours) return `${now.hours} Jam yang lalu`
+  else if (now.minutes) return `${now.minutes} Menit yang lalu`
+  else return `Barusan`
+}

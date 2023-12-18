@@ -6,6 +6,6 @@ let src = await (await fetch('https://raw.githubusercontent.com/BochilTeam/datab
   await conn.sendFile(m.chat, json, "", "*RENUNGAN*", m)
 }
 handler.command = handler.help = ['renungan']
-handler.tags = ['internet']
+handler.tags = ['search']
 
 export default handler

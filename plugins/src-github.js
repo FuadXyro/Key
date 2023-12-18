@@ -38,7 +38,7 @@ conn.reply(m.chat, `*ɢɪᴛʜᴜʙ sᴇᴀʀᴄʜ*\n` + str, fkontak, m)
   }
 }
 handler.help = ['githubsearch'].map(v => v + '')
-handler.tags = ['internet']
+handler.tags = ['search']
 
 handler.command = /^(githubsearch|ghs)$/i
 handler.register = true

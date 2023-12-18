@@ -20,7 +20,7 @@ const anu = {
 	}
 }
 
-let text = 'V7 (latest update)'
+let text = 'V3 (latest update)'
 
 conn.sendMessage(m.chat, { text: text} , { quoted: anu })
 }

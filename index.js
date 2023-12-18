@@ -26,8 +26,6 @@ font: 'console',
 align: 'center',
 gradient: ['red', 'magenta']})
 
-
-
   
 var isRunning = false
 /**
@@ -74,7 +72,7 @@ function start(file) {
   })
   p.on('exit', (_, code) => {
     isRunning = false
-    console.error('Error Cuy:', code)
+    console.error('(❗) Error:', code)
     if (code === 0) return
     watchFile(args[0], () => {
       unwatchFile(args[0])

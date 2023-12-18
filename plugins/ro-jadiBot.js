@@ -5,7 +5,7 @@ import P from 'pino';
 import * as ws from 'ws';
 const {child , spawn, exec} = await import('child_process');
 const { CONNECTING } = ws
-import { makeWASocket, protoType, serialize } from '../lib/simple.js';
+import { makeWaSocket, protoType, serialize } from '../lib/simple.js';
 
 let check1 = "NjBhZGVmZWI4N2M2"
 let check2 = "ZThkMmNkOGVlMDFmZD"
@@ -75,7 +75,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
         browser: ["Jadibot By Fuad", "Safari", "5.0"],
       }
 
-      let conn = makeWASocket(connectionOptions)
+      let conn = makeWaSocket(connectionOptions)
       conn.isInit = false
       let isInit = true
 
@@ -127,7 +127,7 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
         if (restatConn) {
           try { conn.ws.close() } catch { }
           conn.ev.removeAllListeners()
-          conn = makeWASocket(connectionOptions)
+          conn = makeWaSocket(connectionOptions)
           isInit = true
         }
         if (!isInit) {

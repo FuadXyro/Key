@@ -82,7 +82,7 @@ _By ${author}_
 
 }
 handler.help = ["lirik"].map(v => v + " <judul>")
-handler.tags = ["internet"]
+handler.tags = ["search"]
 handler.command = /^l(irik(musik)?|yrics?)$/i
 export default handler
 

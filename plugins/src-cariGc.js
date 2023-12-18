@@ -13,7 +13,7 @@ let handler = async (m, { text, usedPrefix, command }) => {
     await conn.reply(m.chat, teks, fkontak, { contextInfo: { isForwarded: true, forwardingScore: 9999, externalAdReply: { mediaType: 1, mediaUrl: kled, title: `Hai Kak ${m.name}`, thumbnail: { url: kled }, thumbnailUrl: kled, renderLargerThumbnail: true } } })
 }
 handler.help = ['carigrup <pencarian>']
-handler.tags = ['internet']
+handler.tags = ['search']
 
 handler.command = /^carig(ro?up|c)/i
 handler.register = true
