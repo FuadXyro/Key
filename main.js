@@ -165,7 +165,7 @@ global.loadDatabase = async function loadDatabase() {
 }
 loadDatabase()
 
-global.authFile = `${opts._[0] || 'sessions'}`;
+var authFile = `${opts._[0] || 'sessions'}`;
 
 const { state, saveCreds } = await useMultiFileAuthState(path.resolve('./sessions'))
 
