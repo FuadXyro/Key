@@ -24,11 +24,12 @@ await conn.sendMessage(m.chat, {
     let reg = Object.keys(db.data.users).filter(user => db.data.users[user].registered).length
 
     await conn.sendPresenceUpdate('composing', m.chat)
-    conn.reply(m.chat, `┬┈┈┈┈┈┈┈┈┈┈┈┈□┈┈┈┈┈┈┈┈┈┈┈┈┬\n友 Jumlah User Bot: *${totalreg} Orang*\n◙  User Registrasi: *${reg} Orang*\n◘  User Yang Tidak Registrasi: *${unreg} Orang*\n┴┈┈┈┈┈┈┈┈┈┈┈┈■┈┈┈┈┈┈┈┈┈┈┈┈┴\n\n${wm3}`, fkontak)
+    conn.reply(m.chat, `┬┈┈┈┈┈┈┈┈┈┈┈┈□┈┈┈┈┈┈┈┈┈┈┈┈┬\n友 Jumlah User Bot: *${totalreg} Orang*\n◙  User Registrasi: *${reg} Orang*\n◘  User Yang Tidak Registrasi: *${unreg} Orang*\n┴┈┈┈┈┈┈┈┈┈┈┈┈■┈┈┈┈┈┈┈┈┈┈┈┈┴\n\n${wm}`, fkontak)
 }
 handler.help = ['database']
 handler.tags = ['info', 'main']
 handler.command = /^(database|db)$/i
+handler.register = true
 handler.limit = true
 
 export default handler

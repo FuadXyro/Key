@@ -54,8 +54,6 @@ global.APIKeys = {
 
 /*Lolhuman*/
 global.lolkey = "e1a815979e6adfc071b7eafc"
-/*OpenAi*/
-global.openaikey = "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"
 /*AmeApi*/
 global.ameapikey = "1f98ec7e4842d057d7551722f83e9ae5c59896856aa3f96d406ff8fc9185752062920fadf1df1ea71c332d3f6be2dd6fa62b7ac3d0140e40d86ba0e736135820"
 
@@ -71,10 +69,7 @@ global.htjava = pickRandom(["乂", "⛶", "❏", "⫹⫺", "☰", "⎔", "✦", 
 
 /*Watermark*/
 global.wm = "𝒁𝒆𝒏𝒊𝒕𝒉𝑩𝒐𝒕 あ⁩"
-global.wm2 = "꒷︶꒷꒥꒷ ‧₊˚ ꒰ฅ˘օառɛʀ˘ฅ ꒱ ‧₊˚꒷︶꒷꒥꒷"
-global.wm3 = htjava + "𝒁𝒆𝒏𝒊𝒕𝒉𝑩𝒐𝒕"
 global.botdate = `${htjava} Date :  ${moment.tz("Asia/Jakarta").format("DD/MM/YY")}`
-global.bottime = `𝗧 𝗜 𝗠 𝗘 : ${moment.tz("Asia/Jakarta").format("HH:mm:ss")}`
 global.titlebot = `${htjava} Time Sever : ${moment.tz("Asia/Jakarta").format("HH:mm:ss")}\n⫹⫺ Date Server :  ${moment.tz("Asia/Jakarta").format("DD/MM/YY")}`
 
 /*Thumbnail*/
@@ -97,7 +92,7 @@ global.premnsfw = true
 
 /*Type*/
 global.dpptx = "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-global.ddocx = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+global.ddocx = "application/vnd.openxmlformats-o-fficedocument.wordprocessingml.document"
 global.dxlsx = "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
 global.dpdf = "application/pdf"
 global.drtf = "text/rtf"
@@ -111,23 +106,13 @@ global.dmenut = htjava + "───『"
 global.dmenub = "│" + pmenus
 global.dmenub2 = "│" + pmenus
 global.dmenuf = "╰──────────⳹"
-global.dashmenu = "☰ *D A S B O A R D* ☰"
 global.htki = htjava + "───『"
 global.htka = "』───" + htjava
 
 /* Thumbnail */
 global.hwaifu = ImgWaifu()
-global.hbeach = ImgCosplay()
 global.thumbnailUrl = ImgBoneka()
-global.hoppai = ImgCosplay()
-global.hloli = ImgCosplay()
-global.hyuri = ImgCosplay()
-global.hneko = ImgCosplay()
-global.hLokun = ImgCosplay()
-global.hbunny = ImgCosplay()
-global.thumbs = ImgBoneka()
 global.thumb = ImgEstetik()
-global.imagebot = ImgMountain()
 global.thumbdoc = ImgEstetik()
 global.logo = ImgMountain()
 
@@ -148,7 +133,6 @@ global.cmenuh = "』───" + htjava
 global.cmenub = "│" + pmenus
 global.cmenuf = "╰──────────⳹"
 global.cmenua = "\n⌕ ❙❘❙❙❘❙❚❙❘❙❙❚❙❘❙❘❙❚❙❘❙❙❚❙❘❙❙❘❙❚❙❘ ⌕\n     "
-global.emojis = pickRandom(["👑", "🎗", "️🗿", "🕹", "️💡", "🪄", "🎈", "🎊", "🔖", "📍", "❤", "‍🔥", "💤", "💭", "🕚", "💬", "🚩", "🎐", "🍃", "🌿", "🥀", "✨", "⚡", "☂️"])
 global.packname = "𝑴𝒂𝒅𝒆 𝒃𝒚"
 global.stickpack = packname
 global.author = "𝑭𝒖𝒂𝒅𝑿𝒚"
