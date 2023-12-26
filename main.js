@@ -289,7 +289,7 @@ if (pairingCode && !conn.authState.creds.registered) {
     console.log(chalk.cyan('┌──────────────┈'));
     phoneNumber = phoneNumber.replace(/[^0-9]/g, '')
     if (!Object.keys(PHONENUMBER_MCC).some(v => phoneNumber.startsWith(v))) {
-        console.log(chak.cyan('└──────────────┈'));
+        console.log(chalk.cyan('└──────────────┈'));
         console.log(`│ 🗯 ${chalk.redBright("Start with your country's WhatsApp code, Example 62xxx")}:`);
         console.log(chalk.cyan('├──────────────┈'));
         console.log(chalk.cyan('┌──────────────┈'));

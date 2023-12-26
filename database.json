@@ -91,7 +91,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 296263,
+      "exp": 296301,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -19166,7 +19166,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 18,
+      "exp": 34,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -20377,10 +20377,10 @@
       "lastSuccess": 1702814202094
     },
     "adv-update.js": {
-      "total": 10,
-      "success": 8,
-      "last": 1703423273171,
-      "lastSuccess": 1703423273171
+      "total": 11,
+      "success": 9,
+      "last": 1703552048777,
+      "lastSuccess": 1703552048777
     },
     "bot-join.js": {
       "total": 6,
@@ -20953,9 +20953,9 @@
       "lastSuccess": 1703435414388
     },
     "ai-remini.js": {
-      "total": 5,
+      "total": 6,
       "success": 2,
-      "last": 1703509039184,
+      "last": 1703594826310,
       "lastSuccess": 1703509039184
     },
     "ro-kenon.js": {
