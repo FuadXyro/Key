@@ -341,7 +341,7 @@ export async function handler(chatUpdate) {
               if (!isNumber(user.lelebakar)) user.lelebakar = 0
               if (!isNumber(user.leleg)) user.leleg = 0
               if (!isNumber(user.level)) user.level = 0
-              if (!isNumber(user.limit)) user.limit = 10
+              if (!isNumber(user.limit)) user.limit = 50
               if (!isNumber(user.limitjoinfree)) user.limitjoinfree = 1
               if (!isNumber(user.lion)) user.lion = 0
               if (!isNumber(user.lionexp)) user.lionexp = 0
@@ -733,7 +733,7 @@ export async function handler(chatUpdate) {
                     lelebakar: 0,
                     leleg: 0,
                     level: 0,
-                    limit: 25,
+                    limit: 50,
                     limitjoinfree: 1,
                     lion: 0,
                     lionexp: 0,
@@ -1031,11 +1031,11 @@ export async function handler(chatUpdate) {
         if (typeof m.text !== 'string')
             m.text = ''
 
-        const userJid = conn.decodeJid(global.conn.user.id).split('@')[0];
-        const isROwner = [userJid, ...global.owner.map(v => v + '@s.whatsapp.net')].includes(m.sender);
-        const isOwner = isROwner || m.fromMe;
-        const isVvip = isROwner || global.vvip.map(v => v + '@s.whatsapp.net').includes(m.sender);
-        const isMods = isROwner || global.mods.map(v => v + '@s.whatsapp.net').includes(m.sender);
+        const userJid = conn.decodeJid(global.conn.user.id).split('@')[0]
+        const isROwner = [userJid, ...global.owner.map(v => v + '@s.whatsapp.net')].includes(m.sender)
+        const isOwner = isROwner || m.fromMe
+        const isVvip = isROwner || global.vvip.map(v => v + '@s.whatsapp.net').includes(m.sender)
+        const isMods = isROwner || global.mods.map(v => v + '@s.whatsapp.net').includes(m.sender)
         const isPrems = isOwner || db.data.users[m.sender].premiumTime > 0
 
         if (opts['queue'] && m.text && !(isMods || isPrems || isVvip)) {
@@ -1211,7 +1211,7 @@ export async function handler(chatUpdate) {
                 else
                     m.exp += xp
                 if (!isPrems && plugin.limit && global.db.data.users[m.sender].limit < plugin.limit * 1) {
-                    this.reply(m.chat, `[❗] Limit kau abis dek, beli melalui *${usedPrefix}buylimit*`, m)
+                    this.reply(m.chat, `[❗] Limit kau abis dek, beli melalui *${usedPrefix}buy limit*`, m)
                     continue // Limit habis
                 }
                 if (plugin.level > _user.level) {

@@ -53,7 +53,7 @@ ${usedPrefix}${command} welcome
   let isEnable = /true|enable|(turn)?on|1/i.test(command)
   let named = conn.getName(m.sender)
   let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '0@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${named}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${named}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
-  let kled = 'https://telegra.ph/file/6ddedfab5e54c93c6d3c5.jpg'
+  let pp = 'https://telegra.ph/file/6ddedfab5e54c93c6d3c5.jpg'
   let chat = global.db.data.chats[m.chat]
   let user = global.db.data.users[m.sender]
   let bot = global.db.data.settings[conn.user.jid] || {}
@@ -440,16 +440,16 @@ ${usedPrefix}${command} welcome
       break
       
     default:
-      if (!/[01]/.test(command)) return await conn.reply(m.chat, fxy, m, { contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, externalAdReply: { mediaType: 1, mediaUrl: kled, title: ']=======❏ OPTIONS ❏=======[', thumbnail: { url: kled }, thumbnailUrl: kled, sourceUrl: false, renderLargerThumbnail: true }}})
+      if (!/[01]/.test(command)) return await conn.reply(m.chat, fxy, m, { contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, externalAdReply: { mediaType: 1, mediaUrl: pp, title: ']=======❏ OPTIONS ❏=======[', thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: false, renderLargerThumbnail: true }}})
       throw false
   }
-  
     await conn.reply(m.chat, `━━━━━▢ *SUCSESS* ▢━━━━━
 *Type:* ${type}
 *Options:* ${isEnable ? 'Enable' : 'Disable'}
 *Status:* Succes
 *For:* ${isAll ? 'This Bot' : isUser ? '' : 'This Chats'}${chat.antiPhising == true ? '\n\n*Tip:*\nKarna Anti Phising aktif jangan sampe ada kalimat sperti dibawah ini\n_Followers, subscribe, masukin, xxnx, facebook, bit.ly, kartel, fifa, 50gb, xvideos, legends, twilight, 805.000, mediaflare, ssimontok, okep_' : ''}
-`, m, { contextInfo: { isForwarded: false, forwardingScore: 9999, externalAdReply :{ mediaType: 1, mediaUrl: kled, title: `® By FuadXy`, thumbnail: { url: kled }, thumbnailUrl: kled, renderLargerThumbnail: true }}})
+`, m, { contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363144038483540@newsletter', newsletterName: author, serverMessageId: -1 }, businessMessageForwardInfo: { businessOwnerJid: "6283837709331" }, externalAdReply: { mediaType: 1, mediaUrl: sch, title: `${namebot}`, body: '#2021-2024', thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: sch, renderLargerThumbnail: true }}})
+    
 }
 handler.help = ['en', 'dis'].map(v => v + 'able <option>')
 handler.tags = ['group', 'owner']

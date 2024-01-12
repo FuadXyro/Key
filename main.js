@@ -101,20 +101,71 @@ global.conn = makeWaSocket(connectionOptions)
 conn.isInit = false
 
 if (!opts['test']) {
-  setInterval(async () => {
-    if (global.db.data) await global.db.write().catch(console.error)
-    if (opts['autocleartmp']) try {
-      clearTmp()
-
-    } catch (e) { console.error(e) }
-  }, 60 * 1000)
+    if (global.db) {
+        setInterval(async () => {
+            if (global.db.data) await global.db.write();
+            if (opts['autocleartmp'] && (global.support || {}).find)(tmp = [os.tmpdir(), 'tmp', 'jadibot'], tmp.forEach((filename) => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])));
+        }, 30 * 1000);
+    }
 }
-if (opts['server']) (await import('./server.js')).default(global.conn, PORT)
-/* ® FuadXy */
-/* Clear */
+
+if (opts['server'])(await import('./server.js')).default(global.conn, PORT);
+
 async function clearTmp() {
-  const tmp = './tmp'
- readdirSync(tmp).forEach(f => rmSync(`${tmp}/${f}`));
+    try {
+        const tmp = [tmpdir(), join(__dirname, "./tmp")];
+        const filenames = await Promise.all(tmp.map(async (dirname) => {
+            try {
+                const files = await readdirSync(dirname);
+                return Promise.all(files.map(async (file) => {
+                    try {
+                        const filePath = join(dirname, file);
+                        const stats = await statSync(filePath);
+                        if (stats.isFile() && Date.now() - stats.mtimeMs >= 1000 * 60 * 3) {
+                            await unlinkSync(filePath);
+                            console.log("Successfully cleared tmp:", filePath);
+                            return filePath;
+                        }
+                    } catch (err) {
+                        console.error(`Error processing ${file}: ${err.message}`);
+                        return null;
+                    }
+                }));
+            } catch (err) {
+                console.error(`Error reading directory ${dirname}: ${err.message}`);
+                return [];
+            }
+        }));
+        return filenames.flat().filter((file) => file !== null);
+    } catch (err) {
+        console.error(`Error in clearTmp: ${err.message}`);
+        return [];
+    }
+}
+
+async function clearSessions(folder = "./sessions") {
+    try {
+        const filenames = await readdirSync(folder);
+        const deletedFiles = await Promise.all(filenames.map(async (file) => {
+            try {
+                const filePath = join(folder, file);
+                const stats = await statSync(filePath);
+                if (stats.isFile() && Date.now() - stats.mtimeMs >= 1000 * 60 * 120 && file !== 'creds.json') {
+                    await unlinkSync(filePath);
+                    console.log("Deleted session:", filePath);
+                    return filePath;
+                }
+                return null;
+            } catch (err) {
+                console.error(`Error processing ${file}: ${err.message}`);
+                return null;
+            }
+        }));
+        return deletedFiles.filter((file) => file !== null);
+    } catch (err) {
+        console.error(`Error in clearSessions: ${err.message}`);
+        return [];
+    }
 }
 setInterval(async () => {
 	var a = await clearTmp()
@@ -122,48 +173,45 @@ setInterval(async () => {
 	console.log(chalk.cyanBright(pesan))
 }, 180000)
 /* Hehe */
-const hehe = async (jid, options) => {
-  let wm = 'ᴋʏᴀᴍɪ࿐';
-  let gambar = 'https://telegra.ph/file/08a98476cca5dcd0d5115.png';
-  try {
-    gambar = await conn.profilePictureUrl(jid, 'image');
-  } catch (e) {
-
-  } finally {
-  	const peth = (await import('node-fetch')).default
-    gambar = await (await peth(gambar)).buffer()
-    const fkontak = {
-      key: {
-        participant: `0@s.whatsapp.net`,
-        ...({ remoteJid: 'status@broadcast' })
-      },
-      message: {
-        'contactMessage': {
-          'displayName': wm,
-          'vcard': `BEGIN:VCARD\nVERSION:3.0\nN:XL;${wm},;;;\nFN:${wm},\nitem1.TEL;waid=${jid.split`@`[0]}:${jid.split`@`[0]}\nitem1.X-ALabell:Ponsel\nEND:VCARD`,
-          'jpegThumbnail': gambar,
-          'thumbnail': gambar,
-          'sendEphemeral': true
-        }
-      }
-    }
-    const txt = `\n[ ✓ ] 𝑩𝒆𝒓𝒉𝒂𝒔𝒊𝒍 𝑻𝒆𝒓𝒉𝒖𝒃𝒖𝒏𝒈 𝑲𝒆 𝑺𝒄𝒓𝒊𝒑𝒕 ᴋʏᴀᴍɪ×͜×࿐\n\n𝑺𝒂𝒚𝒂 𝑩𝒆𝒓𝒋𝒂𝒏𝒋𝒊 𝑻𝒊𝒅𝒂𝒌 𝑨𝒌𝒂𝒏 𝑴𝒆𝒏𝒋𝒖𝒂𝒍 𝑩𝒆𝒍𝒊𝒌𝒂𝒏 𝑺𝒄𝒓𝒊𝒑𝒕 𝑩𝒐𝒕 𝑰𝒏𝒊.\n𝑻𝒓𝒊𝒎𝒂𝒌𝒂𝒔𝒊𝒉 @${jid.split`@`[0]}, 𝑲𝒂𝒓𝒆𝒏𝒂 𝑺𝒖𝒅𝒂𝒉 𝑴𝒆𝒎𝒃𝒆𝒓𝒊𝒌𝒂𝒏 𝑺𝒄𝒓𝒊𝒑𝒕 𝑰𝒏𝒊.\n\n\n𝑺𝒖𝒎𝒃𝒆𝒓 𝑺𝒄𝒓𝒊𝒑𝒕 ✓\n@${jid.split`@`[0]} \n\ns ᴛ ᴀ ᴛ ᴜ s | s ᴇ ʀ ᴠ ᴇ ʀ\n~ ᴍᴇᴍᴏʀʏ ᴜsᴇᴅ : ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB\n𝑮𝒊𝒕𝒉𝒖𝒃: https://github.com/ShionMdv`
-    return await conn.sendMessage(jid, { text: txt, mentions: [jid], ...options }, { quoted: fkontak, ephemeralExpiration: 86400, ...options })
-  }
-}
-/* Update */
 async function connectionUpdate(update) {
-  const { connection, lastDisconnect, isNewLogin } = update
-  if (isNewLogin) conn.isInit = true
-  const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
-  console.log(code)
-  if (code && code !== DisconnectReason.loggedOut && conn?.ws.readyState !== CONNECTING) {
-    console.log(await global.reloadHandler(true).catch(console.error))
-    global.timestamp.connect = new Date
-    return await hehe('6287734910547' + '@s.whatsapp.net').catch(err => { return !0 })
-  }
-  if (global.db.data == null) loadDatabase()
-} // Gausah Dihapus Njink Susah Susah Update Ngentod
+    const {
+        connection,
+        lastDisconnect,
+        isNewLogin,
+        qr
+    } = update;
+    global.stopped = connection;
+    if (isNewLogin) conn.isInit = true;
+    const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode;
+    if (code && code !== DisconnectReason.loggedOut && conn?.ws.socket == null) {
+        conn.logger.info(await global.reloadHandler(true).catch(console.error));
+    }
+    if (global.db.data == null) loadDatabase();
+    if (qr !== undefined) {
+    conn.logger.info(chalk.yellow('\n🚩ㅤPindai kode QR ini, kode QR akan kedaluwarsa dalam 20 detik.'))
+    }
+  if (connection === "open") {
+        const {
+            jid,
+            name
+        } = conn.user;
+        const currentTime = new Date();
+        const pingStart = new Date();
+       const infoMsg = `• ZenithBotz ʙᴇʀʜᴀsɪ ᴛᴇʀʜᴜʙᴜɴɢ •`;
+       conn.sendMessage("6287734910547@s.whatsapp.net", {
+            text: infoMsg,
+       mentions: ["6283837709331@s.whatsapp.net", jid]
+       }, {
+          quoted: global.fakes, 
+           ephemeralExpiration: global.ephemeral
+        })
+        conn.sendPresenceUpdate('unavailable')
+        conn.logger.info(chalk.yellow('\n🚩 R E A D Y'));
+   }
+    if (connection == 'close') {
+        conn.logger.error(chalk.yellow(`\n🚩 Koneksi ditutup, harap hapus folder ${global.authFile} dan pindai ulang kode QR`));
+    }
+}
 
 process.on('uncaughtException', console.error)
 // let strQuot = /(["'])(?:(?=(\\?))\2.)*?\1/

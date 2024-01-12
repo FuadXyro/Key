@@ -155,45 +155,64 @@ global.povo = "083837709331"
 
 /* Fake adReplyS*/
 global.adReplyS = {
-    fileLength: SizeDoc(),
-    seconds: SizeDoc(),
-    contextInfo: {
-        forwardingScore: SizeDoc(),
-        externalAdReply: {
-            showAdAttribution: true,
-            title: "👋 " + Sapa() + Pagi(),
-            body: author,
-            mediaUrl: sgc,
-            description: "FuadXyro",
-            previewType: "PHOTO",
-            thumbnail: await fs.readFileSync("./thumbnail.jpg"),
-            sourceUrl: "https://github.com/FuadXyro",
+        fileLength: SizeDoc(),
+        seconds: SizeDoc(),
+        contextInfo: {
+            mentionedJid: [],
+            groupMentions: [],
+            isForwarded: true,
+            forwardedNewsletterMessageInfo: {
+                newsletterJid: '120363144038483540@newsletter',
+                newsletterName: global.author,
+                serverMessageId: -1
+            },
+            businessMessageForwardInfo: {
+                businessOwnerJid: businessOwnerJid()
+            },
+            forwardingScore: 256,
+            externalAdReply: {
+                title: "📍 " + Sapa() + Pagi(),
+                body: author,
+                mediaUrl: sgc,
+                description: "FuadXyro",
+                previewType: "PHOTO",
+                thumbnail: logo,
+                sourceUrl: "https://github.com/AyGemuy",
+            }
         }
     }
-}
-/* Fake adReply */
-global.adReply = {
-    fileLength: SizeDoc(),
-    seconds: SizeDoc(),
-    contextInfo: {
-        forwardingScore: SizeDoc(),
-        externalAdReply: {
-            body: author,
-            containsAutoReply: true,
-            mediaType: 1,
-            mediaUrl: sgc,
-            renderLargerThumbnail: true,
-            showAdAttribution: true,
-            sourceId: "𝑾𝒖𝒅𝒚𝒔𝒐𝒇𝒕",
-            sourceType: "PDF",
-            previewType: "PDF",
-            sourceUrl: sgc,
-            thumbnail: await fs.readFileSync("./thumbnail.jpg"),
-            thumbnailUrl: logo,
-            title: "👋 " + Sapa() + Pagi()
+    /* Fake adReply */
+    global.adReply = {
+        fileLength: SizeDoc(),
+        seconds: SizeDoc(),
+        contextInfo: {
+            mentionedJid: [],
+            groupMentions: [],
+            isForwarded: true,
+            forwardedNewsletterMessageInfo: {
+                newsletterJid: '120363144038483540@newsletter',
+                newsletterName: global.author,
+                serverMessageId: -1
+            },
+            businessMessageForwardInfo: {
+                businessOwnerJid: businessOwnerJid()
+            },
+            forwardingScore: 256,
+            externalAdReply: {
+                body: author,
+                containsAutoReply: true,
+                mediaType: 1,
+                mediaUrl: sgc,
+                renderLargerThumbnail: true,
+                sourceId: "FuadXy",
+                sourceType: "PDF",
+                previewType: "PDF",
+                sourceUrl: null,
+                thumbnail: logo,
+                title: "📍 " + Sapa() + Pagi()
+            }
         }
     }
-}
 /* Fake IG */
 global.fakeig = {
     contextInfo: {
@@ -1254,4 +1273,10 @@ function SizeDoc() {
 }
 function PageDoc() {
     return Math.pow(10, 10)
+}
+
+function businessOwnerJid() {
+    let Org = pickRandom([global.nomorown, "0", "6283138381932", "6283837709331"])
+    let Parti = pickRandom([Org + "@s.whatsapp.net"])
+    return Parti
 }

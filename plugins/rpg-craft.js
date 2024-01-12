@@ -114,7 +114,7 @@ ${usedPrefix + command} pickaxe
             break
 
           default:
-            return await conn.reply(m.chat, caption, m, { mentions: [m.sender], contextInfo: { forwardingScore: 9999, isForwarded: true, externalAdReply :{ mediaType: 1, mediaUrl: thumb, title: `${namebot}`, body: `By FuadXy`, thumbnail: { url: thumb }, thumbnailUrl: thumb, sourceUrl: null, renderLargerThumbnail: true }}})
+            return await conn.reply(m.chat, caption, m, { mentions: [m.sender], contextInfo: { forwardingScore: 9999, isForwarded: true, externalAdReply :{ mediaType: 1, mediaUrl: thumb, title: `${namebot}`, body: `🌱┊ RPG WhatsApp Bot`, thumbnail: { url: thumb }, thumbnailUrl: thumb, sourceUrl: null, renderLargerThumbnail: true }}})
         
         }
     } else if (/enchant|enchan/i.test(command)) {

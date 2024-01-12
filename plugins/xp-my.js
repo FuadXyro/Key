@@ -96,6 +96,26 @@ const inventory = {
   }
 }
 let handler = async (m, { conn }) => {
+  let fuad = (text, style = 1) => {
+    var xStr = 'abcdefghijklmnopqrstuvwxyz1234567890'.split('')
+    var yStr = Object.freeze({
+      1: 'ᴀʙᴄᴅᴇꜰɢʜɪᴊᴋʟᴍɴᴏᴘqʀꜱᴛᴜᴠᴡxʏᴢ1234567890',
+    })
+    var replacer = []
+    xStr.map((v, i) =>
+      replacer.push({
+        original: v,
+        convert: yStr[style].split('')[i],
+      })
+    )
+    var str = text.toLowerCase().split('')
+    var output = []
+    str.map((v) => {
+      const find = replacer.find((x) => x.original == v)
+      find ? output.push(find.convert) : output.push(v)
+    })
+    return output.join('')
+  }
   let user = global.db.data.users[m.sender]
   let named = conn.getName(m.sender)
   let fkon = { key: { fromMe: false, participant: `${m.sender.split`@`[0]}@s.whatsapp.net`, ...(m.chat ? { remoteJid: '0@s.whatsapp.net' } : {}) }, message: { contactMessage: { displayName: `${named}`, vcard: `BEGIN:VCARD\nVERSION:3.0\nN:;a,;;;\nFN:${named}\nitem1.TEL;waid=${m.sender.split('@')[0]}:${m.sender.split('@')[0]}\nitem1.X-ABLabel:Ponsel\nEND:VCARD`}}}
@@ -110,10 +130,13 @@ let handler = async (m, { conn }) => {
 *▸ ʟᴇᴠᴇʟ:* ${user.level}
 *▸ ʀᴏʟᴇ:* ${user.role}
 *▸ ʜᴇᴀʟᴛʜ:* ${user.health}
-*▸ ʟɪᴍɪᴛ:* ${user.limit}
+*▸ ʟɪᴍɪᴛ:* ${m.sender.split`@`[0] == nomorbot ? 'Infinity Limit Left=͟͟͞͞💫'
+  : user.premiumTime >= 1
+  ? 'Infinity'
+  : `${user.limit}`} 
 *▸ ᴍᴏɴᴇʏ:* ${user.money}${user.atm ? `
 *▸ ᴀᴛᴍ:* ʟᴠ.${user.atm}
-*▸ ʙᴀɴᴋ:* ${user.bank} $ / ${user.fullatm} $`: ''}
+*▸ ʙᴀɴᴋ:* ${user.bank} $ / ${user.fullatm} $` : ''}
 
 *𖥂* sᴛᴀᴛᴜs : *${m.sender.split`@`[0] == nomorown ? 'Developer' : (user.premiumTime >= 1 ? 'Premium User' : 'Free User')}*
 *𖥂* *ʀᴇɢɪsᴛᴇʀᴇᴅ:* ${user.registered ? 'Yes':'No'}${user.premiumTime >= 1 ? `
@@ -121,7 +144,7 @@ let handler = async (m, { conn }) => {
 ${clockString(user.premiumTime - new Date() * 1)}`: ''}
 `.trim()
   await conn.sendPresenceUpdate('composing', m.chat)
-  await conn.reply(m.chat, caption, fliveLoc, { contextInfo: { isForwarded: true, forwardingScore: 9999, externalAdReply :{ mediaType: 1, mediaUrl: myp, title: `Hai ${conn.getName(m.sender)}  `, thumbnail: { url: myp }, thumbnailUrl: myp, renderLargerThumbnail: true }}}) // Title sengaja gw bikin gitu
+  await conn.reply(m.chat, fuad(caption), fliveLoc, { contextInfo: { isForwarded: true, forwardingScore: 9999, externalAdReply :{ mediaType: 1, mediaUrl: myp, title: `Hai ${conn.getName(m.sender)}  `, thumbnail: { url: myp }, thumbnailUrl: myp, renderLargerThumbnail: true }}}) // Title sengaja gw bikin gitu
 }
 handler.help = ['my']
 handler.tags = ['xp']

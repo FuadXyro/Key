@@ -1,40 +1,32 @@
-let handler = async (m, { conn, usedPrefix, text, command}) => {
-
-var user = global.db.data.users[m.sender]
-
-global.skill = ["swordmaster", "necromancer", "witch", "Archer", "magicswordmaster", "thief", "shadow"]
-
-var bintang = {
-"satu": "⭐",
-"dua": "⭐⭐",
-"tiga": "⭐⭐⭐",
-"empat": "⭐⭐⭐⭐",
-"lima": "⭐⭐⭐⭐⭐",
-"Enam": "⭐⭐⭐⭐⭐⭐"
-}//star how good is the skill
-   
-   let skil = text.trim().toLowerCase() // to filter text
-     
-   if (!skill.includes(skil)) throw `Select *skill🃏* what do you want/pilih skill apa yg kamu inginkan:\n\n${skill.map(skil => `› ${skil}`).join('\n')}
-
-     How To use/Cara menggunakan:
-     ${usedPrefix + command} <nameskill>
-     
-     Example/Contoh:
-     ${usedPrefix + command} necromancer
-     `
-
+let handler = async (m, { conn, usedPrefix, text, command }) => {
+    var user = global.db.data.users[m.sender];
+    
+    global.skill = ["swordmaster", "necromancer", "witch", "Archer", "magicswordmaster", "thief", "shadow", "fuadxy"];
+    
+    var bintang = {
+        "satu": "⭐",
+        "dua": "⭐⭐",
+        "tiga": "⭐⭐⭐",
+        "empat": "⭐⭐⭐⭐",
+        "lima": "⭐⭐⭐⭐⭐",
+        "Enam": "⭐⭐⭐⭐⭐⭐",
+        "tujuh": "🌟🌟🌟🌟🌟🌟🌟"
+    }; // star ratings for skills
+    
+    let skil = text.trim().toLowerCase(); // to filter text
+    
+    if (!global.skill.includes(skil)) throw `Select *skill🃏* what do you want/pilih skill apa yg kamu inginkan:\n\n${global.skill.map(skill => `› ${skill}`).join('\n')}\n\nHow To use/Cara menggunakan:\n${usedPrefix + command} <nameskill>\n\nExample/Contoh:\n${usedPrefix + command} shadow`;
+    
     if (user.skill == "") {
-    user.skill = skil
-    m.reply(`Anda telah memilih Skill ${skil}`)
+        user.skill = skil;
+        await conn.reply(m.chat, `Anda telah memilih Skill ${skil}`, fkontak);
     } else if (user.skill) {
-    m.reply(`Anda Sudah Punya skill ${user.skill} Tidak bisa diganti`)
-   }
+        await conn.reply(m.chat, `Anda Sudah Punya skill ${user.skill} Tidak bisa diganti`, fkontak);
+    }
+};
 
-}
+handler.help = ['selectskill <type>'];
+handler.tags = ['rpg'];
+handler.command = /^(selectskill)$/i;
 
-handler.help = ['selectskill <type>']
-handler.tags = ['rpg']
-handler.command = /^(slectskill|selectskill)$/i
-
-export default handler
+export default handler;

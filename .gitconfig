@@ -1,3 +1,5 @@
 [user]
 	email = fuadxy99@gmail.com
 	name = FuadXyro
+[safe]
+	directory = /home/container

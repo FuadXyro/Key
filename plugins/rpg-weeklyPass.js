@@ -16,6 +16,7 @@ const rewards = {
 		bibitjeruk: 20000000,
 		bibitanggur: 20000000,
 		gardenboxs: 20000000,
+		emerald: 20,
 		joinlimit: 2,
 	}
 const cooldown = 604800000

@@ -129,9 +129,11 @@ ${usedPrefix}open [crate] [quantity]
 ★ ᴇxᴀᴍᴩʟᴇ:
 ${usedPrefix}open mythic 3
 `.trim()
+
     let type = (args[0] || '').toLowerCase()
     let count = Math.floor(isNumber(args[1]) ? Math.min(Math.max(parseInt(args[1]), 1), Number.MAX_SAFE_INTEGER) : 1) * 1
-    if (!(type in listCrate)) return await conn.reply(m.chat, info, m, { mentionedJid: [m.sender], contextInfo: { forwardingScore: 9999, isForwarded: true, externalAdReply :{ mediaType: 1, mediaUrl: thumb, title: `${htki} OPEN CRATES ${htka}`, body: null, thumbnail: { url: thumb }, thumbnailUrl: thumb, sourceUrl: null, renderLargerThumbnail: true }}})
+    if (!(type in listCrate)) return await conn.reply(m.chat, info, m, { mentionedJid: [m.sender], contextInfo: { forwardingScore: 9999, isForwarded: true, externalAdReply :{ mediaType: 1, mediaUrl: thumb, title: `${htki} OPEN CRATES ${htka}`, body: '🌱┊ RPG WhatsApp Bot', thumbnail: { url: thumb }, thumbnailUrl: thumb, sourceUrl: null, renderLargerThumbnail: true }}})
+    if (count >= 7000001) throw 'Max: 7000000'
     if (user[type] < count) return m.reply(`
 Your *${rpg.emoticon(type)}${type} crate* is not enough!, you only have ${user[type]} *${rpg.emoticon(type)}${type} crate*
 type *${usedPrefix}buy ${type} ${count - user[type]}* to buy

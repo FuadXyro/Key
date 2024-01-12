@@ -24,6 +24,4 @@ handler.customPrefix = /^(tes|tess|test)$/i
 
 handler.command = new RegExp
 
-
-
 export default handler

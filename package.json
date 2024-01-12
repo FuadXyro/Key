@@ -55,6 +55,7 @@
         "chalk": "*",
         "chalk-animation": "*",
         "cheerio": "*",
+        "chess.js": "*",
         "child_process": "*",
         "crypto": "*",
         "didyoumean": "*",
