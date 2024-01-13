@@ -91,7 +91,7 @@
       "emas": 4,
       "emerald": 1e+119,
       "esteh": 0,
-      "exp": 301159222544,
+      "exp": 301159223390,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -13695,7 +13695,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 4258,
+      "exp": 4958,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -14549,7 +14549,7 @@
       "emas": 26,
       "emerald": 3800786,
       "esteh": 0,
-      "exp": 65695276598,
+      "exp": 65695276662,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -20534,7 +20534,7 @@
       "emas": 52,
       "emerald": 5,
       "esteh": 0,
-      "exp": 52262796324,
+      "exp": 52262796405,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -50553,10 +50553,10 @@
   },
   "stats": {
     "menu.js": {
-      "total": 183,
-      "success": 177,
-      "last": 1705114696075,
-      "lastSuccess": 1705114696075
+      "total": 184,
+      "success": 178,
+      "last": 1705114723802,
+      "lastSuccess": 1705114723802
     },
     "ro-exec2.js": {
       "total": 61,
@@ -50565,10 +50565,10 @@
       "lastSuccess": 1705105129385
     },
     "ro-exec.js": {
-      "total": 274,
-      "success": 273,
-      "last": 1705114458889,
-      "lastSuccess": 1705114458889
+      "total": 275,
+      "success": 274,
+      "last": 1705141418922,
+      "lastSuccess": 1705141418922
     },
     "ress-tesBot.js": {
       "total": 100,
@@ -50577,16 +50577,16 @@
       "lastSuccess": 1705111977542
     },
     "ro-sfp.js": {
-      "total": 398,
-      "success": 398,
-      "last": 1705114635722,
-      "lastSuccess": 1705114635722
+      "total": 403,
+      "success": 403,
+      "last": 1705141185365,
+      "lastSuccess": 1705141185365
     },
     "ro-df.js": {
-      "total": 105,
-      "success": 105,
-      "last": 1705114604678,
-      "lastSuccess": 1705114604678
+      "total": 109,
+      "success": 109,
+      "last": 1705141378825,
+      "lastSuccess": 1705141378825
     },
     "ro-sf.js": {
       "total": 9,
@@ -50613,10 +50613,10 @@
       "lastSuccess": 1702814202094
     },
     "adv-update.js": {
-      "total": 42,
-      "success": 40,
-      "last": 1705111207386,
-      "lastSuccess": 1705111207386
+      "total": 43,
+      "success": 41,
+      "last": 1705114737404,
+      "lastSuccess": 1705114737404
     },
     "bot-join.js": {
       "total": 21,
@@ -50625,10 +50625,10 @@
       "lastSuccess": 1704630848333
     },
     "ro-gp.js": {
-      "total": 110,
-      "success": 109,
-      "last": 1705114406552,
-      "lastSuccess": 1705114406552
+      "total": 113,
+      "success": 112,
+      "last": 1705141374446,
+      "lastSuccess": 1705141374446
     },
     "i-totalfitur.js": {
       "total": 16,
@@ -50667,9 +50667,9 @@
       "lastSuccess": 1702903490868
     },
     "t-npm.js": {
-      "total": 32,
+      "total": 33,
       "success": 22,
-      "last": 1705105463997,
+      "last": 1705130546835,
       "lastSuccess": 1705105463997
     },
     "dl-yta.js": {
@@ -50679,10 +50679,10 @@
       "lastSuccess": 1704694456258
     },
     "dl-ytv.js": {
-      "total": 32,
-      "success": 26,
-      "last": 1705103168430,
-      "lastSuccess": 1705103168430
+      "total": 39,
+      "success": 32,
+      "last": 1705140649828,
+      "lastSuccess": 1705140649828
     },
     "yt-search.js": {
       "total": 4,
@@ -50709,10 +50709,10 @@
       "lastSuccess": 1702885128727
     },
     "t-ssweb.js": {
-      "total": 27,
-      "success": 22,
-      "last": 1705105223077,
-      "lastSuccess": 1705105223077
+      "total": 28,
+      "success": 23,
+      "last": 1705141002609,
+      "lastSuccess": 1705141002609
     },
     "i-dash.js": {
       "total": 5,
@@ -50727,10 +50727,10 @@
       "lastSuccess": 1704807794097
     },
     "yt-play.js": {
-      "total": 126,
-      "success": 104,
-      "last": 1705107618470,
-      "lastSuccess": 1705107618470
+      "total": 127,
+      "success": 105,
+      "last": 1705115510466,
+      "lastSuccess": 1705115510466
     },
     "src-spotify.js": {
       "total": 7,
@@ -50829,10 +50829,10 @@
       "lastSuccess": 1705110322410
     },
     "t-lookup.js": {
-      "total": 6,
-      "success": 4,
-      "last": 1704600116959,
-      "lastSuccess": 1704600116959
+      "total": 7,
+      "success": 5,
+      "last": 1705141033339,
+      "lastSuccess": 1705141033339
     },
     "a-saucenao.js": {
       "total": 11,
@@ -50901,10 +50901,10 @@
       "lastSuccess": 1703140259112
     },
     "dl-tiktok.js": {
-      "total": 55,
-      "success": 55,
-      "last": 1705070383155,
-      "lastSuccess": 1705070383155
+      "total": 58,
+      "success": 58,
+      "last": 1705122786782,
+      "lastSuccess": 1705122786782
     },
     "s-qcr.js": {
       "total": 34,
@@ -50967,10 +50967,10 @@
       "lastSuccess": 1704886658941
     },
     "ro-gitStatus.js": {
-      "total": 8,
-      "success": 8,
-      "last": 1704548277065,
-      "lastSuccess": 1704548277065
+      "total": 9,
+      "success": 9,
+      "last": 1705114794665,
+      "lastSuccess": 1705114794665
     },
     "virus-warCall.js": {
       "total": 57,
@@ -51051,10 +51051,10 @@
       "lastSuccess": 1703175106336
     },
     "rpg-inventory.js": {
-      "total": 334,
-      "success": 332,
-      "last": 1705106931176,
-      "lastSuccess": 1705106931176
+      "total": 336,
+      "success": 334,
+      "last": 1705117402464,
+      "lastSuccess": 1705117402464
     },
     "xp-ref.js": {
       "total": 7,
@@ -51117,10 +51117,10 @@
       "lastSuccess": 1704017234538
     },
     "xp-limit.js": {
-      "total": 42,
-      "success": 39,
-      "last": 1704615153171,
-      "lastSuccess": 1704615153171
+      "total": 43,
+      "success": 40,
+      "last": 1705131941291,
+      "lastSuccess": 1705131941291
     },
     "gc-time.js": {
       "total": 9,
@@ -51585,10 +51585,10 @@
       "lastSuccess": 1705065753089
     },
     "bank-cek.js": {
-      "total": 433,
-      "success": 430,
-      "last": 1705106936025,
-      "lastSuccess": 1705106936025
+      "total": 435,
+      "success": 432,
+      "last": 1705114784249,
+      "lastSuccess": 1705114784249
     },
     "rpg-dompet.js": {
       "total": 87,
@@ -51903,10 +51903,10 @@
       "lastSuccess": 1705106834200
     },
     "t-ocr.js": {
-      "total": 6,
-      "success": 4,
-      "last": 1705111984614,
-      "lastSuccess": 1705111984614
+      "total": 7,
+      "success": 5,
+      "last": 1705138755798,
+      "lastSuccess": 1705138755798
     },
     "rpg-buy.js": {
       "total": 104,
@@ -52047,10 +52047,10 @@
       "lastSuccess": 1705063453808
     },
     "dl-mega.js": {
-      "total": 6,
-      "success": 6,
-      "last": 1705063869340,
-      "lastSuccess": 1705063869340
+      "total": 8,
+      "success": 8,
+      "last": 1705139948084,
+      "lastSuccess": 1705139948084
     },
     "gc-sider.js": {
       "total": 2,
@@ -52077,10 +52077,16 @@
       "lastSuccess": 1705105806307
     },
     "ro-temaBot.js": {
-      "total": 6,
-      "success": 6,
-      "last": 1705114689822,
-      "lastSuccess": 1705114689822
+      "total": 7,
+      "success": 7,
+      "last": 1705114720756,
+      "lastSuccess": 1705114720756
+    },
+    "t-call.js": {
+      "total": 4,
+      "success": 2,
+      "last": 1705141261508,
+      "lastSuccess": 1705141261508
     }
   },
   "msgs": {},
