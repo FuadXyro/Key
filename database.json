@@ -91,7 +91,7 @@
       "emas": 4,
       "emerald": 1e+119,
       "esteh": 0,
-      "exp": 301159221613,
+      "exp": 301159222544,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -3490,7 +3490,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 530,
+      "exp": 531,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -12841,7 +12841,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 28,
+      "exp": 54,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -20534,7 +20534,7 @@
       "emas": 52,
       "emerald": 5,
       "esteh": 0,
-      "exp": 52262796300,
+      "exp": 52262796324,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -50553,10 +50553,10 @@
   },
   "stats": {
     "menu.js": {
-      "total": 178,
-      "success": 172,
-      "last": 1705110779638,
-      "lastSuccess": 1705110779638
+      "total": 183,
+      "success": 177,
+      "last": 1705114696075,
+      "lastSuccess": 1705114696075
     },
     "ro-exec2.js": {
       "total": 61,
@@ -50565,28 +50565,28 @@
       "lastSuccess": 1705105129385
     },
     "ro-exec.js": {
-      "total": 251,
-      "success": 250,
-      "last": 1705110967959,
-      "lastSuccess": 1705110967959
+      "total": 274,
+      "success": 273,
+      "last": 1705114458889,
+      "lastSuccess": 1705114458889
     },
     "ress-tesBot.js": {
-      "total": 98,
-      "success": 89,
-      "last": 1705107775510,
-      "lastSuccess": 1705107775510
+      "total": 100,
+      "success": 91,
+      "last": 1705111977542,
+      "lastSuccess": 1705111977542
     },
     "ro-sfp.js": {
-      "total": 397,
-      "success": 397,
-      "last": 1705108144595,
-      "lastSuccess": 1705108144595
+      "total": 398,
+      "success": 398,
+      "last": 1705114635722,
+      "lastSuccess": 1705114635722
     },
     "ro-df.js": {
-      "total": 104,
-      "success": 104,
-      "last": 1705108141135,
-      "lastSuccess": 1705108141135
+      "total": 105,
+      "success": 105,
+      "last": 1705114604678,
+      "lastSuccess": 1705114604678
     },
     "ro-sf.js": {
       "total": 9,
@@ -50613,10 +50613,10 @@
       "lastSuccess": 1702814202094
     },
     "adv-update.js": {
-      "total": 41,
-      "success": 39,
-      "last": 1705043928015,
-      "lastSuccess": 1705043928015
+      "total": 42,
+      "success": 40,
+      "last": 1705111207386,
+      "lastSuccess": 1705111207386
     },
     "bot-join.js": {
       "total": 21,
@@ -50625,10 +50625,10 @@
       "lastSuccess": 1704630848333
     },
     "ro-gp.js": {
-      "total": 107,
-      "success": 106,
-      "last": 1705107958868,
-      "lastSuccess": 1705107958868
+      "total": 110,
+      "success": 109,
+      "last": 1705114406552,
+      "lastSuccess": 1705114406552
     },
     "i-totalfitur.js": {
       "total": 16,
@@ -50637,10 +50637,10 @@
       "lastSuccess": 1705062952387
     },
     "dl-ig.js": {
-      "total": 11,
-      "success": 8,
-      "last": 1704724826833,
-      "lastSuccess": 1704724826833
+      "total": 13,
+      "success": 9,
+      "last": 1705111576981,
+      "lastSuccess": 1705111275721
     },
     "s-stickers.js": {
       "total": 15,
@@ -50943,10 +50943,10 @@
       "lastSuccess": 1704811126032
     },
     "t-tourl.js": {
-      "total": 21,
-      "success": 20,
-      "last": 1705102476531,
-      "lastSuccess": 1705102476531
+      "total": 22,
+      "success": 21,
+      "last": 1705113151062,
+      "lastSuccess": 1705113151062
     },
     "i-changelog.js": {
       "total": 24,
@@ -51903,10 +51903,10 @@
       "lastSuccess": 1705106834200
     },
     "t-ocr.js": {
-      "total": 5,
-      "success": 3,
-      "last": 1704965168157,
-      "lastSuccess": 1704901765204
+      "total": 6,
+      "success": 4,
+      "last": 1705111984614,
+      "lastSuccess": 1705111984614
     },
     "rpg-buy.js": {
       "total": 104,
@@ -52077,10 +52077,10 @@
       "lastSuccess": 1705105806307
     },
     "ro-temaBot.js": {
-      "total": 3,
-      "success": 3,
-      "last": 1705108155842,
-      "lastSuccess": 1705108155842
+      "total": 6,
+      "success": 6,
+      "last": 1705114689822,
+      "lastSuccess": 1705114689822
     }
   },
   "msgs": {},
