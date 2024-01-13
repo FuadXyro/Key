@@ -90,10 +90,13 @@ global.authFile = `sessions`
 const { state, saveCreds } = await useMultiFileAuthState(path.resolve('./sessions'))
 
 const connectionOptions = {
-printQRInTerminal: true,
-auth: state,
-logger: P({ level: 'fatal' }),
-browser: ['FuadXyro', 'Edge', '1.0.0']
+  printQRInTerminal: true,
+  auth: state,
+  logger: P({ level: 'fatal' }),
+  browser: ['FuadXyro', 'Edge', '1.0.0'],
+  qrCodeData: (qrCode) => {
+    qrcode.generate(qrCode, { small: true });
+  },
 }
 
 
@@ -167,11 +170,6 @@ async function clearSessions(folder = "./sessions") {
         return [];
     }
 }
-setInterval(async () => {
-	var a = await clearTmp()
-	var pesan = "The tmp folder has been cleaned"
-	console.log(chalk.cyanBright(pesan))
-}, 180000)
 /* Hehe */
 async function connectionUpdate(update) {
     const {

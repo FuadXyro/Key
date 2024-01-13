@@ -23,11 +23,11 @@ let handler = async (m, { conn, args, usedPrefix }) => {
     giftCodes.push(giftCode)
   }
 
-  // Create or update conn.freegift[m.sender] object with purchased gift codes and existing time
-  if (!conn.freegift) conn.freegift = {}
-  conn.freegift[m.sender] = {
-    ...(conn.freegift[m.sender] || {}), // Use existing time if available
-    code: conn.freegift[m.sender]?.code ? conn.freegift[m.sender].code.concat(giftCodes) : giftCodes,
+  // Create or update conn.redeem[m.sender] object with purchased gift codes and existing time
+  if (!conn.redeem) conn.redeem = {}
+  conn.redeem[m.sender] = {
+    ...(conn.redeem[m.sender] || {}), // Use existing time if available
+    code: conn.redeem[m.sender]?.code ? conn.redeem[m.sender].code.concat(giftCodes) : giftCodes,
   }
 
   // Deduct money from user's account

@@ -25,16 +25,16 @@ let handler = async (m, {
         
         let item = await ytmp4(args[0], q.split("p")[0])
         if ((item.contentLength).split("MB")[0] >= limit) return m.reply(` ≡  *YT Downloader*\n\n*⚖️Size* : ${item.contentLength}\n*🎞️Quality* : ${item.quality}\n\n_The file exceeds the download limit_ *+${limit} MB*\n\n*Link:*\n${await shortUrl(item.videoUrl)}`)
-        let captvid = `🔍 *[ RESULT V1 ]*
+        let captvid = `Y O U T U B E
 
-📷 *Image URL:* ${item.thumb.url || 'Tidak diketahui'}
-📚 *Title:* ${item.title || 'Tidak diketahui'}
-📅 *Date:* ${item.date || 'Tidak diketahui'}
-⏱️ *Duration:* ${item.duration || 'Tidak diketahui'}
-📺 *Channel:* ${item.channel || 'Tidak diketahui'}
-🔒 *Quality:* ${item.quality || 'Tidak diketahui'}
-📦 *Content Length:* ${item.contentLength || 'Tidak diketahui'}
-📝 *Description:* ${item.description || 'Tidak diketahui'}
+*Image URL:* ${item.thumb.url || 'Tidak diketahui'}
+*Title:* ${item.title || 'Tidak diketahui'}
+*Date:* ${item.date || 'Tidak diketahui'}
+*Duration:* ${item.duration || 'Tidak diketahui'}
+*Channel:* ${item.channel || 'Tidak diketahui'}
+*Quality:* ${item.quality || 'Tidak diketahui'}
+*Content Length:* ${item.contentLength || 'Tidak diketahui'}
+*Description:* ${item.description || 'Tidak diketahui'}
 `.trim()
         let dls = "Downloading video succes"
         let doc = {

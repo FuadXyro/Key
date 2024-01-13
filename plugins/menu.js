@@ -28,6 +28,8 @@ let _muptime
     _muptime *= 1000
   }
 let muptime = clockString(_muptime)
+let date = new Date()
+let year = date.getFullYear()
 
 //Total Feature
 let totalf = Object.values(global.plugins).filter(
@@ -39,16 +41,9 @@ let who
    else who = m.sender
 let name = conn.getName(who)
 //thumbnail 
-let img1 = 'https://telegra.ph/file/4d5cf54515dd1eab55c47.jpg'
-let img2 = 'https://telegra.ph/file/55d519d8ec7f25ba6c4bb.jpg'
-let img3 = 'https://telegra.ph/file/7108d5804a49b4fcdae27.jpg'
-let img4 = 'https://telegra.ph/file/7108d5804a49b4fcdae27.jpg'
-let img5 = 'https://telegra.ph/file/37dc838d0e326bc21e95d.jpg'
-let img6 = 'https://telegra.ph/file/fa171fb51d5b188f3acce.jpg'
-let img7 = 'https://telegra.ph/file/b2bcf52752d273683c002.jpg'
-let pp = `${pickRandom([`${img1}`, `${img2}`, `${img3}`, `${img4}`, `${img5}`, `${img6}`, `${img7}`])}`
 
-let ucpn = `${ucapan()}`
+const pp = pickRandom(images)
+const ucpn = `${ucapan()}`
 let info = `Hai Kak *${m.name}*
 sᥱᥣᥲmᥲ𝗍 ძᥲ𝗍ᥲᥒg ძі ${namebot}
 ᑲ᥆𝗍 іᥒі sᥱძᥲᥒg ძᥲᥣᥲm 𝗍ᥲһᥲ⍴ ⍴ᥱᥒgᥱmᑲᥲᥒgᥲᥒ!!
@@ -62,7 +57,7 @@ sᥱᥣᥲmᥲ𝗍 ძᥲ𝗍ᥲᥒg ძі ${namebot}
   ✬ Runtime: ${muptime}
   ✬ Size Database: ${megabit()} MB
   ✬ NodeJs: ${process.version}
-  ✬ Total Fitur: ${totalf}
+  ✬ Total File: ${totalf}
 𖢖 ═════════════════ 𖢖
 
 
@@ -100,9 +95,17 @@ sᥱᥣᥲmᥲ𝗍 ძᥲ𝗍ᥲᥒg ძі ${namebot}
 ${motivasi.getRandom()}
 
 ❀𝑫𝒂𝒕𝒆 ${new Date().toLocaleString('id-ID', {timeZone: 'Asia/Jakarta' })}`
+
+conn.temamenu = conn.temamenu ? conn.temamenu : {
+            id: 1
+        }
+if (conn.temamenu.id === 1) {            
 await conn.sendPresenceUpdate('recording', m.chat)
-await conn.reply(m.chat, info, m, { mentionedJid: [who], contextInfo: { forwardingScore: 9999, isForwarded: true, externalAdReply :{ mediaType: 1, mediaUrl: pp, title: `${namebot}`, body: '乂 2021-2023', thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: `${global.sch}`, renderLargerThumbnail: true }}})
-  }
+await conn.reply(m.chat, info, m, { mentionedJid: [who], contextInfo: { forwardingScore: 9999, isForwarded: true, externalAdReply :{ mediaType: 1, mediaUrl: pp, title: `${namebot}`, body: `乂 2021-${year}`, thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: `${global.sch}`, renderLargerThumbnail: true }}})
+} else if (conn.temamenu.id === 2) {
+await conn.reply(m.chat, info, m, { contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363144038483540@newsletter', newsletterName: author, serverMessageId: -1 }, businessMessageForwardInfo: { businessOwnerJid: "6283837709331" }, externalAdReply: { mediaType: 1, mediaUrl: sch, title: `${namebot}`, body: `#2021-${year}`, thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: sch, renderLargerThumbnail: true }}})
+ }
+}
 handler.help = ['menu']
 handler.tags = ['info', 'main']
 handler.command =  /^(menu|help)$/i
@@ -144,3 +147,13 @@ function megabit() {
 function pickRandom(list) {
      return list[Math.floor(Math.random() * list.length)]
 }
+
+const images = [
+  'https://telegra.ph/file/4d5cf54515dd1eab55c47.jpg',
+  'https://telegra.ph/file/55d519d8ec7f25ba6c4bb.jpg',
+  'https://telegra.ph/file/7108d5804a49b4fcdae27.jpg',
+  'https://telegra.ph/file/7108d5804a49b4fcdae27.jpg',
+  'https://telegra.ph/file/37dc838d0e326bc21e95d.jpg',
+  'https://telegra.ph/file/fa171fb51d5b188f3acce.jpg',
+  'https://telegra.ph/file/b2bcf52752d273683c002.jpg'
+]

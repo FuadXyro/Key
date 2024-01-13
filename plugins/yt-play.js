@@ -15,12 +15,13 @@ let handler = async (m, { conn, command, text, usedPrefix }) => {
   const combinedRegex = /^(play|ytplay|ytmp3|playmp3|playmp4|ytplaymp4)$/i
   const isMP3 = combinedRegex.test(command)
   let vap = `
-𝐓𝐢𝐭𝐥𝐞: ${title}
-𝐔𝐫𝐥: ${url}
-𝐃𝐞𝐬𝐜𝐫𝐢𝐩𝐭𝐢𝗼𝐧 ${description}
-𝐏𝐮𝐛𝐥𝐢𝐬𝐡𝐞𝐝: ${publishedTime ? publishedTime : 'tidak diketahui'}
-𝐃𝐮𝐫𝐚𝐭𝐢𝗼𝐧: ${durationH ? durationH : 'tidak diketahui'}
-𝐕𝐢𝐞𝐰: ${viewH ? viewH : 'tidak diketahui'}
+𝑻𝒊𝒕𝒍𝒆: ${title}
+𝑼𝒓𝒍: ${url}
+𝑺𝒊𝒛𝒆: ${formatBytes(ytdl.size)}
+𝑫𝒆𝒔𝒄𝒓𝒊𝒑𝒕𝒊𝒐𝒏 ${description}
+𝑷𝒖𝒃𝒍𝒊𝒔𝒉𝒆𝒅: ${publishedTime ? publishedTime : 'tidak diketahui'}
+𝑫𝒖𝒓𝒂𝒕𝒊𝒐𝒏: ${durationH ? durationH : 'tidak diketahui'}
+𝑽𝒊𝒆𝒘: ${viewH ? viewH : 'tidak diketahui'}
 `
   conn.sendMessage(m.chat, {
     text: vap,
@@ -76,6 +77,14 @@ function formatNumber(num) {
 
     if (numDigits <= 3) {
         return numString;
+    }
+function formatBytes(bytes) {
+    if (bytes === 0 || isNaN(bytes)) {
+        return '0 B';
+    }
+    const sizes = ['B', 'KB', 'MB', 'GB', 'TB'];
+    const i = Math.floor(Math.log(bytes) / Math.log(1024));
+    return `${(bytes / 1024 ** i).toFixed(2)} ${sizes[i]}`
     }
 
     const suffixIndex = Math.floor((numDigits - 1) / 3);
