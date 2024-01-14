@@ -68,12 +68,8 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
       args[0] ? fs.writeFileSync("./jadibot/" + uniqid + "/creds.json", JSON.stringify(JSON.parse(Buffer.from(args[0], "base64").toString("utf-8")), null, '\t')) : ""
       const { state, saveState, saveCreds } = await useMultiFileAuthState("./jadibot/" + uniqid)
 
-      const connectionOptions = {
-        printQRInTerminal: true,
-        auth: state,
-        logger: P({ level: 'silent'}),
-        browser: ["Jadibot By Fuad", "Safari", "5.0"],
-      }
+      const connectionOptions = { printQRInTerminal: true, auth: state, logger: P({ level: 'fatal' }), browser: ['Jadibot By FuadXy', 'Edge', '1.0.0'], qrCodeData: (qrCode) => { qrcode.generate(qrCode, { small: true })}}
+
 
       let conn = makeWaSocket(connectionOptions)
       conn.isInit = false

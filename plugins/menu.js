@@ -103,7 +103,8 @@ if (conn.temamenu.id === 1) {
 await conn.sendPresenceUpdate('recording', m.chat)
 await conn.reply(m.chat, info, m, { mentionedJid: [who], contextInfo: { forwardingScore: 9999, isForwarded: true, externalAdReply :{ mediaType: 1, mediaUrl: pp, title: `${namebot}`, body: `乂 2021-${year}`, thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: `${global.sch}`, renderLargerThumbnail: true }}})
 } else if (conn.temamenu.id === 2) {
-await conn.sendMessage(m.chat, { document: { url: "https://telegra.ph/file/d7f123701a32a29f109d9.jpg" }, fileName: 'Simple Bot WhatsApp By Fuad', mimetype: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", fileLength: 999999999999, pageCount: 999999999, caption: info, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363144038483540@newsletter', newsletterName: author, serverMessageId: -1 }, businessMessageForwardInfo: { businessOwnerJid: "6283837709331" }, externalAdReply: { mediaType: 1, mediaUrl: sch, title: `${namebot}`, body: `#2021-${year}`, thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: sch, renderLargerThumbnail: true }}})
+await conn.sendMessage(m.chat, { document: fs.readFileSync("./package.json"), fileName: 'ZenithBotz', mimetype: 'application/msword',
+  jpegThumbnail: fs.readFileSync("./media/thumbDoc.jpg"), caption: info, contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, forwardedNewsletterMessageInfo: { newsletterJid: '120363144038483540@newsletter', newsletterName: author, serverMessageId: -1 }, businessMessageForwardInfo: { businessOwnerJid: "6283837709331" }, externalAdReply: { mediaType: 1, mediaUrl: sch, title: `${namebot}`, body: `#2021-${year}`, thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: sch, renderLargerThumbnail: true }}}, { quoted: m,ephemeralExpiration: 86400})
  }
 }
 handler.help = ['menu']
