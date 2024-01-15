@@ -70,7 +70,7 @@ function reward(user = {}) {
             emerald: 4,
             common: 2 * (user.dog && (user.dog > 2 ? 2 : user.dog) * 1.2 || 1),
             uncommon: [0, 0, 0, 1, 0].concat(
-                new Array(5 - (
+                new Array(4 - (
                     (user.dog > 2 && user.dog < 6 && user.dog) || (user.dog > 5 && 5) || 2
                 )).fill(0)
             ),
@@ -80,14 +80,12 @@ function reward(user = {}) {
                 )).fill(0)
             ),
             legendary: [0, 0, 0, 0, 0, 0, 0, 1, 0, 0].concat(
-                new Array(10 - (
+                new Array(9 - (
                     (user.dog > 8 && user.dog) || 4
                 )).fill(0)
             ),
-            iron: [0, 0, 0, 1, 0, 0],
-            gold: [0, 0, 0, 0, 0, 1, 0],
             diamond: [0, 0, 0, 0, 0, 0, 1, 0].concat(
-                new Array(5 - (
+                new Array(7 - (
                     (user.fox < 6 && user.fox) || (user.fox > 5 && 5) || 0
                 )).fill(0)
             ),
@@ -96,6 +94,6 @@ function reward(user = {}) {
             health: 40 - user.cat * 4,
             pickaxedurability: 10
         }
-    }
-    return rewards
+    };
+    return rewards;
 }

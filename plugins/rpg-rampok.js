@@ -1,16 +1,18 @@
 let handler = async (m, { conn, text, usedPrefix, command }) => {
     let dapat = Math.floor(Math.random() * 100000)
     let nomor = m.sender
+    let nomorown = '6283138381932@s.whatsapp.net'
     let who
-    
+
     if (m.isGroup) who = m.mentionedJid[0]
     else who = m.chat
 
     if (!who) throw 'Tag salah satu lah'
 
-    if (nomor === '6283138381932') {
-        throw 'Anda merampok developer bot, dan anda terkena denda Rp: 30000000'
-        global.db.data.users[m.sender].money -= 30000000 // Decrease money by 30000000
+    if (who == nomorown) {
+        conn.reply(m.chat, "Anda telah merampok owner bot, dan anda terkena denda Rp: 30000000", m)
+        global.db.data.users[m.sender].money -= 30000000
+        return
     }
 
     if (typeof db.data.users[who] === 'undefined') throw 'Pengguna tidak ada didalam database'
@@ -22,12 +24,19 @@ let handler = async (m, { conn, text, usedPrefix, command }) => {
 
     if (new Date() - global.db.data.users[m.sender].lastrob > 3600000) {
         if (10000 > users[who].money) throw 'ᴛᴀʀɢᴇᴛ ɢᴀᴀᴅᴀ 💰ᴜᴀɴɢ ʙᴏᴅᴏʜ, ᴋɪꜱᴍɪɴ ᴅɪᴀ'
-        
-        users[who].money -= dapat * 1
-        users[m.sender].money += dapat * 1
-        global.db.data.users[m.sender].lastrob = new Date() * 1
 
-        conn.reply(m.chat, `ʙᴇʀʜᴀꜱɪʟ ᴍᴇʀᴀᴍᴘᴏᴋ ᴍᴏɴᴇʏ ᴛᴀʀɢᴇᴛ ꜱᴇʙᴇꜱᴀʀ 💰${dapat}`, m)
+        users[who].money -= dapat * 1
+
+        // Adjust the fine for robbing the owner
+        if (who == nomorown) {
+            conn.reply(m.chat, `Anda berhasil merampok money target 💰${dapat}, tapi kena denda Rp: 5000000 karena merampok owner`, m)
+            global.db.data.users[m.sender].money -= 5000000
+        } else {
+            users[m.sender].money += dapat * 1
+            conn.reply(m.chat, `ʙᴇʀʜᴀꜱɪʟ ᴍᴇʀᴀᴍᴘᴏᴋ ᴍᴏɴᴇʏ ᴛᴀʀɢᴇᴛ ꜱᴇʙᴇꜱᴀʀ 💰${dapat}`, m)
+        }
+
+        global.db.data.users[m.sender].lastrob = new Date() * 1
     } else {
         conn.reply(m.chat, `Anda Sudah merampok dan berhasil sembunyi, tunggu ${timers} untuk merampok lagi`, m)
     }
