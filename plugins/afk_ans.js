@@ -1,27 +1,71 @@
-export function before(m) {
-    let user = global.db.data.users[m.sender]
-    if (user.afk > -1) {
+export async function before(m) {
+    let senderUser = global.db.data.users[m.sender]
+
+    if (senderUser.afk > -1) {
         m.reply(`
-  Kamu berhenti AFK${user.afkReason ? ' setelah ' + user.afkReason : ''}
-  Selama ${(new Date - user.afk).toTimeString()}
+  Kamu berhenti AFK${senderUser.afkReason ? ' setelah ' + senderUser.afkReason : ''}
+  Selama ${(new Date() - senderUser.afk).toTimeString()}
   `.trim())
-        user.afk = -1
-        user.afkReason = ''
+
+        senderUser.afk = -1
+        senderUser.afkReason = ''
     }
-    let jids = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
-    for (let jid of jids) {
-        let user = global.db.data.users[jid]
-        if (!user)
+     
+    const textLower = m.text.toLowerCase()
+    const rp = new Intl.NumberFormat('id-ID', {
+        style: 'currency',
+        currency: 'IDR',
+        minimumFractionDigits: 0,
+        maximumFractionDigits: 0,
+    })
+
+    let mentionedJids = [...new Set([...(m.mentionedJid || []), ...(m.quoted ? [m.quoted.sender] : [])])]
+
+    for (let jid of mentionedJids) {
+        let taggedUser = global.db.data.users[jid]
+
+        if (!taggedUser) {
             continue
-        let afkTime = user.afk
-        if (!afkTime || afkTime < 0)
+        }
+
+        let afkTime = taggedUser.afk
+
+        if (!afkTime || afkTime < 0) {
             continue
-        let reason = user.afkReason || ''
-        m.reply(`
-  Jangan tag dia!
-  Dia sedang AFK ${reason ? 'dengan alasan ' + reason : 'tanpa alasan'}
-  Selama ${(new Date - afkTime).toTimeString()}
-  `.trim())
+        }
+
+        let reason = taggedUser.afkReason || ''
+        let maxDenda = 100000000
+        let denda = Math.floor(Math.random() * maxDenda) + 1
+
+        let pesan = `
+Anda akan terkena denda ${rp.format(denda)}
+Karena mengetag user yang sedang AFK
+  
+${reason ? 'Dengan alasan ' + reason : 'Tanpa alasan'}
+Selama ${(new Date() - afkTime).toTimeString()}
+
+• Ketik *maaf* Agar Terhindar dari denda
+• Waktu meminta maaf: 90 Detik
+`
+
+        await m.reply(pesan)
+
+        await sleep(90000)
+
+        
+        if (/^maaf$/i.test(textLower)) {
+            global.db.data.users[m.sender].afk = -1
+            return m.reply('Anda telah meminta maaf dan terhindar dari denda.')
+        } else {
+            return m.reply('Anda tidak meminta maaf, maka anda terkena denda')
+            senderUser.money = (senderUser.money || 0) - denda
+        }
     }
-    return true
+
+   // return true
+}
+
+function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms))
 }
