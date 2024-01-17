@@ -1,13 +1,13 @@
-async function handler(m, {
+let handler = async (m, {
     conn,
     usedPrefix,
     command,
     text
-}) {
+}) => {
     let user = global.db.data.users[m.sender]
     let SWORD = user.sword < 1
     let ARMOR = user.armor < 1
-    let HEALT = user.healt < 90
+    let HEALT = user.healt < 50
     let prefix = usedPrefix
     if (SWORD || ARMOR || HEALT) {
         console.log({
@@ -87,26 +87,26 @@ Room ID: ${room.id}
 ${M(p1)}, ${M(p2)}, ${M(p3)} dan ${M(p4)}
 
 Sedang berperang di dungeon...
-`.trim()
+`
 
             await m.reply(str, c1, {
                 contextInfo: {
-                    mentionedJid: conn.parseMention(str)
+                    mentionedJid: await conn.parseMention(str)
                 }
             })
             if (![c1, c3, c4].includes(c2)) m.reply(str, c2, {
                 contextInfo: {
-                    mentionedJid: conn.parseMention(str)
+                    mentionedJid: await conn.parseMention(str)
                 }
             })
             if (![c1, c2, c4].includes(c3)) m.reply(str, c3, {
                 contextInfo: {
-                    mentionedJid: conn.parseMention(str)
+                    mentionedJid: await conn.parseMention(str)
                 }
             })
             if (![c1, c2, c3].includes(c4)) m.reply(str, c4, {
                 contextInfo: {
-                    mentionedJid: conn.parseMention(str)
+                    mentionedJid: await conn.parseMention(str)
                 }
             })
 
@@ -139,7 +139,7 @@ Sedang berperang di dungeon...
 *✉️exp:* ${exp * 4}
 *💵uang:* ${money * 4}
 *🗑️sampah:* ${sampah  * 4}${potion == 0 ? '' : '\n*🥤Potion:* ' + potion * 4}${makananPet == 0 ? '' : '\n*🍖Makanan Pet* ' + makananPet * 4}${kayu == 0 ? '' : '\n*🪵Kayu:* ' + kayu * 4}${batu == 0 ? '' : '\n*🪨Batu:* ' + batu * 4}${string == 0 ? '' : '\n*🕸️String:* ' + string * 4}${iron == 0 ? '' : '\n*⛓️Iron:* ' + iron * 4}${diamond == 0 ? '' : '\n*💎diamond:* ' + diamond * 4}${common == 0 ? '' : '\n*📦common crate:* ' + common * 4}${uncommon == 0 ? '' : '\n*📦uncommon crate:* ' + uncommon * 4}
-             `.trim()
+             `
                 for (let i = 0; i < player.length; i++) {
                     let p = player[i]
                     setTimeout(() => {
@@ -172,22 +172,22 @@ Sedang berperang di dungeon...
 
                 await m.reply(str2, c1, {
                     contextInfo: {
-                        mentionedJid: conn.parseMention(str2)
+                        mentionedJid: await conn.parseMention(str2)
                     }
                 })
                 if (![c1, c3, c4].includes(c2)) m.reply(str2, c2, {
                     contextInfo: {
-                        mentionedJid: conn.parseMention(str2)
+                        mentionedJid: await conn.parseMention(str2)
                     }
                 })
                 if (![c1, c2, c4].includes(c3)) m.reply(str2, c3, {
                     contextInfo: {
-                        mentionedJid: conn.parseMention(str2)
+                        mentionedJid: await conn.parseMention(str2)
                     }
                 })
                 if (![c1, c2, c3].includes(c4)) m.reply(str2, c4, {
                     contextInfo: {
-                        mentionedJid: conn.parseMention(st2)
+                        mentionedJid: await conn.parseMention(st2)
                     }
                 })
 
@@ -195,22 +195,22 @@ Sedang berperang di dungeon...
                     let str3 = 'Selamat ' + M(p1) + ', ' + M(p2) + ', ' + M(p3) + ' dan ' + M(p4) + ' kalian mendapatkan item Rare Total *' + mythic * 4 + '* 📦Mythic Crate'
                     await m.reply(str3, c1, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                     if (![c1, c3, c4].includes(c2)) m.reply(str3, c2, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                     if (![c1, c2, c4].includes(c3)) m.reply(str3, c3, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                     if (![c1, c2, c3].includes(c4)) m.reply(str3, c4, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                 }
@@ -219,22 +219,22 @@ Sedang berperang di dungeon...
                     let str3 = (mythic > 0 ? 'Dan juga' : 'Selamat ' + M(p1) + ', ' + M(p2) + ', ' + M(p3) + ' dan ' + M(p4) + ' kalian') + ' mendapatkan item Epic Total ' + (pet > 0 && legendary > 0 ? `*${legendary * 4}* 🎁Legendary Crate dan *${pet * 4}* 📦Pet Crate` : pet > 0 && legendary < 1 ? `*${pet * 4}* 📦Pet Crate` : legendary > 0 && pet < 1 ? `*${legendary * 4}* 🎁Legendary Crate` : '')
                     await m.reply(str3, c1, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                     if (![c1, c3, c4].includes(c2)) m.reply(str3, c2, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                     if (![c1, c2, c4].includes(c3)) m.reply(str3, c3, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                     if (![c1, c2, c3].includes(c4)) m.reply(str3, c4, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                 }
@@ -281,22 +281,22 @@ Sedang berperang di dungeon...
                     let str3 = `${((SDH || SDH.length > 0) || (SDM1L || SDM1L.length > 0)) ? `⚔️Sword ${((SDH || SDH.length > 0 ? sI + ' Hancur, silahkan crafting ⚔️Sword kembali dengan mengetik *' + usedPrefix + 'craft sword*' : '') + (SDM1L || SDM1L.length > 0 ? (SDH || SDH.length > 0 ? ', Sedangkan ⚔️Sword ' : '') + sH + ' Hancur, dan Menurun *1* Level' : ''))}` : ''}${HEALT || healt.length > 0 ? `❤️Nyawa ${H} habis, silahkan isi ❤️Nyawa dengan mengetik ${usedPrefix}heal` : ''}`
                     await m.reply(str3, c1, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                     if (![c1, c3, c4].includes(c2)) m.reply(str3, c2, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                     if (![c1, c2, c4].includes(c3)) m.reply(str3, c3, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                     if (![c1, c2, c3].includes(c4)) m.reply(str3, c4, {
                         contextInfo: {
-                            mentionedJid: conn.parseMention(str3)
+                            mentionedJid: await conn.parseMention(str3)
                         }
                     })
                 }
@@ -351,7 +351,9 @@ Sedang berperang di dungeon...
     }
 }
 
-handler.before = function(m) {
+handler.before = async (m, {
+    conn
+}) => {
     global.dungeon = global.dungeon ? global.dungeon : {}
     let room = Object.values(global.dungeon).find(room => room.id.startsWith('dungeon-') && [room.game.player1, room.game.player2, room.game.player3, room.game.player4].includes(m.sender) && room.state == 'WAITING')
     if (room) {
@@ -381,10 +383,10 @@ Room ID: ${room.id}
 ${P}
 
 Sedang berperang di dungeon...
-`.trim()
+`
             m.reply(str, room.player1, {
                 contextInfo: {
-                    mentionedJid: this.parseMention(str)
+                    mentionedJid: await this.parseMention(str)
                 }
             })
 
@@ -416,7 +418,7 @@ Sedang berperang di dungeon...
 *✉️exp:* ${exp}
 *💵uang:* ${money}
 *🗑️sampah:* ${sampah}${potion == 0 ? '' : '\n*🥤Potion:* ' + potion}${makananPet == 0 ? '' : '\n*🍖Makanan Pet* ' + makananPet * 1}${kayu == 0 ? '' : '\n*🪵Kayu:* ' + kayu}${batu == 0 ? '' : '\n*🪨Batu:* ' + batu}${string == 0 ? '' : '\n*🕸️String:* ' + string}${iron == 0 ? '' : '\n*⛓️Iron:* ' + iron}${diamond == 0 ? '' : '\n*💎diamond:* ' + diamond}${common == 0 ? '' : '\n*📦common crate:* ' + common}${uncommon == 0 ? '' : '\n*📦uncommon crate:* ' + uncommon}
-`.trim()
+`
                 users.healt -= healt * 1
                 users.sworddurability -= sword * 1
                 users.money += money * 1
@@ -456,7 +458,7 @@ Sedang berperang di dungeon...
                     let str3 = `${__sword1 ? `⚔️Sword Kamu ${_sword1 ? ` Level nya berkurang 1 karena hancur` : ` Hancur, dan silahkan crafting ⚔️Sword kembali dengan mengetik ${usedPrefix}`}craft sword` : ''} ${healt1 ? `${__sword1 ? 'Dan ' : ''}❤️Nyawa Kamu habis, silahkan isi kembali dengan ketik ${usedPrefix}heal` : ''}`
                     m.reply(str3, room.player1, {
                         contextInfo: {
-                            mentionedJid: this.parseMention(str3)
+                            mentionedJid: await this.parseMention(str3)
                         }
                     })
                 }
@@ -471,25 +473,25 @@ Room ID: ${room.id}
 ${P}
 
 Sedang berperang di dungeon...
-`.trim()
+`
             m.reply(str, c1, {
                 contextInfo: {
-                    mentionedJid: this.parseMention(str)
+                    mentionedJid: await this.parseMention(str)
                 }
             })
             if (c2 && ![c1, c3, c4].includes(c2)) m.reply(str, c2, {
                 contextInfo: {
-                    mentionedJid: this.parseMention(str)
+                    mentionedJid: await this.parseMention(str)
                 }
             })
             if (c3 && ![c1, c2, c4].includes(c3)) m.reply(str, c3, {
                 contextInfo: {
-                    mentionedJid: this.parseMention(str)
+                    mentionedJid: await this.parseMention(str)
                 }
             })
             if (c4 && ![c1, c2, c3].includes(c4)) m.reply(str, c4, {
                 contextInfo: {
-                    mentionedJid: this.parseMention(str)
+                    mentionedJid: await this.parseMention(str)
                 }
             })
 
@@ -533,25 +535,25 @@ Sedang berperang di dungeon...
 *✉️exp:* ${exp * orang}
 *💵uang:* ${money * orang}
 *🗑️sampah:* ${sampah  * orang}${potion == 0 ? '' : '\n*🥤Potion:* ' + potion * orang}${makananPet == 0 ? '' : '\n*🍖Makanan Pet* ' + makananPet * orang}${kayu == 0 ? '' : '\n*🪵Kayu:* ' + kayu * orang}${batu == 0 ? '' : '\n*🪨Batu:* ' + batu * orang}${string == 0 ? '' : '\n*🕸️String:* ' + string * orang}${iron == 0 ? '' : '\n*⛓️Iron:* ' + iron * orang}${diamond == 0 ? '' : '\n*💎diamond:* ' + diamond * orang}${common == 0 ? '' : '\n*📦common crate:* ' + common * orang}${uncommon == 0 ? '' : '\n*📦uncommon crate:* ' + uncommon * orang}
-`.trim()
+`
                 await m.reply(str2, c1, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str2)
+                        mentionedJid: await this.parseMention(str2)
                     }
                 })
                 if (c2 && ![c1, c3, c4].includes(c2)) m.reply(str2, c2, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str2)
+                        mentionedJid: await this.parseMention(str2)
                     }
                 })
                 if (c3 && ![c1, c2, c4].includes(c3)) m.reply(str2, c3, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str2)
+                        mentionedJid: await this.parseMention(str2)
                     }
                 })
                 if (c4 && ![c1, c2, c3].includes(c4)) m.reply(str2, c4, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str2)
+                        mentionedJid: await this.parseMention(str2)
                     }
                 })
             }, pickRandom([1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000, 9000, 10000, 11000]))
@@ -590,22 +592,22 @@ Sedang berperang di dungeon...
                 let str3 = 'Selamat ' + P + ' kalian mendapatkan item Rare Total *' + mythic * orang + '* 📦Mythic Crate'
                 m.reply(str3, c1, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
                 if (c2 && ![c1, c3, c4].includes(c2)) m.reply(str3, c2, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
                 if (c3 && ![c1, c2, c4].includes(c3)) m.reply(str3, c3, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
                 if (c4 && ![c1, c2, c3].includes(c4)) m.reply(str3, c4, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
             }
@@ -615,22 +617,22 @@ Sedang berperang di dungeon...
                 let str3 = (mythic > 0 ? 'Dan juga' : 'Selamat ' + P + ' kalian') + ' mendapatkan item Epic Total ' + (pet > 0 && legendary > 0 ? `*${legendary * orang}* 🎁Legendary Crate dan *${pet * orang}* 📦Pet Crate` : pet > 0 && legendary < 1 ? `*${pet * orang}* 📦Pet Crate` : legendary > 0 && pet < 1 ? `*${legendary * orang}* 🎁Legendary Crate` : '')
                 m.reply(str3, c1, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
                 if (c2 && ![c1, c3, c4].includes(c2)) m.reply(str3, c2, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
                 if (c3 && ![c1, c2, c4].includes(c3)) m.reply(str3, c3, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
                 if (c4 && ![c1, c2, c3].includes(c4)) m.reply(str3, c4, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
             }
@@ -661,9 +663,9 @@ Sedang berperang di dungeon...
                 let s4 = _sd4 ? (_sd4 * 1) < 1 : false
 
                 //Buat nyimpen data sementara :v
-                let HEALT = [],
-                    SDH = [],
-                    SDM1L = []
+                let HEALT = []
+                let SDH = []
+                let SDM1L = []
                 for (let siapa in PLAYER) {
                     if ((users[siapa].healt * 1) < 1) HEALT.push(siapa)
                     if ((users[siapa].sworddurability * 1) < 1 && (users[siapa].sword * 1) == 1) SDH.push(siapa)
@@ -678,22 +680,22 @@ Sedang berperang di dungeon...
                 let str3 = `${((SDH || SDH.length > 0) || (SDM1L || SDM1L.length > 0)) ? `⚔️Sword ${((SDH || SDH.length > 0 ? sI + ' Hancur, silahkan crafting ⚔️Sword kembali dengan mengetik *' + usedPrefix + 'craft sword*' : '') + (SDM1L || SDM1L.length > 0 ? (SDH || SDH.length > 0 ? ', Sedangkan ⚔️Sword ' : '') + sH + ' Hancur, dan Menurun *1* Level' : ''))}` : ''}${HEALT || HEALT.length > 0 ? `❤️Nyawa ${H} habis, silahkan isi ❤️Nyawa dengan mengetik ${usedPrefix}heal` : ''}`
                 m.reply(str3, c1, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
                 if (c2 && ![c1, c3, c4].includes(c2)) m.reply(str3, c2, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
                 if (c3 && ![c1, c2, c4].includes(c3)) m.reply(str3, c3, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
                 if (c4 && ![c1, c2, c3].includes(c4)) m.reply(str3, c4, {
                     contextInfo: {
-                        mentionedJid: this.parseMention(str3)
+                        mentionedJid: await this.parseMention(str3)
                     }
                 })
             }
@@ -732,10 +734,10 @@ function pickRandom(list) {
 function item(sword, armor, healt, usedPrefix) {
     let sw = (sword * 1) < 1
     let a = (armor * 1) < 1
-    let h = (healt * 1) < 90
+    let h = (healt * 1) < 50
     let str = `
-${sw ? 'Kamu belum memiliki ⚔️Sword' : ''}${sw && a && h ? ',' : sw && a ? ' dan ' : ''} ${a ? '🥼Armor' : ''}${sw && a && h ? ' dan Minimal 90 ❤Healt' : h ? 'Minimal 90 ❤Healt' : ''}${sw ? `\nuntuk mendapatkan ⚔Sword ketik *${usedPrefix}craft sword*` : ''}${a ? `\nuntuk mendapatkan 🥼Armor ketik *${usedPrefix}buy armor*` : ''}${h ? `\nuntuk menambah ❤Healt ketik *${usedPrefix}heal*` : ''}
-  `.trim()
+${sw ? 'Kamu belum memiliki ⚔️Sword' : ''}${sw && a && h ? ',' : sw && a ? ' dan ' : ''} ${a ? '🥼Armor' : ''}${sw && a && h ? ' dan Minimal 50 ❤Healt' : h ? 'Minimal 50 ❤Healt' : ''}${sw ? `\nuntuk mendapatkan ⚔Sword ketik *${usedPrefix}craft sword*` : ''}${a ? `\nuntuk mendapatkan 🥼Armor ketik *${usedPrefix}buy armor*` : ''}${h ? `\nuntuk menambah ❤Healt ketik *${usedPrefix}heal*` : ''}
+  `
     return str
 }
 

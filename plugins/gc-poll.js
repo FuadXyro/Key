@@ -22,7 +22,7 @@ async function createPoll(conn, groupId, question, options) {
     poll: poll,
   }
 
-  await conn.sendMessage(groupId, pollMessage, 'extendedTextMessage')
+  await conn.sendMessage(groupId, pollMessage)
 }
 
 let handler = async (m, { conn, text }) => {

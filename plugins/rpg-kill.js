@@ -8,6 +8,10 @@ let handler = async (m, {
 let who
     if (m.isGroup) who = m.mentionedJid[0]
     else who = m.chat
+    if (global.db.data.users[who] && global.db.data.users[who].killCount && global.db.data.users[who].killCount >= 3) {
+        throw 'Anda tidak bisa mengekilnya dikarenakan dia terkill berkali-kali'
+    }
+
     if (!who) throw 'Tag salah satu lah'
     if (typeof db.data.users[who] == 'undefined') throw 'Pengguna tidak ada didalam data base'
     let monsters = [{
@@ -191,13 +195,13 @@ let who
         if (player.health < 0) {
             let pp = 'https://telegra.ph/file/ac048abb076b26dc5a9c1.jpg'
             let msg = `*@${pengirim}* Anda Mati Di Bunuh Oleh.
-            *@${m.mentionedJid[0].split`@`[0]}: ${monsterName}`
+            *@${m.mentionedJid[0].split`@`[0]}: ${monsterName}*`
             if (player.level > 0) {
                 if (player.sword > 0) {
-                    player.level -= 1
+                    player.level -= 10
                     player.sword -= 5
                     player.exp -= exp * 1
-                    msg += `\nLevel Anda Turun 1 Karena Mati Saat War!\nSword Anda Berkurang 5 Karena Mati Saat War!`
+                    msg += `\nLevel Anda Turun 10 Karena Mati Saat War!\nSword Anda Berkurang 5 Karena Mati Saat War!`
                 }
             }
             player.health = 100          
@@ -212,7 +216,7 @@ let who
 
 
 let pp =  'https://telegra.ph/file/f388d0c3f21395b1a285b.jpg'
-let pesan = `Berhasil mengekill*
+let pesan = `Berhasil mengekill
 *@${who.split('@')[0]}* Moster: ${monsterName}
       
 *@${pengirim}* Karakter: Manusia.
@@ -228,6 +232,7 @@ let pesan = `Berhasil mengekill*
 
 `
         await conn.reply(m.chat, pesan, m, { contextInfo: { mentionedJid: [m.sender, m.mentionedJid[0]], forwardingScore: 9999, isForwarded: true, externalAdReply: { mediaType: 1, mediaUrl: pp, title: '⌂ K I L L', body: '🌱┊ RPG WhatsApp Bot', thumbnail: { url: pp }, thumbnailUrl: pp, sourceUrl: false, renderLargerThumbnail: true }}})
+        global.db.data.users[who].killCount = (global.db.data.users[who].killCount || 0) + 1
     } else throw `Tunggu ${timers} Untuk Mengekill Lagi`
 }
 
