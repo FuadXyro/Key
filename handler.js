@@ -1460,21 +1460,23 @@ mediaType: 1,
 renderLargerThumbnail: null
 }}}, { quoted: m})
     let msgg = {
-    	unreg: `📮 Verifikasi Di perlukan untuk menambahkan user ke dalam database.   	
-  
-*Type Daftar*
-.daftar *(Daftar Menggunakan nama & umur)*
-.remail *(Daftar Menggunakan Email)*
-  
-◉ Daftar using name and age
-.daftar name.age
-*Contoh*
-.daftar FuadXy.20
+    	unreg: `📮 Verifikasi Diperlukan Untuk Menambahkan Pengguna ke dalam Database.
 
-◉ Register using email
-.remail <your email>
-*Contoh*
-.remail fuadxy99@gmail.com
+*Type Daftar:*
+.daftar (Daftar Menggunakan Nama & Umur)
+.remail (Daftar Menggunakan Email)
+
+*Contoh Penggunaan:*
+• Daftar Menggunakan Nama & Umur:
+*.daftar FuadXyro.20*
+
+• Daftar Menggunakan Email:
+*.remail fuadxy99@gmail.com*
+
+➩ Skip Verifikasi:
+*.guest*
+
+✨ *Catatan*: Pastikan untuk mengikuti format yang benar sesuai contoh yang diberikan untuk memastikan pendaftaran yang sukses.
 `
 }[type]
 if (msgg) return conn.sendMessage(m.chat, {
@@ -1482,7 +1484,7 @@ text: msgg,
 contextInfo: {
 externalAdReply: {
 title: `${namebot} By ${author}`,
-thumbnailUrl: null,
+thumbnailUrl: 'https://telegra.ph/file/af58277a4da517223dd55.jpg',
 sourceUrl: null,
 mediaType: 1,
 renderLargerThumbnail: true

@@ -91,7 +91,7 @@
       "emas": 4,
       "emerald": 1e+119,
       "esteh": 0,
-      "exp": 301737967314,
+      "exp": 301737968475,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -249,7 +249,7 @@
       "lelebakar": 0,
       "leleg": 0,
       "level": 5515,
-      "limit": 810,
+      "limit": 1412,
       "limitjoinfree": 1,
       "lion": 194,
       "lionexp": 0,
@@ -442,7 +442,9 @@
       "lastpractice": "2024-01-13T16:43:47.730Z",
       "lastyearly": 1705191121886,
       "hasRated": true,
-      "killCount": 1
+      "killCount": 1,
+      "lastbonus": 1705676097783,
+      "bonus": 1705676098043
     },
     "6282316828450@s.whatsapp.net": {
       "afk": -1,
@@ -8184,7 +8186,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 936,
+      "exp": 943,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -12881,7 +12883,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 77,
+      "exp": 80,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -13039,7 +13041,7 @@
       "lelebakar": 0,
       "leleg": 0,
       "level": 0,
-      "limit": 25,
+      "limit": 24,
       "limitjoinfree": 1,
       "lion": 0,
       "lionexp": 0,
@@ -14541,7 +14543,7 @@
       "babihutan": 104,
       "babipanggang": 0,
       "bandage": 0,
-      "bank": 9007521261667830,
+      "bank": 9007521952781668,
       "banned": false,
       "BannedReason": "",
       "Banneduser": false,
@@ -14586,10 +14588,10 @@
       "dragon": 97,
       "dragonexp": 0,
       "dragonlastfeed": 0,
-      "emas": 46,
-      "emerald": 10000147812,
+      "emas": 48,
+      "emerald": 10000148104,
       "esteh": 0,
-      "exp": 71750765438,
+      "exp": 71750914873,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -14617,7 +14619,7 @@
       "harimau": 105,
       "haus": 100,
       "healt": 20,
-      "health": 19994960,
+      "health": 19994886,
       "healtmonster": 100,
       "hero": 1,
       "herolastclaim": 0,
@@ -14628,7 +14630,7 @@
       "ikan": 518,
       "ikanbakar": 0,
       "intelligence": 10,
-      "iron": 20954644,
+      "iron": 20955242,
       "jagung": 0,
       "jagungbakar": 0,
       "jeruk": 3885,
@@ -14705,8 +14707,8 @@
       "lastfishing": 0,
       "lastgojek": 0,
       "lastgrab": 0,
-      "lasthourly": 1705666743315,
-      "lasthunt": 1705666869411,
+      "lasthourly": 1705674950660,
+      "lasthunt": 1705674914845,
       "lastjb": 0,
       "lastkill": 1705660175012,
       "lastlink": 0,
@@ -14741,13 +14743,13 @@
       "lastweekly": 1705190494108,
       "lastwork": 0,
       "lbars": "[▒▒▒▒▒▒▒▒▒]",
-      "legendary": 999995822616339,
+      "legendary": 999995822616394,
       "lele": 225,
       "leleb": 0,
       "lelebakar": 0,
       "leleg": 0,
       "level": 3152,
-      "limit": 36000000000000850,
+      "limit": 36000000000000976,
       "limitjoinfree": 1,
       "lion": 179,
       "lionexp": 0,
@@ -14767,7 +14769,7 @@
       "mana": 20,
       "mangga": 3480,
       "misi": "Melindungi Hutan dari PerambahanMenjelajahi Lembah TerlarangMenjaga Perbatasan WilayahMengembalikan Permata SuciMemusnahkan Desa GoblinMenjelajahi Gua MisteriusMengungkap Misteri KunoMembebaskan Desa Budaya dari Kutukan",
-      "money": 2064511,
+      "money": 0,
       "monyet": 46,
       "mythic": 999989008650048,
       "naga": 0,
@@ -14797,7 +14799,7 @@
       "pillhero": 0,
       "pisang": 3697,
       "pointxp": 0,
-      "potion": 741651,
+      "potion": 742650,
       "premium": true,
       "premiumTime": 1720330911545,
       "ramuan": 0,
@@ -14856,7 +14858,7 @@
       "steak": 0,
       "stick": 0,
       "strength": 30,
-      "string": 30928215,
+      "string": 30928218,
       "stroberi": 0,
       "superior": 0,
       "suplabu": 0,
@@ -14864,7 +14866,7 @@
       "sword": 1,
       "sworddurability": 40,
       "tigame": 50,
-      "tiketcoin": 88,
+      "tiketcoin": 89,
       "title": 0,
       "tomat": 0,
       "tprem": 0,
@@ -14929,7 +14931,7 @@
       "ref_code": "fdffXLSe97B",
       "ref_count": 0,
       "lastGameTime": 0,
-      "login": 1705584097088,
+      "login": 1705674933474,
       "lastbossbattle": "2024-01-16T13:12:05.411Z",
       "bosbattle": 1705414325411,
       "lastpractice": "2024-01-14T23:05:12.373Z",
@@ -19904,7 +19906,7 @@
       "mana": 20,
       "mangga": 0,
       "misi": "",
-      "money": 707199,
+      "money": 688178,
       "monyet": 0,
       "mythic": 0,
       "naga": 0,
@@ -20505,12 +20507,12 @@
       "anakphonix": 0,
       "anakrubah": 0,
       "anakserigala": 0,
-      "anggur": 1963,
+      "anggur": 2428,
       "anjing": 0,
       "anjinglastclaim": 0,
       "antispam": 0,
       "antispamlastclaim": 0,
-      "apel": 2434,
+      "apel": 2625,
       "aqua": 20000000,
       "arc": 0,
       "arcdurability": 0,
@@ -20532,7 +20534,7 @@
       "babihutan": 95,
       "babipanggang": 0,
       "bandage": 0,
-      "bank": 9.8992656399429e+25,
+      "bank": 9.899265639942937e+25,
       "banned": false,
       "BannedReason": "",
       "Banneduser": false,
@@ -20542,11 +20544,11 @@
       "bawalbakar": 0,
       "bayam": 0,
       "berlian": 100,
-      "bibitanggur": 19996000,
-      "bibitapel": 19996000,
-      "bibitjeruk": 19996000,
-      "bibitmangga": 19996000,
-      "bibitpisang": 19996000,
+      "bibitanggur": 19995000,
+      "bibitapel": 19995000,
+      "bibitjeruk": 19995000,
+      "bibitmangga": 19995000,
+      "bibitpisang": 19995000,
       "botol": 0,
       "bow": 0,
       "bowdurability": 0,
@@ -20565,11 +20567,11 @@
       "clay": 0,
       "coal": 0,
       "coin": 0,
-      "common": 1000000064553379,
+      "common": 1000000064628980,
       "crystal": 297,
       "cumi": 0,
       "cupon": 0,
-      "diamond": 10001748380,
+      "diamond": 10003385237,
       "dog": 80290,
       "dogexp": 0,
       "doglastfeed": 0,
@@ -20577,10 +20579,10 @@
       "dragon": 55926,
       "dragonexp": 0,
       "dragonlastfeed": 0,
-      "emas": 90,
-      "emerald": 119665845,
+      "emas": 92,
+      "emerald": 135900273,
       "esteh": 0,
-      "exp": 79709327567,
+      "exp": 79849358202,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -20598,7 +20600,7 @@
       "gardenboxs": 20000000,
       "gems": 0,
       "glass": 0,
-      "gold": 31824913,
+      "gold": 32266367,
       "griffin": 80177,
       "griffinexp": 0,
       "griffinlastclaim": 0,
@@ -20608,7 +20610,7 @@
       "harimau": 81,
       "haus": 100,
       "healt": 8,
-      "health": 19995829,
+      "health": 19995596,
       "healtmonster": 100,
       "hero": 1,
       "herolastclaim": 0,
@@ -20619,10 +20621,10 @@
       "ikan": 133,
       "ikanbakar": 0,
       "intelligence": 10,
-      "iron": 12620721,
+      "iron": 12671266,
       "jagung": 0,
       "jagungbakar": 0,
-      "jeruk": 2506,
+      "jeruk": 3176,
       "job": "Pengangguran",
       "joinlimit": 3,
       "judilast": 0,
@@ -20682,7 +20684,7 @@
       "laper": 100,
       "lastadventure": 1705586753589,
       "lastberbru": 1705656694010,
-      "lastberkebon": 1705663716704,
+      "lastberkebon": 1705675981203,
       "lastbunga": 0,
       "lastbunuhi": 0,
       "lastclaim": 1705668426404,
@@ -20696,10 +20698,10 @@
       "lastfishing": 0,
       "lastgojek": 0,
       "lastgrab": 0,
-      "lasthourly": 1705666727982,
-      "lasthunt": 1705666723684,
+      "lasthourly": 1705674154075,
+      "lasthunt": 1705674099358,
       "lastjb": 0,
-      "lastkill": 1705666970303,
+      "lastkill": 1705676524555,
       "lastlink": 0,
       "lastlumber": 0,
       "lastmancingeasy": 0,
@@ -20707,7 +20709,7 @@
       "lastmancinghard": 0,
       "lastmancingnormal": 0,
       "lastmining": 1705586777693,
-      "lastmisi": 1705666749024,
+      "lastmisi": 1705674948756,
       "lastmonthly": 1703951613070,
       "lastmulung": 0,
       "lastnambang": 0,
@@ -20718,7 +20720,7 @@
       "lastpekerjaan": 0,
       "lastpotionclaim": 0,
       "lastramuanclaim": 0,
-      "lastrob": 1705666932167,
+      "lastrob": 1705674970302,
       "lastroket": 0,
       "lastseen": 0,
       "lastSetStatus": 0,
@@ -20732,13 +20734,13 @@
       "lastweekly": 1705142051553,
       "lastwork": 0,
       "lbars": "[▒▒▒▒▒▒▒▒▒]",
-      "legendary": 979988778497719,
+      "legendary": 979988778319579,
       "lele": 88,
       "leleb": 0,
       "lelebakar": 0,
       "leleg": 0,
       "level": 3282,
-      "limit": 48000000000000984,
+      "limit": 48000000000001560,
       "limitjoinfree": 1,
       "lion": 93223,
       "lionexp": 0,
@@ -20756,11 +20758,11 @@
       "makananphonix": 0,
       "makananserigala": 0,
       "mana": 20,
-      "mangga": 2137,
+      "mangga": 2630,
       "misi": "Menjaga Hutan Hujan dari Pembalakan LiarMemusnahkan Desa GoblinMengungkap Misteri KunoMemperbaiki Mesin WaktuMemusnahkan Desa GoblinMenjaga Perbatasan WilayahMenghadapi Makhluk MitologiMemancing Ikan RaksasaMenangkap Monster LangkaMenemukan Harta Karun Kuno",
-      "money": 52448685,
+      "money": 62912691,
       "monyet": 124,
-      "mythic": 899890012688192,
+      "mythic": 899890012585843,
       "naga": 0,
       "nagalastclaim": 0,
       "name": "Vinzz",
@@ -20778,7 +20780,7 @@
       "pausbakar": 0,
       "pc": 0,
       "pepesikan": 0,
-      "pet": 25692114,
+      "pet": 25725994,
       "phonix": 79868,
       "phonixexp": 0,
       "phonixlastclaim": 0,
@@ -20786,9 +20788,9 @@
       "pickaxe": 1,
       "pickaxedurability": 7,
       "pillhero": 0,
-      "pisang": 1554,
+      "pisang": 1925,
       "pointxp": 0,
-      "potion": 72259922,
+      "potion": 72325866,
       "premium": true,
       "premiumTime": 1720330897440,
       "ramuan": 0,
@@ -20809,7 +20811,7 @@
       "rhinoceros": 62455,
       "rhinocerosexp": 0,
       "rhinoceroslastfeed": 0,
-      "rock": 85163191,
+      "rock": 85243290,
       "roket": 0,
       "role": "Master 숒 × Legendary 숒",
       "roti": 0,
@@ -20847,7 +20849,7 @@
       "steak": 0,
       "stick": 0,
       "strength": 30,
-      "string": 85153988,
+      "string": 85234241,
       "stroberi": 0,
       "superior": 0,
       "suplabu": 0,
@@ -20855,18 +20857,18 @@
       "sword": 1,
       "sworddurability": 40,
       "tigame": 50,
-      "tiketcoin": 60,
+      "tiketcoin": 63,
       "title": 0,
       "tomat": 0,
       "tprem": 0,
-      "trash": 8369506094,
+      "trash": 8384194446,
       "trofi": 0,
       "troopcamp": 0,
       "tumiskangkung": 0,
       "udang": 200,
       "udangbakar": 0,
       "umpan": 0,
-      "uncommon": 1000000043321148,
+      "uncommon": 1000000043373830,
       "unreglast": 0,
       "upgrader": 0,
       "vodka": 0,
@@ -20877,7 +20879,7 @@
       "wolf": 79567,
       "wolfexp": 0,
       "wolflastfeed": 0,
-      "wood": 85171885,
+      "wood": 85252700,
       "wortel": 0,
       "limitjoin": 0,
       "akinator": {
@@ -20900,7 +20902,7 @@
       "healthmonster": 0,
       "kyubiexp": 0,
       "kyubilastfeed": 0,
-      "lastbansos": 1705668655044,
+      "lastbansos": 1705676749035,
       "lastcodereg": 0,
       "lastgift": 0,
       "lastIstigfar": 0,
@@ -20918,12 +20920,14 @@
       "weeklypass": 1703948741699,
       "pedang": 0,
       "lastGameTime": 0,
-      "login": 1705586792303,
+      "login": 1705673570526,
       "lastbossbattle": "2024-01-17T12:21:35.468Z",
       "bosbattle": 1705497695468,
       "lastpractice": "2024-01-14T23:05:47.222Z",
       "lastyearly": 1705220413193,
-      "killCount": 1
+      "killCount": 1,
+      "lastbonus": 1705676130551,
+      "bonus": 1705676130843
     },
     "6289525985957@s.whatsapp.net": {
       "afk": -1,
@@ -21443,7 +21447,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 272,
+      "exp": 275,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -30601,7 +30605,7 @@
       "babihutan": 0,
       "babipanggang": 0,
       "bandage": 0,
-      "bank": 9017199263380626,
+      "bank": 9017199284826792,
       "banned": false,
       "BannedReason": "",
       "Banneduser": false,
@@ -30646,10 +30650,10 @@
       "dragon": 0,
       "dragonexp": 0,
       "dragonlastfeed": 0,
-      "emas": 2,
-      "emerald": 0,
+      "emas": 4,
+      "emerald": 1,
       "esteh": 0,
-      "exp": 320880,
+      "exp": 342859,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -30667,7 +30671,7 @@
       "gardenboxs": 0,
       "gems": 0,
       "glass": 0,
-      "gold": 0,
+      "gold": 1,
       "griffin": 0,
       "griffinexp": 0,
       "griffinlastclaim": 0,
@@ -30688,7 +30692,7 @@
       "ikan": 0,
       "ikanbakar": 0,
       "intelligence": 10,
-      "iron": 2,
+      "iron": 7,
       "jagung": 0,
       "jagungbakar": 0,
       "jeruk": 0,
@@ -30754,7 +30758,7 @@
       "lastberkebon": 0,
       "lastbunga": 0,
       "lastbunuhi": 0,
-      "lastclaim": 1705575661313,
+      "lastclaim": 1705677078137,
       "lastcode": 0,
       "lastcrusade": 0,
       "lastdagang": 0,
@@ -30765,7 +30769,7 @@
       "lastfishing": 0,
       "lastgojek": 0,
       "lastgrab": 0,
-      "lasthourly": 1705499103437,
+      "lasthourly": 1705677123382,
       "lasthunt": 1705243175454,
       "lastjb": 0,
       "lastkill": 1705243456163,
@@ -30787,7 +30791,7 @@
       "lastpekerjaan": 0,
       "lastpotionclaim": 0,
       "lastramuanclaim": 0,
-      "lastrob": 1705236887929,
+      "lastrob": 1705676689147,
       "lastroket": 0,
       "lastseen": 0,
       "lastSetStatus": 0,
@@ -30807,7 +30811,7 @@
       "lelebakar": 0,
       "leleg": 0,
       "level": 0,
-      "limit": 237,
+      "limit": 432,
       "limitjoinfree": 1,
       "lion": 0,
       "lionexp": 0,
@@ -30827,9 +30831,9 @@
       "mana": 20,
       "mangga": 0,
       "misi": "",
-      "money": 0,
+      "money": -2970229,
       "monyet": 0,
-      "mythic": 3,
+      "mythic": 0,
       "naga": 0,
       "nagalastclaim": 0,
       "name": "Sansuwi",
@@ -30857,7 +30861,7 @@
       "pillhero": 0,
       "pisang": 0,
       "pointxp": 0,
-      "potion": 54,
+      "potion": 64,
       "premium": false,
       "premiumTime": 0,
       "ramuan": 0,
@@ -30878,7 +30882,7 @@
       "rhinoceros": 0,
       "rhinocerosexp": 0,
       "rhinoceroslastfeed": 0,
-      "rock": 0,
+      "rock": 2,
       "roket": 0,
       "role": "Newbie ㋡",
       "roti": 0,
@@ -30916,7 +30920,7 @@
       "steak": 0,
       "stick": 0,
       "strength": 30,
-      "string": 3,
+      "string": 8,
       "stroberi": 0,
       "superior": 0,
       "suplabu": 0,
@@ -30928,7 +30932,7 @@
       "title": 0,
       "tomat": 0,
       "tprem": 0,
-      "trash": 0,
+      "trash": 195,
       "trofi": 0,
       "troopcamp": 0,
       "tumiskangkung": 0,
@@ -30946,7 +30950,7 @@
       "wolf": 0,
       "wolfexp": 0,
       "wolflastfeed": 0,
-      "wood": 0,
+      "wood": 1,
       "wortel": 0,
       "limitjoin": 0,
       "akinator": {
@@ -30969,7 +30973,7 @@
       "healthmonster": 0,
       "kyubiexp": 0,
       "kyubilastfeed": 0,
-      "lastbansos": 1705668543236,
+      "lastbansos": 1705676730429,
       "lastcodereg": 0,
       "lastgift": 0,
       "lastIstigfar": 0,
@@ -30985,7 +30989,10 @@
       "robo": 0,
       "roboxp": 0,
       "pedang": 0,
-      "lastyearly": 1705501335262
+      "lastyearly": 1705501335262,
+      "lastbonus": 1705676284381,
+      "bonus": 1705676284682,
+      "killCount": 1
     },
     "6283152459470@s.whatsapp.net": {
       "afk": -1,
@@ -40260,7 +40267,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 167,
+      "exp": 194,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -47485,7 +47492,7 @@
       "crystal": 0,
       "cumi": 0,
       "cupon": 0,
-      "diamond": 29258,
+      "diamond": 236819,
       "dog": 0,
       "dogexp": 0,
       "doglastfeed": 0,
@@ -47494,9 +47501,9 @@
       "dragonexp": 0,
       "dragonlastfeed": 0,
       "emas": 2,
-      "emerald": 23617,
+      "emerald": 1564702,
       "esteh": 0,
-      "exp": 82290709,
+      "exp": 155825894,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -47524,7 +47531,7 @@
       "harimau": 0,
       "haus": 100,
       "healt": 100,
-      "health": 70,
+      "health": 60,
       "healtmonster": 100,
       "hero": 1,
       "herolastclaim": 0,
@@ -47615,7 +47622,7 @@
       "lasthourly": 1705586796403,
       "lasthunt": 1705665717187,
       "lastjb": 0,
-      "lastkill": 0,
+      "lastkill": 1705673355375,
       "lastlink": 0,
       "lastlumber": 0,
       "lastmancingeasy": 0,
@@ -47654,7 +47661,7 @@
       "lelebakar": 0,
       "leleg": 0,
       "level": 178,
-      "limit": 205,
+      "limit": 204,
       "limitjoinfree": 1,
       "lion": 0,
       "lionexp": 0,
@@ -47674,7 +47681,7 @@
       "mana": 20,
       "mangga": 0,
       "misi": "",
-      "money": 9007198979896135,
+      "money": 9007248979896232,
       "monyet": 0,
       "mythic": 99999999812511,
       "naga": 0,
@@ -47832,7 +47839,8 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "pedang": 0
+      "pedang": 0,
+      "killCount": 1
     },
     "6285175264974@s.whatsapp.net": {
       "afk": -1,
@@ -50034,9 +50042,9 @@
       "dragonexp": 0,
       "dragonlastfeed": 0,
       "emas": 0,
-      "emerald": 5418798,
+      "emerald": 5418990,
       "esteh": 0,
-      "exp": 8804906,
+      "exp": 12903857,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -50075,7 +50083,7 @@
       "ikan": 0,
       "ikanbakar": 0,
       "intelligence": 10,
-      "iron": 0,
+      "iron": 2112,
       "jagung": 0,
       "jagungbakar": 0,
       "jeruk": 0,
@@ -50188,13 +50196,13 @@
       "lastweekly": 0,
       "lastwork": 0,
       "lbars": "[▒▒▒▒▒▒▒▒▒]",
-      "legendary": 0,
+      "legendary": 2,
       "lele": 0,
       "leleb": 0,
       "lelebakar": 0,
       "leleg": 0,
       "level": 95,
-      "limit": 49,
+      "limit": 136,
       "limitjoinfree": 1,
       "lion": 0,
       "lionexp": 0,
@@ -50214,7 +50222,7 @@
       "mana": 20,
       "mangga": 0,
       "misi": "",
-      "money": 79709,
+      "money": 592623796,
       "monyet": 0,
       "mythic": 0,
       "naga": 0,
@@ -50244,7 +50252,7 @@
       "pillhero": 0,
       "pisang": 0,
       "pointxp": 0,
-      "potion": 10,
+      "potion": 764,
       "premium": false,
       "premiumTime": 0,
       "ramuan": 0,
@@ -50260,7 +50268,7 @@
       "ramuanserigalalast": 0,
       "registered": true,
       "reglast": 0,
-      "regTime": 1705245633129,
+      "regTime": 1705678263018,
       "rendang": 0,
       "rhinoceros": 0,
       "rhinocerosexp": 0,
@@ -50372,7 +50380,10 @@
       "robo": 0,
       "roboxp": 0,
       "hasRated": true,
-      "killCount": 2
+      "killCount": 2,
+      "lastbonus": 1705676234743,
+      "bonus": 1705676235004,
+      "login": 1705677037159
     },
     "6281211037493@s.whatsapp.net": {
       "afk": -1,
@@ -50802,7 +50813,7 @@
       "roboxp": 0
     },
     "628388767485@s.whatsapp.net": {
-      "afk": -1,
+      "afk": 1705676404945,
       "afkReason": "",
       "age": 16,
       "agility": 16,
@@ -50890,9 +50901,9 @@
       "dragonexp": 0,
       "dragonlastfeed": 0,
       "emas": 0,
-      "emerald": 4369670,
+      "emerald": 4369780,
       "esteh": 0,
-      "exp": 67377348,
+      "exp": 71070826,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -50931,7 +50942,7 @@
       "ikan": 0,
       "ikanbakar": 0,
       "intelligence": 10,
-      "iron": 50,
+      "iron": 2869,
       "jagung": 0,
       "jagungbakar": 0,
       "jeruk": 0,
@@ -51030,7 +51041,7 @@
       "lastpekerjaan": 0,
       "lastpotionclaim": 0,
       "lastramuanclaim": 0,
-      "lastrob": 1705490473637,
+      "lastrob": 1705673137361,
       "lastroket": 0,
       "lastseen": 0,
       "lastSetStatus": 0,
@@ -51044,13 +51055,13 @@
       "lastweekly": 0,
       "lastwork": 0,
       "lbars": "[▒▒▒▒▒▒▒▒▒]",
-      "legendary": 11100005,
+      "legendary": 11100018,
       "lele": 0,
       "leleb": 0,
       "lelebakar": 0,
       "leleg": 0,
       "level": 35,
-      "limit": 291,
+      "limit": 341,
       "limitjoinfree": 1,
       "lion": 0,
       "lionexp": 0,
@@ -51070,7 +51081,7 @@
       "mana": 20,
       "mangga": 0,
       "misi": "",
-      "money": 479980727814,
+      "money": 480180158957,
       "monyet": 0,
       "mythic": 100000000000,
       "naga": 0,
@@ -51100,7 +51111,7 @@
       "pillhero": 0,
       "pisang": 0,
       "pointxp": 0,
-      "potion": 65,
+      "potion": 906,
       "premium": false,
       "premiumTime": 0,
       "ramuan": 0,
@@ -51227,10 +51238,10 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "login": 1705220380422,
+      "login": 1705673592966,
       "lastyearly": 1705220424038,
       "pedang": 0,
-      "killCount": 1
+      "killCount": 2
     },
     "6285882876694@s.whatsapp.net": {
       "afk": -1,
@@ -54998,7 +55009,7 @@
       "babihutan": 0,
       "babipanggang": 0,
       "bandage": 0,
-      "bank": 9133619,
+      "bank": 37224974,
       "banned": false,
       "BannedReason": "",
       "Banneduser": false,
@@ -55035,7 +55046,7 @@
       "crystal": 0,
       "cumi": 0,
       "cupon": 0,
-      "diamond": 1368096,
+      "diamond": 1756878,
       "dog": 0,
       "dogexp": 0,
       "doglastfeed": 0,
@@ -55044,9 +55055,9 @@
       "dragonexp": 0,
       "dragonlastfeed": 0,
       "emas": 2,
-      "emerald": 11621371,
+      "emerald": 18660826,
       "esteh": 0,
-      "exp": 190716702,
+      "exp": 199783997,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -55074,7 +55085,7 @@
       "harimau": 0,
       "haus": 100,
       "healt": 100,
-      "health": 100,
+      "health": 7,
       "healtmonster": 100,
       "hero": 1,
       "herolastclaim": 0,
@@ -55165,7 +55176,7 @@
       "lasthourly": 1705668174017,
       "lasthunt": 1705667467919,
       "lastjb": 0,
-      "lastkill": 1705669785813,
+      "lastkill": 1705673333953,
       "lastlink": 0,
       "lastlumber": 0,
       "lastmancingeasy": 0,
@@ -55204,7 +55215,7 @@
       "lelebakar": 0,
       "leleg": 0,
       "level": 316,
-      "limit": 298,
+      "limit": 296,
       "limitjoinfree": 1,
       "lion": 0,
       "lionexp": 0,
@@ -55224,7 +55235,7 @@
       "mana": 20,
       "mangga": 0,
       "misi": "",
-      "money": 27935652,
+      "money": 0,
       "monyet": 0,
       "mythic": 1015640,
       "naga": 0,
@@ -55381,7 +55392,7 @@
       "psepick": 0,
       "robo": 0,
       "roboxp": 0,
-      "killCount": 1,
+      "killCount": 2,
       "login": 1705668146670,
       "lastyearly": 1705668216285
     },
@@ -55476,7 +55487,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 3,
+      "exp": 47,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -55752,7 +55763,7 @@
       "sworddurability": 0,
       "tigame": 50,
       "tiketcoin": 0,
-      "title": "",
+      "title": 0,
       "tomat": 0,
       "tprem": 0,
       "trash": 0,
@@ -55786,7 +55797,31 @@
         "progression": null,
         "step": null,
         "soal": null
-      }
+      },
+      "kingdom": true,
+      "premiumDate": -1,
+      "catexp": 0,
+      "enchant": 0,
+      "glimit": 20,
+      "glory": 0,
+      "healthmonster": 0,
+      "kyubiexp": 0,
+      "kyubilastfeed": 0,
+      "lastbansos": 0,
+      "lastcodereg": 0,
+      "lastgift": 0,
+      "lastIstigfar": 0,
+      "lastrampok": 0,
+      "lastsda": 0,
+      "lastwar": 0,
+      "pancing": 0,
+      "pertambangan": 0,
+      "pertanian": 0,
+      "petFood": 0,
+      "psenjata": 0,
+      "psepick": 0,
+      "robo": 0,
+      "roboxp": 0
     },
     "6285935664433@s.whatsapp.net": {
       "afk": -1,
@@ -56706,10 +56741,10 @@
       "dragon": 0,
       "dragonexp": 0,
       "dragonlastfeed": 0,
-      "emas": 0,
+      "emas": 2,
       "emerald": 0,
       "esteh": 0,
-      "exp": 10017,
+      "exp": 85852,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -56737,7 +56772,7 @@
       "harimau": 0,
       "haus": 100,
       "healt": 100,
-      "health": 100,
+      "health": 26,
       "healtmonster": 100,
       "hero": 1,
       "herolastclaim": 0,
@@ -56748,7 +56783,7 @@
       "ikan": 0,
       "ikanbakar": 0,
       "intelligence": 10,
-      "iron": 0,
+      "iron": 2,
       "jagung": 0,
       "jagungbakar": 0,
       "jeruk": 0,
@@ -56825,8 +56860,8 @@
       "lastfishing": 0,
       "lastgojek": 0,
       "lastgrab": 0,
-      "lasthourly": 0,
-      "lasthunt": 0,
+      "lasthourly": 1705673200055,
+      "lasthunt": 1705673146946,
       "lastjb": 0,
       "lastkill": 0,
       "lastlink": 0,
@@ -56837,7 +56872,7 @@
       "lastmancingnormal": 0,
       "lastmining": 0,
       "lastmisi": 0,
-      "lastmonthly": 0,
+      "lastmonthly": 1705673138328,
       "lastmulung": 0,
       "lastnambang": 0,
       "lastnebang": 0,
@@ -56858,10 +56893,10 @@
       "lastturu": 0,
       "lastwarpet": 0,
       "lastweaponclaim": 0,
-      "lastweekly": 0,
+      "lastweekly": 1705673162533,
       "lastwork": 0,
       "lbars": "[▒▒▒▒▒▒▒▒▒]",
-      "legendary": 0,
+      "legendary": 2,
       "lele": 0,
       "leleb": 0,
       "lelebakar": 0,
@@ -56887,9 +56922,9 @@
       "mana": 20,
       "mangga": 0,
       "misi": "",
-      "money": 4999,
+      "money": 0,
       "monyet": 0,
-      "mythic": 0,
+      "mythic": 3,
       "naga": 0,
       "nagalastclaim": 0,
       "name": "rizky",
@@ -56917,7 +56952,7 @@
       "pillhero": 0,
       "pisang": 0,
       "pointxp": 0,
-      "potion": 15,
+      "potion": 39,
       "premium": false,
       "premiumTime": 0,
       "ramuan": 0,
@@ -56976,7 +57011,7 @@
       "steak": 0,
       "stick": 0,
       "strength": 30,
-      "string": 0,
+      "string": 3,
       "stroberi": 0,
       "superior": 0,
       "suplabu": 0,
@@ -56984,8 +57019,8 @@
       "sword": 0,
       "sworddurability": 0,
       "tigame": 50,
-      "tiketcoin": 0,
-      "title": "",
+      "tiketcoin": 1,
+      "title": 0,
       "tomat": 0,
       "tprem": 0,
       "trash": 0,
@@ -57019,7 +57054,31 @@
         "progression": null,
         "step": null,
         "soal": null
-      }
+      },
+      "kingdom": true,
+      "premiumDate": -1,
+      "catexp": 0,
+      "enchant": 0,
+      "glimit": 20,
+      "glory": 0,
+      "healthmonster": 0,
+      "kyubiexp": 0,
+      "kyubilastfeed": 0,
+      "lastbansos": 0,
+      "lastcodereg": 0,
+      "lastgift": 0,
+      "lastIstigfar": 0,
+      "lastrampok": 0,
+      "lastsda": 0,
+      "lastwar": 0,
+      "pancing": 0,
+      "pertambangan": 0,
+      "pertanian": 0,
+      "petFood": 0,
+      "psenjata": 0,
+      "psepick": 0,
+      "robo": 0,
+      "roboxp": 0
     },
     "6285271500042@s.whatsapp.net": {
       "afk": -1,
@@ -57112,7 +57171,7 @@
       "emas": 0,
       "emerald": 0,
       "esteh": 0,
-      "exp": 8,
+      "exp": 123,
       "expg": 0,
       "exphero": 0,
       "expired": 0,
@@ -57388,7 +57447,7 @@
       "sworddurability": 0,
       "tigame": 50,
       "tiketcoin": 0,
-      "title": "",
+      "title": 0,
       "tomat": 0,
       "tprem": 0,
       "trash": 0,
@@ -57422,7 +57481,34 @@
         "progression": null,
         "step": null,
         "soal": null
-      }
+      },
+      "kingdom": true,
+      "premiumDate": -1,
+      "catexp": 0,
+      "enchant": 0,
+      "glimit": 20,
+      "glory": 0,
+      "healthmonster": 0,
+      "kyubiexp": 0,
+      "kyubilastfeed": 0,
+      "lastbansos": 0,
+      "lastcodereg": 0,
+      "lastgift": 0,
+      "lastIstigfar": 0,
+      "lastrampok": 0,
+      "lastsda": 0,
+      "lastwar": 0,
+      "pancing": 0,
+      "pertambangan": 0,
+      "pertanian": 0,
+      "petFood": 0,
+      "psenjata": 0,
+      "psepick": 0,
+      "robo": 0,
+      "roboxp": 0,
+      "email": "lynn15@gmail.com",
+      "code": "164-783",
+      "codeExpire": 1705675249887
     }
   },
   "chats": {
@@ -59259,14 +59345,45 @@
       "premnsfw": false,
       "adminOnly": false,
       "owneronly": false
+    },
+    "6285271500042@s.whatsapp.net": {
+      "isBanned": false,
+      "antiLinkGc": false,
+      "antiLinkTik": false,
+      "antiLinkTel": false,
+      "antiLinkIg": false,
+      "antiLinkFb": false,
+      "antiLinkHttp": false,
+      "antiLinkYt": false,
+      "antiSpam": false,
+      "antiStiker": false,
+      "antiVirtex": false,
+      "virtex": false,
+      "autoJoin": false,
+      "antiToxic": false,
+      "anticall": false,
+      "welcome": true,
+      "detect": false,
+      "sWelcome": "",
+      "sBye": "",
+      "sPromote": "",
+      "sDemote": "",
+      "delete": false,
+      "viewonce": false,
+      "simi": false,
+      "expired": 0,
+      "nsfw": false,
+      "premnsfw": false,
+      "adminOnly": false,
+      "owneronly": false
     }
   },
   "stats": {
     "menu.js": {
-      "total": 229,
-      "success": 223,
-      "last": 1705672766286,
-      "lastSuccess": 1705672766286
+      "total": 233,
+      "success": 227,
+      "last": 1705678436543,
+      "lastSuccess": 1705678436543
     },
     "ro-exec2.js": {
       "total": 80,
@@ -59275,10 +59392,10 @@
       "lastSuccess": 1705502971339
     },
     "ro-exec.js": {
-      "total": 340,
-      "success": 339,
-      "last": 1705671824488,
-      "lastSuccess": 1705671824488
+      "total": 342,
+      "success": 341,
+      "last": 1705678431374,
+      "lastSuccess": 1705678431374
     },
     "ress-tesBot.js": {
       "total": 122,
@@ -59287,16 +59404,16 @@
       "lastSuccess": 1705670351279
     },
     "ro-sfp.js": {
-      "total": 557,
-      "success": 557,
-      "last": 1705672735043,
-      "lastSuccess": 1705672735043
+      "total": 569,
+      "success": 569,
+      "last": 1705676569430,
+      "lastSuccess": 1705676569430
     },
     "ro-df.js": {
-      "total": 197,
-      "success": 197,
-      "last": 1705672727031,
-      "lastSuccess": 1705672727031
+      "total": 204,
+      "success": 204,
+      "last": 1705676554875,
+      "lastSuccess": 1705676554875
     },
     "ro-sf.js": {
       "total": 16,
@@ -59323,10 +59440,10 @@
       "lastSuccess": 1702814202094
     },
     "adv-update.js": {
-      "total": 49,
-      "success": 47,
-      "last": 1705504051159,
-      "lastSuccess": 1705504051159
+      "total": 50,
+      "success": 48,
+      "last": 1705672954976,
+      "lastSuccess": 1705672954976
     },
     "bot-join.js": {
       "total": 21,
@@ -59335,16 +59452,16 @@
       "lastSuccess": 1704630848333
     },
     "ro-gp.js": {
-      "total": 175,
-      "success": 174,
-      "last": 1705670383284,
-      "lastSuccess": 1705670383284
+      "total": 183,
+      "success": 182,
+      "last": 1705676760025,
+      "lastSuccess": 1705676760025
     },
     "i-totalfitur.js": {
-      "total": 22,
-      "success": 22,
-      "last": 1705573300036,
-      "lastSuccess": 1705573300036
+      "total": 24,
+      "success": 24,
+      "last": 1705676941359,
+      "lastSuccess": 1705676941359
     },
     "dl-ig.js": {
       "total": 18,
@@ -59389,10 +59506,10 @@
       "lastSuccess": 1705224660919
     },
     "dl-ytv.js": {
-      "total": 53,
-      "success": 46,
-      "last": 1705408715260,
-      "lastSuccess": 1705408715260
+      "total": 54,
+      "success": 47,
+      "last": 1705674427350,
+      "lastSuccess": 1705674427350
     },
     "yt-search.js": {
       "total": 4,
@@ -59437,10 +59554,10 @@
       "lastSuccess": 1705586599470
     },
     "yt-play.js": {
-      "total": 148,
-      "success": 122,
-      "last": 1705655249198,
-      "lastSuccess": 1705655249198
+      "total": 151,
+      "success": 125,
+      "last": 1705674206089,
+      "lastSuccess": 1705674206089
     },
     "src-spotify.js": {
       "total": 7,
@@ -59455,10 +59572,10 @@
       "lastSuccess": 1703166626919
     },
     "menu-all.js": {
-      "total": 85,
-      "success": 85,
-      "last": 1705667971919,
-      "lastSuccess": 1705667971919
+      "total": 87,
+      "success": 87,
+      "last": 1705678209400,
+      "lastSuccess": 1705678209400
     },
     "xp-daftar.js": {
       "total": 66,
@@ -59467,22 +59584,22 @@
       "lastSuccess": 1705671646851
     },
     "rpg-daily.js": {
-      "total": 130,
-      "success": 63,
-      "last": 1705670940394,
-      "lastSuccess": 1705670940394
+      "total": 139,
+      "success": 64,
+      "last": 1705677116809,
+      "lastSuccess": 1705677078137
     },
     "rpg-monthly.js": {
-      "total": 55,
-      "success": 55,
-      "last": 1705668189226,
-      "lastSuccess": 1705668189226
+      "total": 57,
+      "success": 57,
+      "last": 1705674958797,
+      "lastSuccess": 1705674958797
     },
     "rpg-weekly.js": {
-      "total": 71,
-      "success": 21,
-      "last": 1705668159561,
-      "lastSuccess": 1705668159561
+      "total": 74,
+      "success": 23,
+      "last": 1705674940415,
+      "lastSuccess": 1705674919159
     },
     "t-sauce.js": {
       "total": 11,
@@ -59653,10 +59770,10 @@
       "lastSuccess": 1705660070117
     },
     "t-tourl.js": {
-      "total": 38,
-      "success": 37,
-      "last": 1705338149897,
-      "lastSuccess": 1705338149897
+      "total": 41,
+      "success": 40,
+      "last": 1705678016768,
+      "lastSuccess": 1705678016768
     },
     "i-changelog.js": {
       "total": 24,
@@ -59761,10 +59878,10 @@
       "lastSuccess": 1703175106336
     },
     "rpg-inventory.js": {
-      "total": 388,
-      "success": 386,
-      "last": 1705668985935,
-      "lastSuccess": 1705668985935
+      "total": 390,
+      "success": 388,
+      "last": 1705676793731,
+      "lastSuccess": 1705676793731
     },
     "xp-ref.js": {
       "total": 7,
@@ -59845,10 +59962,10 @@
       "lastSuccess": 1704709171886
     },
     "xp-my.js": {
-      "total": 94,
-      "success": 93,
-      "last": 1705668227818,
-      "lastSuccess": 1705668227818
+      "total": 95,
+      "success": 94,
+      "last": 1705673204150,
+      "lastSuccess": 1705673204150
     },
     "gc-call.js": {
       "total": 5,
@@ -59941,9 +60058,9 @@
       "lastSuccess": 1703916823751
     },
     "rpg-kerja.js": {
-      "total": 148,
+      "total": 150,
       "success": 93,
-      "last": 1705666734262,
+      "last": 1705674967339,
       "lastSuccess": 1705654594909
     },
     "rpg-mancing.js": {
@@ -59995,10 +60112,10 @@
       "lastSuccess": 1704640679434
     },
     "rpg-mission.js": {
-      "total": 40,
-      "success": 40,
-      "last": 1705666744694,
-      "lastSuccess": 1705666744694
+      "total": 41,
+      "success": 41,
+      "last": 1705674944280,
+      "lastSuccess": 1705674944280
     },
     "q-dare.js": {
       "total": 3,
@@ -60007,10 +60124,10 @@
       "lastSuccess": 1703937660380
     },
     "rpg-fighting.js": {
-      "total": 504,
-      "success": 504,
-      "last": 1705670991200,
-      "lastSuccess": 1705670991200
+      "total": 508,
+      "success": 508,
+      "last": 1705677589198,
+      "lastSuccess": 1705677589198
     },
     "gm-siapakahaku.js": {
       "total": 18,
@@ -60025,10 +60142,10 @@
       "lastSuccess": 1704518628846
     },
     "afk.js": {
-      "total": 146,
-      "success": 146,
-      "last": 1705672788517,
-      "lastSuccess": 1705672788517
+      "total": 150,
+      "success": 150,
+      "last": 1705676960480,
+      "lastSuccess": 1705676960480
     },
     "i-versibot.js": {
       "total": 6,
@@ -60043,10 +60160,10 @@
       "lastSuccess": 1703942209682
     },
     "rpg-transfer.js": {
-      "total": 250,
-      "success": 250,
-      "last": 1705668944080,
-      "lastSuccess": 1705668944080
+      "total": 253,
+      "success": 253,
+      "last": 1705676330787,
+      "lastSuccess": 1705676330787
     },
     "rpg-shops.js": {
       "total": 148,
@@ -60139,10 +60256,10 @@
       "lastSuccess": 1704546670098
     },
     "rpg-open.js": {
-      "total": 724,
-      "success": 700,
-      "last": 1705669079156,
-      "lastSuccess": 1705669079156
+      "total": 733,
+      "success": 709,
+      "last": 1705676847112,
+      "lastSuccess": 1705676847112
     },
     "t-sendQuote.js": {
       "total": 6,
@@ -60163,10 +60280,10 @@
       "lastSuccess": 1704523370290
     },
     "rpg-korupsi.js": {
-      "total": 85,
-      "success": 85,
-      "last": 1705668655044,
-      "lastSuccess": 1705668655044
+      "total": 87,
+      "success": 87,
+      "last": 1705676749035,
+      "lastSuccess": 1705676749035
     },
     "rpg-weeklyPass.js": {
       "total": 13,
@@ -60193,10 +60310,10 @@
       "lastSuccess": 1703950010383
     },
     "rpg-leaderboard.js": {
-      "total": 271,
-      "success": 271,
-      "last": 1705668805008,
-      "lastSuccess": 1705668805008
+      "total": 275,
+      "success": 275,
+      "last": 1705676398439,
+      "lastSuccess": 1705676398439
     },
     "i-speed.js": {
       "total": 9,
@@ -60235,16 +60352,16 @@
       "lastSuccess": 1705220617387
     },
     "rpg-hourly.js": {
-      "total": 88,
-      "success": 78,
-      "last": 1705668174018,
-      "lastSuccess": 1705668174018
+      "total": 94,
+      "success": 83,
+      "last": 1705677123382,
+      "lastSuccess": 1705677123382
     },
     "rpg-hunt.js": {
-      "total": 181,
-      "success": 152,
-      "last": 1705667468174,
-      "lastSuccess": 1705667468174
+      "total": 185,
+      "success": 155,
+      "last": 1705674940530,
+      "lastSuccess": 1705674915106
     },
     "rpg-heal.js": {
       "total": 50,
@@ -60265,46 +60382,46 @@
       "lastSuccess": 1705586382500
     },
     "rpg-rampok.js": {
-      "total": 189,
-      "success": 146,
-      "last": 1705666932167,
-      "lastSuccess": 1705666932167
+      "total": 195,
+      "success": 151,
+      "last": 1705676858381,
+      "lastSuccess": 1705676858381
     },
     "xp-unreg.js": {
-      "total": 20,
-      "success": 13,
-      "last": 1705318199385,
-      "lastSuccess": 1705318199385
+      "total": 21,
+      "success": 14,
+      "last": 1705678199177,
+      "lastSuccess": 1705678199177
     },
     "xp-ceksn.js": {
-      "total": 17,
-      "success": 17,
-      "last": 1705318184890,
-      "lastSuccess": 1705318184890
+      "total": 18,
+      "success": 18,
+      "last": 1705678178900,
+      "lastSuccess": 1705678178900
     },
     "bank-nabung.js": {
-      "total": 193,
-      "success": 193,
-      "last": 1705668667800,
-      "lastSuccess": 1705668667800
+      "total": 197,
+      "success": 197,
+      "last": 1705676590385,
+      "lastSuccess": 1705676590385
     },
     "bank-tarik.js": {
-      "total": 138,
-      "success": 138,
-      "last": 1705668801831,
-      "lastSuccess": 1705668801831
+      "total": 141,
+      "success": 141,
+      "last": 1705676768089,
+      "lastSuccess": 1705676768089
     },
     "bank-cek.js": {
-      "total": 520,
-      "success": 517,
-      "last": 1705668648201,
-      "lastSuccess": 1705668648201
+      "total": 522,
+      "success": 519,
+      "last": 1705677510420,
+      "lastSuccess": 1705677510420
     },
     "rpg-dompet.js": {
-      "total": 145,
-      "success": 144,
-      "last": 1705668655515,
-      "lastSuccess": 1705668655515
+      "total": 149,
+      "success": 148,
+      "last": 1705676853794,
+      "lastSuccess": 1705676853794
     },
     "gc-links.js": {
       "total": 23,
@@ -60343,10 +60460,10 @@
       "lastSuccess": 1705484880928
     },
     "xp-profile.js": {
-      "total": 50,
-      "success": 50,
-      "last": 1705668497947,
-      "lastSuccess": 1705668497947
+      "total": 51,
+      "success": 51,
+      "last": 1705677539380,
+      "lastSuccess": 1705677539380
     },
     "t-remobg.js": {
       "total": 3,
@@ -60385,10 +60502,10 @@
       "lastSuccess": 1704033274886
     },
     "rpg-atmplus.js": {
-      "total": 309,
-      "success": 309,
-      "last": 1705668825421,
-      "lastSuccess": 1705668825421
+      "total": 312,
+      "success": 312,
+      "last": 1705676599346,
+      "lastSuccess": 1705676599346
     },
     "gc-revoke.js": {
       "total": 5,
@@ -60571,10 +60688,10 @@
       "lastSuccess": 1704382273625
     },
     "rpg-berburu.js": {
-      "total": 9,
-      "success": 9,
-      "last": 1705657070712,
-      "lastSuccess": 1705657070712
+      "total": 10,
+      "success": 10,
+      "last": 1705674167887,
+      "lastSuccess": 1705674167887
     },
     "gm-quizz.js": {
       "total": 6,
@@ -60607,10 +60724,10 @@
       "lastSuccess": 1704464526202
     },
     "rpg-login.js": {
-      "total": 84,
-      "success": 46,
-      "last": 1705668146670,
-      "lastSuccess": 1705668146670
+      "total": 91,
+      "success": 51,
+      "last": 1705677045155,
+      "lastSuccess": 1705677045155
     },
     "t-ocr.js": {
       "total": 9,
@@ -60805,10 +60922,10 @@
       "lastSuccess": 1705146455680
     },
     "xp-reg.js": {
-      "total": 22,
-      "success": 22,
-      "last": 1705222604037,
-      "lastSuccess": 1705222604037
+      "total": 23,
+      "success": 23,
+      "last": 1705675249895,
+      "lastSuccess": 1705675249895
     },
     "store-otp.js": {
       "total": 2,
@@ -60859,10 +60976,10 @@
       "lastSuccess": 1705164740704
     },
     "t-delete.js": {
-      "total": 20,
-      "success": 16,
-      "last": 1705666987861,
-      "lastSuccess": 1705666987861
+      "total": 23,
+      "success": 18,
+      "last": 1705675336986,
+      "lastSuccess": 1705675336986
     },
     "o-unprem.js": {
       "total": 5,
@@ -60919,16 +61036,16 @@
       "lastSuccess": 1705223974928
     },
     "rpg-kill.js": {
-      "total": 80,
-      "success": 56,
-      "last": 1705669786074,
-      "lastSuccess": 1705669786074
+      "total": 85,
+      "success": 60,
+      "last": 1705676524818,
+      "lastSuccess": 1705676524818
     },
     "xp-guest.js": {
-      "total": 12,
-      "success": 5,
-      "last": 1705657563970,
-      "lastSuccess": 1705318218289
+      "total": 15,
+      "success": 6,
+      "last": 1705678265795,
+      "lastSuccess": 1705678265795
     },
     "store-transaksi.js": {
       "total": 4,
@@ -60973,10 +61090,10 @@
       "lastSuccess": 1705496263460
     },
     "rpg-berkebon.js": {
-      "total": 22,
-      "success": 21,
-      "last": 1705663716704,
-      "lastSuccess": 1705663716704
+      "total": 24,
+      "success": 23,
+      "last": 1705675981203,
+      "lastSuccess": 1705675981203
     },
     "rpg-eat.js": {
       "total": 2,
@@ -61013,6 +61130,18 @@
       "success": 4,
       "last": 1705575762884,
       "lastSuccess": 1705575762884
+    },
+    "gc-kick.js": {
+      "total": 2,
+      "success": 0,
+      "last": 1705673379058,
+      "lastSuccess": 0
+    },
+    "rpg-bonus.js": {
+      "total": 22,
+      "success": 16,
+      "last": 1705677071375,
+      "lastSuccess": 1705676572899
     }
   },
   "msgs": {},
