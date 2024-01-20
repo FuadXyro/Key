@@ -240,7 +240,7 @@ global.reloadHandler = async function (restatConn) {
   }
 
   conn.welcome = `]======❏ *WELCOME* ❏======[\n\n◉ Group @subject\n\n👋 Hallo @user\n*SEMOGA BETAH YA*😆\n\n@desc`
-  conn.bye = '👋 Byee @user\n\n*Awas Aja Lu Balik lagi😒*'
+  conn.bye = '👋Selamat tinggal, semoga hari mu penuh keceriaan!\n\nIngat, kami tunggu kepulanganmu dengan senyuman!'
   conn.spromote = '*@user* Sekarang jadi admin!'
   conn.sdemote = '*@user* Sekarang bukan lagi admin!'
   conn.sDesc = 'Deskripsi telah diubah menjadi \n@desc'

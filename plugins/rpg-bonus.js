@@ -8,7 +8,7 @@ let handler = async (m, { conn }) => {
         throw `Kamu sudah mengclaim bonus. Mohon tunggu selama *${formatTime(remainingTime)}*`
     }
 
-    let bonusMoney = getRandom(300000)
+    let bonusMoney = getRandom(30000000)
     let bonusLimit = getRandom(500)
 
     user.money += bonusMoney
