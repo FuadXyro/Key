@@ -41,7 +41,7 @@ await conn.sendMessage(m.chat, {
   const caption = `
 *Name:* ${user.registered ? user.name : conn.getName(m.sender)}
 *Atm:* ${user.atm > 0 ? 'Level ' + user.atm : 'Belum memiliki kartu atm'}
-*Bank:* ${user.bank}
+*Bank:* ${rp.format(user.bank)}
 *Money:* ${rp.format(user.money)}
 *Status:* ${user.premiumTime > 0 ? 'Premium' : 'Free'}
 *Registered:* ${user.registered ? '✓' : 'No'}

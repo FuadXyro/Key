@@ -10,6 +10,7 @@ const leaderboards = [
   'emerald',
   'trash',
   'joinlimit',
+  'magicwand',
   'potion',
   'petFood',
   'wood',
@@ -17,6 +18,8 @@ const leaderboards = [
   'string',
   'common',
   'uncommon',
+  'crystal',
+  'darkcrystal',
   'mythic',
   'legendary',
   'pet'

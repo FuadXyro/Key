@@ -6,22 +6,23 @@ let handler = async (m, { conn, command, args }) => {
   if (global.db.data.users[m.sender].money >= moneyplus * count) {
     global.db.data.users[m.sender].money -= moneyplus * count
     global.db.data.users[m.sender].bank += count
-    conn.reply(m.chat, `-${moneyplus * count} Money\n+ ${count} ATM`, m)
-  } else conn.reply(m.chat, `Money tidak mencukupi untuk menabung ${count} ATM`, m)
+    let info = `
+    -${rp.format(moneyplus * count)} Money
+    +${rp.format(count)} ATM
+    `
+    await conn.reply(m.chat, info, fkontak)
+  } else conn.reply(m.chat, `Money tidak mencukupi untuk menabung ${rp.format(count)} ATM`, m)
 }
 handler.help = ['atm <jumlah>', 'atmall']
 handler.tags = ['rpg']
 handler.command = /^atm([0-9]+)|atm|atmall$/i
-handler.owner = false
-handler.mods = false
-handler.premium = false
-handler.group = false
-handler.private = false
-handler.limit = true
-handler.admin = false
-handler.botAdmin = false
-
-handler.fail = null
 handler.exp = 0
 
 export default handler
+
+const rp = new Intl.NumberFormat('id-ID', {
+  style: 'currency',
+  currency: 'IDR',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+})

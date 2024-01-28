@@ -1,8 +1,24 @@
 const items = [
-    'money', 'bank', 'potion', 'trash', 'wood',
-    'rock', 'string', 'petFood', 'emerald',
-    'diamond', 'gold', 'iron', 'common',
-    'uncommon', 'mythic', 'legendary', 'pet',
+    'money',
+    'bank',
+    'potion',
+    'trash',
+    'wood',
+    'rock',
+    'string',
+    'petFood',
+    'emerald',
+    'diamond',
+    'gold',
+    'iron',
+    'common',
+    'uncommon', 
+    'crystal',
+    'darkcrystal',
+    'mythic', 
+    'legendary',
+    'magicwand', 
+    'pet',
 ]
 
 
@@ -93,7 +109,7 @@ const fee = Math.ceil(count * feePercentage)
         let _previous = _user[type] * 1
         user[type] -= count * 1
         _user[type] += count * 1
-        if (previous > user[type] * 1 && _previous < _user[type] * 1) m.reply(`*––––––『 TRANSFER 』––––––*\n*📊 Status:* Succes\n*🗂️ Type:* ${type}${special(type)} ${rpg.emoticon(type)}\n*🧮 Count:* ${count}\n*🈂️ Fee: ${fee} ${rpg.emoticon('money')}\n*📨 To:* @${(to || '').replace(/@s\.whatsapp\.net/g, '')}`, null, {
+        if (previous > user[type] * 1 && _previous < _user[type] * 1) m.reply(`*––––––『 TRANSFER 』––––––*\n*📊 Status:* Succes\n*🗂️ Type:* ${type}${special(type)} ${rpg.emoticon(type)}\n*🧮 Count:* ${count}\n*🈂️ Fee: ${fee}* ${rpg.emoticon('money')}\n*📨 To:* @${(to || '').replace(/@s\.whatsapp\.net/g, '')}`, null, {
             mentions: [to]
         })
         else {
