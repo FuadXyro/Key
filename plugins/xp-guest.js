@@ -20,7 +20,7 @@ let handler = async function(m, {
     user.age = age
 
     let sn = createHash('md5').update(m.sender).digest('hex')
-    let capt = `乂  *G U E S*\n\n`
+    let capt = `乂  *G U E S T*\n\n`
     capt += `┌  ◦ *Name* : ${name}\n`
     capt += `│  ◦ *Number* : ${m.sender.split("@")[0]}\n`
     capt += `│  ◦ *Age* : ${age}\n`
