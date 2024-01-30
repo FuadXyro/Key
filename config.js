@@ -11,10 +11,12 @@ import fs from "fs"
 import moment from "moment-timezone"
 
 /* Dev number */
-global.owner = [ 
+global.owner = [
+    ["6287753191005"],
     ["6283138381932"],
     ["6283837709331"]
 ]
+
 /* Vvip number */
 global.vvip = JSON.parse(readFileSync("./src/vvip.json", "utf-8"))
 /* Moderator number */
