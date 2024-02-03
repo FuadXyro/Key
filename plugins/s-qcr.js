@@ -36,7 +36,7 @@ if (!text) throw `Input warna & teks atau reply teks yang ingin di jadikan quote
          "replyMessage": {}
       }]
    }
-   const json = await axios.post('https://bot.lyo.su/quote/generate', obj, {
+   const json = await axios.post('https://quote.btch.bz/generate', obj, {
       headers: {
          'Content-Type': 'application/json'
       }

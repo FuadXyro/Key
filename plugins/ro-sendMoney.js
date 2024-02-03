@@ -1,49 +1,64 @@
-let { MessageType } = (await import('@adiwajshing/baileys')).default;
+const { MessageType } = (await import('@adiwajshing/baileys')).default
 
 let handler = async (m, { conn, text }) => {
-  if (!text) throw 'Masukkan jumlah money yang akan diberi';
-  let who;
+    if (!text) throw 'Masukkan jumlah money yang akan diberi'
+    let who
 
-  if (m.isGroup) who = m.mentionedJid[0];
-  else who = m.chat;
+    if (m.isGroup) who = m.mentionedJid[0]
+    else who = m.chat
+    if (!who) throw 'Tag salah satu lah'
 
-  if (!who) throw 'Tag salah satu lah';
+    let txt = text.replace('@' + who.split`@`[0], '').trim()
+    if (isNaN(txt)) throw 'Hanya angka'
 
-  let txt = text.replace('@' + who.split`@`[0], '').trim();
-
-  if (isNaN(txt)) throw 'Hanya angka';
-
-  let mny = parseInt(txt);
-
-  if (mny > 0) {
-    let users = global.db.data.users;
-
-    if (!users[who]) {
-      users[who] = {
-        money: 0,
-      };
+    let pp = 'https://telegra.ph/file/4d7ee3d7b468c7cc7e9e4.jpg'
+    let mny = countSupport(txt)
+    if (mny > 0) { 
+        let users = global.db.data.users
+        if (!users[who]) { 
+            users[who] = { money: 0 } 
+        }
+        users[who].money += mny
+        await conn.reply(m.chat, `Selamat @${who.split`@`[0]}. Kamu mendapatkan +${formatMoney(mny)} Money!`, m, { 
+            contextInfo: { 
+                mentionedJid: [who], 
+                forwardingScore: 9999, 
+                isForwarded: true, 
+                externalAdReply: { 
+                    mediaType: 1,
+                    mediaUrl: pp, 
+                    title: `${namebot}`, 
+                    body: '#2021-2024', 
+                    thumbnail: { url: pp }, 
+                    thumbnailUrl: pp, 
+                    sourceUrl: false, 
+                    renderLargerThumbnail: true 
+                }
+            }
+        })
     }
+}
 
-    users[who].money += mny;
+handler.help = ['sendmoney @user <amount>']
+handler.tags = ['developer']
+handler.command = /^sendmoney$/i
+handler.premium = false
+handler.rowner = true
 
-    conn.reply(
-      m.chat,
-      `Selamat @${who.split`@`[0]}. Kamu mendapatkan +${mny} Money!`,
-      m,
-      { mentions: [who] },
-      {
-        contextInfo: {
-          mentionedJid: [who],
-        },
-      }
-    );
-  }
-};
+export default handler
 
-handler.help = ['sendmoney @user <amount>'];
-handler.tags = ['developer'];
-handler.command = /^sendmoney$/;
-handler.premium = false;
-handler.rowner = true;
+function countSupport(txt) {
+    let mny = parseInt(txt)
+    if (txt.toLowerCase().endsWith('k')) {
+        mny *= 1000
+    } else if (txt.toLowerCase().endsWith('m')) {
+        mny *= 1000000
+    } else if (txt.toLowerCase().endsWith('t')) {
+        mny *= 1000000000000
+    }
+    return mny
+}
 
-export default handler;
+function formatMoney(amount) {
+    return new Intl.NumberFormat('id-ID', { style: 'currency', currency: 'IDR' }).format(amount)
+}
