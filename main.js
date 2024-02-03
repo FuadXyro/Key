@@ -35,7 +35,7 @@ import {
   mongoDBV2
 } from './lib/mongoDB.js';
 import store from './lib/store-single.js';
-const { DisconnectReason, useMultiFileAuthState } = await import('@adiwajshing/baileys')
+const { Browsers, DisconnectReason, useMultiFileAuthState } = await import('@adiwajshing/baileys')
 
 const { CONNECTING } = ws
 const { chain } = lodash
@@ -93,7 +93,7 @@ const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
   logger: P({ level: 'fatal' }),
-  browser: ['FuadXyro', 'Edge', '1.0.0'],
+  browser: Browsers.macOS('Desktop'),
   qrCodeData: (qrCode) => {
     qrcode.generate(qrCode, { small: true });
   },
