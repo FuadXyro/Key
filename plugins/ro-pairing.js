@@ -150,7 +150,9 @@ let handler = async (m, {
 handler.help = ['pairing']
 handler.tags = ['jadibot', 'baileys']
 handler.command = /^(pairing)$/i
-handler.private = true
+handler.private = false
+handler.rowner = true 
+
 export default handler
 
 const more = String.fromCharCode(8206)

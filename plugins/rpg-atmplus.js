@@ -10,7 +10,7 @@ let handler = async (m, { conn, command, args }) => {
     -${rp.format(moneyplus * count)} Money
     +${rp.format(count)} ATM
     `
-    await conn.reply(m.chat, info, fakes)
+    await conn.reply(m.chat, info, fkontak)
   } else conn.reply(m.chat, `Money tidak mencukupi untuk menabung ${rp.format(count)} ATM`, m)
 }
 handler.help = ['atm <jumlah>', 'atmall']
