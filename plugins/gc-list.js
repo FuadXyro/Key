@@ -89,11 +89,11 @@ let handler = async (m, { conn, usedPrefix, command, isOwner }) => {
     mentions: await conn.parseMention(caption),
   })
   sleep(2000)
-  conn.reply(m.chat, TextListGroup, fkontak, {
+  conn.reply(m.chat, TextListGroup, fakes, {
     mentions: await conn.parseMention(TextListGroup),
   })
   sleep(4000)
-  conn.reply(m.chat, TextListAnnounce, fkontak, {
+  conn.reply(m.chat, TextListAnnounce, fakes, {
     mentions: await conn.parseMention(TextListAnnounce),
   })
 }

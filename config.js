@@ -12,7 +12,6 @@ import moment from "moment-timezone"
 
 /* Dev number */
 global.owner = [
-    ["6287753191005"],
     ["6283138381932"],
     ["6283837709331"]
 ]
