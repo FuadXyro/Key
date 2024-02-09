@@ -8,9 +8,9 @@ let handler = async (m, {
     usedPrefix,
     command
 }) => {
-if (!text) throw `Input warna & teks atau reply teks yang ingin di jadikan quote!`;
-    let [warna, teks] = text.split('|')
-    if (!text) throw `Example: .${command} #00ff00|teks`
+if (!text) throw `Input warna, nama, dan teks atau reply teks yang ingin di jadikan quote!`;
+    let [warna, nama, teks] = text.split('|')
+    if (!text) throw `Example: .${command} #00ff00|nama|teks`
     await m.reply(wait)
 
     let pp = await conn.profilePictureUrl(m.sender, 'image').catch(_ => 'https://telegra.ph/file/a2ae6cbfa40f6eeea0cf1.jpg')
@@ -27,7 +27,7 @@ if (!text) throw `Input warna & teks atau reply teks yang ingin di jadikan quote
          "avatar": true,
          "from": {
             "id": 1,
-            "name": m.name,
+            "name": nama,
             "photo": {
                "url": pp
             }
@@ -46,7 +46,7 @@ if (!text) throw `Input warna & teks atau reply teks yang ingin di jadikan quote
     if (stiker) return conn.sendFile(m.chat, stiker, 'Quotly.webp', '', m)
 }
 
-handler.help = ['qcr warna|teks']
+handler.help = ['qcr warna|nama|teks']
 handler.tags = ['sticker']
 handler.command = /^(qcr)$/i
 export default handler

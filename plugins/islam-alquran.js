@@ -10,23 +10,26 @@ let handler = async (m, { conn, args, usedPrefix, command }) => {
     if (isNaN(args[0]) || isNaN(args[1])) {
       throw `Contoh:\n${usedPrefix + command} 1 2\n\nMaka hasilnya adalah Surah Al-Fatihah ayat 2`
     }
-
+    let images = ['https://telegra.ph/file/021a9dc89ddd8c45c2c86.jpg', 'https://telegra.ph/file/fb92b5e0923ad35b19282.jpg']
+    let randomIndex = Math.floor(Math.random() * images.length)
+    let randomImage = images[randomIndex]
+    
     let res = await alquran(args[0], args[1])
     m.reply(wait) // Ensure 'wait' is defined
 
-    m.reply(
-      `
+    let info = `
 ${res.arab}
 ${res.latin}
 
+- Artinya
 ${res.terjemahan}
 ${readMore}
 ${res.tafsir}
 
 ( ${res.surah} )
 `.trim()
-    )
-
+    await conn.reply(m.chat, info, m, { contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, externalAdReply: { mediaType: 1, mediaUrl: randomImage, title: `${htki} Al-Qur'an ${htka}`, body: `${res.surah}`, thumbnail: { url: randomImage }, thumbnailUrl: randomImage, sourceUrl: false, renderLargerThumbnail: true }}})
+    
     await conn.sendMessage(
       m.chat,
       {

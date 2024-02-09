@@ -1,15 +1,15 @@
-process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0';
-import './config.js';
+process.env['NODE_TLS_REJECT_UNAUTHORIZED'] = '0'
+import './config.js'
 
-import { createRequire } from "module"; // Bring in the ability to create the 'require' method
-import path, { join } from 'path';
-import { fileURLToPath, pathToFileURL } from 'url';
-import { platform } from 'process';
+import { createRequire } from "module" // Bring in the ability to create the 'require' method
+import path, { join } from 'path'
+import { fileURLToPath, pathToFileURL } from 'url'
+import { platform } from 'process'
 global.__filename = function filename(pathURL = import.meta.url, rmPrefix = platform !== 'win32') { return rmPrefix ? /file:\/\/\//.test(pathURL) ? fileURLToPath(pathURL) : pathURL : pathToFileURL(pathURL).toString() }
 global.__dirname = function dirname(pathURL) { return path.dirname(global.__filename(pathURL, true)) }
 global.__require = function require(dir = import.meta.url) { return createRequire(dir) }
 
-import * as ws from 'ws';
+import * as ws from 'ws'
 import {
   readdirSync,
   rmSync,
@@ -18,23 +18,23 @@ import {
   existsSync,
   readFileSync,
   watch
-} from 'fs';
+} from 'fs'
 
-import yargs from 'yargs';
-import { spawn } from 'child_process';
-import lodash from 'lodash';
-import chalk from 'chalk';
-import syntaxerror from 'syntax-error';
-import { tmpdir } from 'os';
-import { format } from 'util';
-import P from 'pino';
-import { makeWaSocket, protoType, serialize } from './lib/simple.js';
-import { Low, JSONFile } from 'lowdb';
+import yargs from 'yargs'
+import { spawn } from 'child_process'
+import lodash from 'lodash'
+import chalk from 'chalk'
+import syntaxerror from 'syntax-error'
+import { tmpdir } from 'os'
+import { format } from 'util'
+import P from 'pino'
+import { makeWaSocket, protoType, serialize } from './lib/simple.js'
+import { Low, JSONFile } from 'lowdb'
 import {
   mongoDB,
   mongoDBV2
-} from './lib/mongoDB.js';
-import store from './lib/store-single.js';
+} from './lib/mongoDB.js'
+import store from './lib/store-single.js'
 const { Browsers, DisconnectReason, useMultiFileAuthState } = await import('@adiwajshing/baileys')
 
 const { CONNECTING } = ws
@@ -93,9 +93,9 @@ const connectionOptions = {
   printQRInTerminal: true,
   auth: state,
   logger: P({ level: 'fatal' }),
-  browser: Browsers.macOS('Desktop'),
+  browser: ['FuadXyro', 'Edge', '1.0.0'],
   qrCodeData: (qrCode) => {
-    qrcode.generate(qrCode, { small: true });
+    qrcode.generate(qrCode, { small: true })
   },
 }
 
@@ -106,68 +106,68 @@ conn.isInit = false
 if (!opts['test']) {
     if (global.db) {
         setInterval(async () => {
-            if (global.db.data) await global.db.write();
-            if (opts['autocleartmp'] && (global.support || {}).find)(tmp = [os.tmpdir(), 'tmp', 'jadibot'], tmp.forEach((filename) => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])));
-        }, 30 * 1000);
+            if (global.db.data) await global.db.write()
+            if (opts['autocleartmp'] && (global.support || {}).find)(tmp = [os.tmpdir(), 'tmp', 'jadibot'], tmp.forEach((filename) => cp.spawn('find', [filename, '-amin', '3', '-type', 'f', '-delete'])))
+        }, 30 * 1000)
     }
 }
 
-if (opts['server'])(await import('./server.js')).default(global.conn, PORT);
+if (opts['server'])(await import('./server.js')).default(global.conn, PORT)
 
 async function clearTmp() {
     try {
-        const tmp = [tmpdir(), join(__dirname, "./tmp")];
+        const tmp = [tmpdir(), join(__dirname, "./tmp")]
         const filenames = await Promise.all(tmp.map(async (dirname) => {
             try {
-                const files = await readdirSync(dirname);
+                const files = await readdirSync(dirname)
                 return Promise.all(files.map(async (file) => {
                     try {
-                        const filePath = join(dirname, file);
-                        const stats = await statSync(filePath);
+                        const filePath = join(dirname, file)
+                        const stats = await statSync(filePath)
                         if (stats.isFile() && Date.now() - stats.mtimeMs >= 1000 * 60 * 3) {
-                            await unlinkSync(filePath);
-                            console.log("Successfully cleared tmp:", filePath);
-                            return filePath;
+                            await unlinkSync(filePath)
+                            console.log("Successfully cleared tmp:", filePath)
+                            return filePath
                         }
                     } catch (err) {
-                        console.error(`Error processing ${file}: ${err.message}`);
-                        return null;
+                        console.error(`Error processing ${file}: ${err.message}`)
+                        return null
                     }
-                }));
+                }))
             } catch (err) {
-                console.error(`Error reading directory ${dirname}: ${err.message}`);
-                return [];
+                console.error(`Error reading directory ${dirname}: ${err.message}`)
+                return []
             }
-        }));
-        return filenames.flat().filter((file) => file !== null);
+        }))
+        return filenames.flat().filter((file) => file !== null)
     } catch (err) {
-        console.error(`Error in clearTmp: ${err.message}`);
-        return [];
+        console.error(`Error in clearTmp: ${err.message}`)
+        return []
     }
 }
 
 async function clearSessions(folder = "./sessions") {
     try {
-        const filenames = await readdirSync(folder);
+        const filenames = await readdirSync(folder)
         const deletedFiles = await Promise.all(filenames.map(async (file) => {
             try {
-                const filePath = join(folder, file);
-                const stats = await statSync(filePath);
+                const filePath = join(folder, file)
+                const stats = await statSync(filePath)
                 if (stats.isFile() && Date.now() - stats.mtimeMs >= 1000 * 60 * 120 && file !== 'creds.json') {
-                    await unlinkSync(filePath);
-                    console.log("Deleted session:", filePath);
-                    return filePath;
+                    await unlinkSync(filePath)
+                    console.log("Deleted session:", filePath)
+                    return filePath
                 }
-                return null;
+                return null
             } catch (err) {
-                console.error(`Error processing ${file}: ${err.message}`);
-                return null;
+                console.error(`Error processing ${file}: ${err.message}`)
+                return null
             }
-        }));
-        return deletedFiles.filter((file) => file !== null);
+        }))
+        return deletedFiles.filter((file) => file !== null)
     } catch (err) {
-        console.error(`Error in clearSessions: ${err.message}`);
-        return [];
+        console.error(`Error in clearSessions: ${err.message}`)
+        return []
     }
 }
 /* Hehe */
@@ -177,14 +177,14 @@ async function connectionUpdate(update) {
         lastDisconnect,
         isNewLogin,
         qr
-    } = update;
-    global.stopped = connection;
-    if (isNewLogin) conn.isInit = true;
-    const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode;
+    } = update
+    global.stopped = connection
+    if (isNewLogin) conn.isInit = true
+    const code = lastDisconnect?.error?.output?.statusCode || lastDisconnect?.error?.output?.payload?.statusCode
     if (code && code !== DisconnectReason.loggedOut && conn?.ws.socket == null) {
-        conn.logger.info(await global.reloadHandler(true).catch(console.error));
+        conn.logger.info(await global.reloadHandler(true).catch(console.error))
     }
-    if (global.db.data == null) loadDatabase();
+    if (global.db.data == null) loadDatabase()
     if (qr !== undefined) {
     conn.logger.info(chalk.yellow('\n🚩ㅤPindai kode QR ini, kode QR akan kedaluwarsa dalam 20 detik.'))
     }
@@ -192,10 +192,10 @@ async function connectionUpdate(update) {
         const {
             jid,
             name
-        } = conn.user;
-        const currentTime = new Date();
-        const pingStart = new Date();
-       const infoMsg = `• ZenithBotz ʙᴇʀʜᴀsɪ ᴛᴇʀʜᴜʙᴜɴɢ •`;
+        } = conn.user
+        const currentTime = new Date()
+        const pingStart = new Date()
+       const infoMsg = `• ZenithBotz ʙᴇʀʜᴀsɪ ᴛᴇʀʜᴜʙᴜɴɢ •`
        conn.sendMessage("6287734910547@s.whatsapp.net", {
             text: infoMsg,
        mentions: ["6283837709331@s.whatsapp.net", jid]
@@ -204,10 +204,10 @@ async function connectionUpdate(update) {
            ephemeralExpiration: global.ephemeral
         })
         conn.sendPresenceUpdate('unavailable')
-        conn.logger.info(chalk.yellow('\n🚩 R E A D Y'));
+        conn.logger.info(chalk.yellow('\n🚩 R E A D Y'))
    }
     if (connection == 'close') {
-        conn.logger.error(chalk.yellow(`\n🚩 Koneksi ditutup, harap hapus folder ${global.authFile} dan pindai ulang kode QR`));
+        conn.logger.error(chalk.yellow(`\n🚩 Koneksi ditutup, harap hapus folder ${global.authFile} dan pindai ulang kode QR`))
     }
 }
 
