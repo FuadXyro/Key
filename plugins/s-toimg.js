@@ -1,16 +1,39 @@
-import { webp2png } from '../lib/webp2mp4.js'
+import { spawn } from 'child_process'
+import { format } from 'util'
+
 let handler = async (m, { conn, usedPrefix, command }) => {
+    if (!global.support.convert &&
+        !global.support.magick &&
+        !global.support.gm) return handler.disabled = true
+
     const notStickerMessage = `Reply sticker with command *${usedPrefix + command}*`
     if (!m.quoted) throw notStickerMessage
-    const q = m.quoted || m
-    let mime = q.mediaType || ''
-    if (!/sticker/.test(mime)) throw notStickerMessage
-    let media = await q.download()
-    let out = await webp2png(media).catch(_ => null) || Buffer.alloc(0)
-    await conn.sendFile(m.chat, out, 'out.png', '*DONE (≧ω≦)ゞ*', m)
+
+    let q = m.quoted
+    if (/sticker/.test(q.mediaType)) {
+        let sticker = await q.download()
+        if (!sticker) throw 'Failed to download sticker'
+
+        let bufs = []
+        const [_spawnprocess, ..._spawnargs] = [...(global.support.gm ? ['gm'] : global.support.magick ? ['magick'] : []), 'convert', 'webp:-', 'png:-']
+        let im = spawn(_spawnprocess, _spawnargs)
+
+        im.on('error', e => m.reply(format(e)))
+        im.stdout.on('data', chunk => bufs.push(chunk))
+
+        im.stdin.write(sticker)
+        im.stdin.end()
+
+        im.on('exit', () => {
+            conn.sendFile(m.chat, Buffer.concat(bufs), 'image.png', m)
+        })
+    } else {
+        throw notStickerMessage
+    }
 }
+
 handler.help = ['toimg (reply)']
 handler.tags = ['sticker']
-handler.command = ['toimg']
+handler.command = /^(toimg)$/i
 
 export default handler
