@@ -2,23 +2,26 @@ import fs from 'fs'
 import fetch from 'node-fetch'
 
 let handler = async (m, { text }) => {
+  conn.listAfk = conn.listAfk || {}
   try {
-    let name = m.pushName || conn.getName(m.sender)
-    let who = m.mentionedJid && m.mentionedJid[0] ? m.mentionedJid[0] : m.fromMe ? conn.user.jid : m.sender
     let user = global.db.data.users[m.sender]
+    user.afk = +new Date()
+    user.afkReason = text
+    const username = m.name || m.pushName
+    const id = m.sender || m.key.remoteJid
 
-    let thumb = await conn.profilePictureUrl(who, 'image').catch(error => {
-      console.error('Error getting profile picture:', error)
-      return hwaifu.getRandom()
-    })
+    conn.listAfk[m.chat] = conn.listAfk[m.chat]
+      ? conn.listAfk[m.chat].some(user => user.id === id)
+        ? conn.listAfk[m.chat]
+        : [...conn.listAfk[m.chat], { username, id }]
+      : [{ username, id }]
+
+    let thumb = await conn.profilePictureUrl(id, 'image').catch(_ => hwaifu.getRandom())
 
     if (!user) {
       console.error('User data not found')
       return
     }
-
-    user.afk = +new Date
-    user.afkReason = text
 
     let anunya = `\n${conn.getName(m.sender)} Sedang AFK\nDᴇɴɢᴀɴ Aʟᴀsᴀɴ ⬕ ${text ? ': ' + text : ''}`
     await conn.reply(m.chat, anunya, false, {
@@ -28,7 +31,7 @@ let handler = async (m, { text }) => {
         externalAdReply: {
           mediaType: 1,
           mediaUrl: thumb,
-          title: `Seseorang AFK!`,
+          title: `Seseorang AFK!!!`,
           thumbnail: { url: thumb },
           thumbnailUrl: thumb,
           renderLargerThumbnail: true
