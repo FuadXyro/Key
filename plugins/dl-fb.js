@@ -13,7 +13,7 @@ var handler = async (m, { args }) => {
         };
 
         const reqOptions = {
-            url: `https://apikey.fuadxy99.repl.co/fb?u=${url}`,
+            url: `https://c059325b-1806-4026-98e2-3a3e1c89020c-00-13ybpwq3bi9zf.sisko.replit.dev/fb?u=${url}`,
             method: "GET",
             headers: headersList,
         };
