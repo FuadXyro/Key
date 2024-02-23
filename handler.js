@@ -1062,7 +1062,7 @@ export async function handler(chatUpdate) {
         const isRAdmin = user?.admin == 'superadmin' || false
         const isAdmin = isRAdmin || user?.admin == 'admin' || false // Is User Admin?
         const isBotAdmin = bot?.admin || false // Are you Admin?
-
+        if ((opts['groupmode'] || (m.isGroup && isPrems && isOwner)) && !m.isGroup) return await this.reply(m.chat, `⚠️ Using bot in private chat only for premium user, upgrade to premium plan only Rp. 5,000,- to get Infinity limits for 1 month.\n\nIf you want to buy contact *@${owner[0]}*`, m, { contextInfo: { mentionedJid: [m.sender], forwardingScore: 9999, isForwarded: true, externalAdReply: { mediaType: 1, mediaUrl: 'https://iili.io/JTRzjBS.jpg', title: `${namebot}`, thumbnail: { url: 'https://iili.io/JTRzjBS.jpg' }, thumbnailUrl: 'https://iili.io/JTRzjBS.jpg', sourceUrl: sgc, renderLargerThumbnail: true }}});
         const ___dirname = path.join(path.dirname(fileURLToPath(import.meta.url)), './plugins')
         for (let name in global.plugins) {
             let plugin = global.plugins[name]
