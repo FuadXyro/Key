@@ -1,7 +1,7 @@
 {
   "name": "FuadXyro",
-  "version": "6.6.0",
-  "description": "WhatsApp API",
+  "version": "6.6.6",
+  "description": "WhatsApp Baileys",
   "keywords": [
     "whatsapp",
     "js-whatsapp",
@@ -12,12 +12,12 @@
     "automation",
     "multi-device"
   ],
-  "homepage": "https://github.com/WhiskeySockets/Baileys",
+  "homepage": "https://github.com/FuadXyro/Key",
   "repository": {
-    "url": "git@github.com:WhiskeySockets/Baileys.git"
+    "url": "git@github.com:FuadXyro/Key.git"
   },
   "license": "MIT",
-  "author": "Adhiraj Singh",
+  "author": "FuadXyro",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
   "files": [
